@@ -1,6 +1,17 @@
 import React, { useMemo } from "react";
-import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
-import { buildPages, pickKeywordIndex, type Caption, type PunchLine } from "../captions";
+import {
+  AbsoluteFill,
+  interpolate,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion";
+import {
+  buildPages,
+  pickKeywordIndex,
+  tiraPontoFinal,
+  type Caption,
+  type PunchLine,
+} from "../captions";
 import { colors } from "../tokens";
 import { fam } from "./shared";
 import "../fonts";
@@ -24,12 +35,18 @@ const fit = (chars: number, maxW: number, max: number, min: number) =>
  * - Dia a dia: Montserrat 700, contorno preto fino, sem tarja; a palavra falada fica em âmbar.
  * - Frase de efeito: "Título de cinema" (palavra-chave gigante em âmbar, resto pequeno em branco).
  */
-export const Legendas: React.FC<LegendasProps> = ({ captions, punchLines = [] }) => {
+export const Legendas: React.FC<LegendasProps> = ({
+  captions,
+  punchLines = [],
+}) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const t = (frame / fps) * 1000;
   const k = width / 1080;
-  const pages = useMemo(() => buildPages(captions, punchLines), [captions, punchLines]);
+  const pages = useMemo(
+    () => buildPages(captions, punchLines),
+    [captions, punchLines],
+  );
 
   const zone: React.CSSProperties = {
     justifyContent: "flex-end",
@@ -39,19 +56,34 @@ export const Legendas: React.FC<LegendasProps> = ({ captions, punchLines = [] })
 
   const punch = punchLines.find((p) => t >= p.startMs && t < p.endMs);
   if (punch) {
-    const words = captions.filter((w) => w.startMs >= punch.startMs && w.startMs < punch.endMs);
+    const words = captions.filter(
+      (w) => w.startMs >= punch.startMs && w.startMs < punch.endMs,
+    );
     const texts = words.map((w) => clean(w.text));
+    // Interrogação e exclamação são bem-vindas; ponto final nunca.
+    const lastRaw = words.length ? words[words.length - 1].text.trim() : "";
+    if (texts.length && /[?!]$/.test(lastRaw))
+      texts[texts.length - 1] += lastRaw.slice(-1);
     const byName = punch.keyword
-      ? texts.findIndex((w) => w.toLowerCase() === clean(punch.keyword as string).toLowerCase())
+      ? texts.findIndex(
+          (w) =>
+            clean(w).toLowerCase() ===
+            clean(punch.keyword as string).toLowerCase(),
+        )
       : -1;
     const ki = byName >= 0 ? byName : pickKeywordIndex(texts);
     const above = texts.slice(0, ki).join(" ");
     const below = texts.slice(ki + 1).join(" ");
     const maxW = 960 * k;
-    const dim = interpolate(t, [punch.startMs, punch.startMs + 200, punch.endMs - 150, punch.endMs], [0, 1, 1, 0], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp",
-    });
+    const dim = interpolate(
+      t,
+      [punch.startMs, punch.startMs + 200, punch.endMs - 150, punch.endMs],
+      [0, 1, 1, 0],
+      {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      },
+    );
     const push = interpolate(t, [punch.startMs, punch.endMs], [1, 1.06], {
       extrapolateLeft: "clamp",
       extrapolateRight: "clamp",
@@ -66,7 +98,9 @@ export const Legendas: React.FC<LegendasProps> = ({ captions, punchLines = [] })
     };
     return (
       <AbsoluteFill>
-        <AbsoluteFill style={{ background: "rgba(11,12,14,.4)", opacity: dim }} />
+        <AbsoluteFill
+          style={{ background: "rgba(11,12,14,.4)", opacity: dim }}
+        />
         <AbsoluteFill style={zone}>
           <div
             style={{
@@ -77,11 +111,35 @@ export const Legendas: React.FC<LegendasProps> = ({ captions, punchLines = [] })
               textShadow: "0 6px 40px rgba(0,0,0,.8)",
             }}
           >
-            {above ? <div style={{ ...line, fontSize: fit(above.length, maxW, 96 * k, 48 * k) }}>{above}</div> : null}
-            <div style={{ ...line, color: c.amberText, fontSize: fit(texts[ki]?.length ?? 1, maxW, 300 * k, 110 * k) }}>
+            {above ? (
+              <div
+                style={{
+                  ...line,
+                  fontSize: fit(above.length, maxW, 96 * k, 48 * k),
+                }}
+              >
+                {above}
+              </div>
+            ) : null}
+            <div
+              style={{
+                ...line,
+                color: c.amberText,
+                fontSize: fit(texts[ki]?.length ?? 1, maxW, 300 * k, 110 * k),
+              }}
+            >
               {texts[ki]}
             </div>
-            {below ? <div style={{ ...line, fontSize: fit(below.length, maxW, 96 * k, 48 * k) }}>{below}</div> : null}
+            {below ? (
+              <div
+                style={{
+                  ...line,
+                  fontSize: fit(below.length, maxW, 96 * k, 48 * k),
+                }}
+              >
+                {below}
+              </div>
+            ) : null}
           </div>
         </AbsoluteFill>
       </AbsoluteFill>
@@ -89,7 +147,10 @@ export const Legendas: React.FC<LegendasProps> = ({ captions, punchLines = [] })
   }
 
   const i = pages.findIndex((p, idx) => {
-    const holdEnd = Math.min(p.endMs + 300, pages[idx + 1]?.startMs ?? Infinity);
+    const holdEnd = Math.min(
+      p.endMs + 300,
+      pages[idx + 1]?.startMs ?? Infinity,
+    );
     return t >= p.startMs && t < holdEnd;
   });
   if (i < 0) return null;
@@ -122,8 +183,15 @@ export const Legendas: React.FC<LegendasProps> = ({ captions, punchLines = [] })
         }}
       >
         {page.words.map((w, idx) => (
-          <span key={idx} style={{ color: idx === active ? c.amberText : c.ink }}>
-            {idx === 0 ? w.text.trimStart() : w.text}
+          <span
+            key={idx}
+            style={{ color: idx === active ? c.amberText : c.ink }}
+          >
+            {idx === page.words.length - 1
+              ? tiraPontoFinal(idx === 0 ? w.text.trimStart() : w.text)
+              : idx === 0
+                ? w.text.trimStart()
+                : w.text}
           </span>
         ))}
       </div>

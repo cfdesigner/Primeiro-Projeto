@@ -29,4 +29,4 @@ Cada design system vive em `design-systems/<nome>/`. Veja `design-systems/README
 - As fontes vêm do Google Fonts no momento do render.
 - CFDesigner: vídeo é sempre tema Cinema. Inglês para público internacional, português para o Brasil, nunca misturados na mesma linha. Um único destaque âmbar por peça.
 - **CFDesigner, regra do dono: NÃO colocar as barras letterbox do ReelFrame** (ponto REC, timecode, símbolo + "@cfdesigner", "24 fps · 9:16"). Elas ficam desligadas por padrão (`bars={false}`). Só ligue com `bars` se o usuário pedir explicitamente. Também não escreva timecode, REC ou fps em vídeos por conta própria.
-- **Legendas:** use o componente `Legendas` do CFDesigner (skill `legendas`). Dia a dia: Montserrat com contorno preto fino, sem tarja. Frase de efeito: Título de cinema.
+- **Legendas: sem ponto final, nunca** (vírgula, ? e ! podem). Use o componente `Legendas` do CFDesigner (skill `legendas`). Dia a dia: Montserrat com contorno preto fino, sem tarja. Frase de efeito: Título de cinema.

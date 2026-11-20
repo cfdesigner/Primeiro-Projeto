@@ -16,4 +16,4 @@ export const imagery = {
   timelineCloseup,
   manifestoBanner,
 };
-export { buildPages, suggestPunchLines, pickKeywordIndex, type Caption, type PunchLine, type Page, type PunchCandidate } from "./captions";
+export { buildPages, tiraPontoFinal, suggestPunchLines, pickKeywordIndex, type Caption, type PunchLine, type Page, type PunchCandidate } from "./captions";

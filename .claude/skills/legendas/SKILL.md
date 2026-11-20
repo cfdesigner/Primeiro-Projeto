@@ -11,6 +11,7 @@ Quando o usuário mandar um vídeo/áudio e pedir legenda: **transcreva primeiro
 
 - **Dia a dia (70–80% do vídeo):** Montserrat 700 branco gelo, **contorno preto fino e SEM tarja/caixa/linha**, a palavra falada em âmbar. É o padrão.
 - **Frase de efeito:** "Título de cinema": palavra-chave gigante em âmbar (Bebas), o resto da frase pequeno em branco, fundo levemente escurecido e um leve zoom. Só em frases curtas e fortes.
+- **Sem ponto final, nunca** (regra do dono: acha feio). Toda legenda termina sem ponto. Vírgula, `?` e `!` ficam. O componente `Legendas` já tira o ponto sozinho (`tiraPontoFinal`); se escrever texto de legenda à mão ou em outro componente, aplique a mesma regra. Reticências não são mexidas.
 - Posição: acima dos ~24% de baixo (botões de Reels/Shorts). Nunca barras de REC/timecode.
 
 Tudo isso já está no componente `Legendas` (`design-systems/cfdesigner/components/Legendas.tsx`). Não reinvente o visual.

@@ -35,6 +35,12 @@ export const pickKeywordIndex = (texts: string[]): number => {
   return best;
 };
 
+/**
+ * Regra do dono: legenda NUNCA termina com ponto final. Vírgula, ? e ! ficam.
+ * Só tira um ponto isolado no fim; reticências ("..." ou "…") ficam como estão.
+ */
+export const tiraPontoFinal = (text: string): string => text.replace(/([^.\s])\.\s*$/, "$1");
+
 const endsSentence = (text: string) => /[.!?…]$/.test(text.trim());
 
 /** Agrupa as palavras em "páginas" de legenda do dia a dia, pulando as frases de efeito. */
