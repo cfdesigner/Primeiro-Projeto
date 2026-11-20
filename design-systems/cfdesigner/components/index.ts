@@ -8,3 +8,4 @@ export { ServiceCard, type ServiceCardProps } from "./ServiceCard";
 export { Testimonial, type TestimonialProps } from "./Testimonial";
 export { Manifesto, type ManifestoProps } from "./Manifesto";
 export { Grain } from "./shared";
+export { Legendas, type LegendasProps } from "./Legendas";

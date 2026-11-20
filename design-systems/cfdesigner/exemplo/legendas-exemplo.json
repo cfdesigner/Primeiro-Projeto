@@ -1,0 +1,114 @@
+[
+  {
+    "text": " A",
+    "startMs": 0,
+    "endMs": 340,
+    "timestampMs": 170,
+    "confidence": 0.89
+  },
+  {
+    "text": " edição",
+    "startMs": 340,
+    "endMs": 680,
+    "timestampMs": 510,
+    "confidence": 0.997
+  },
+  {
+    "text": " é",
+    "startMs": 680,
+    "endMs": 820,
+    "timestampMs": 750,
+    "confidence": 0.991
+  },
+  {
+    "text": " o",
+    "startMs": 820,
+    "endMs": 880,
+    "timestampMs": 850,
+    "confidence": 0.697
+  },
+  {
+    "text": " instante",
+    "startMs": 880,
+    "endMs": 1280,
+    "timestampMs": 1080,
+    "confidence": 0.962
+  },
+  {
+    "text": " em",
+    "startMs": 1280,
+    "endMs": 1380,
+    "timestampMs": 1330,
+    "confidence": 0.983
+  },
+  {
+    "text": " que",
+    "startMs": 1380,
+    "endMs": 1460,
+    "timestampMs": 1420,
+    "confidence": 0.998
+  },
+  {
+    "text": " a",
+    "startMs": 1460,
+    "endMs": 1540,
+    "timestampMs": 1500,
+    "confidence": 0.902
+  },
+  {
+    "text": " emoção",
+    "startMs": 1540,
+    "endMs": 1840,
+    "timestampMs": 1690,
+    "confidence": 0.997
+  },
+  {
+    "text": " encontra",
+    "startMs": 1840,
+    "endMs": 2220,
+    "timestampMs": 2030,
+    "confidence": 0.727
+  },
+  {
+    "text": " o",
+    "startMs": 2220,
+    "endMs": 2360,
+    "timestampMs": 2290,
+    "confidence": 0.99
+  },
+  {
+    "text": " tempo.",
+    "startMs": 2360,
+    "endMs": 2700,
+    "timestampMs": 2530,
+    "confidence": 0.999
+  },
+  {
+    "text": " Cinema",
+    "startMs": 3280,
+    "endMs": 3580,
+    "timestampMs": 3430,
+    "confidence": 0.451
+  },
+  {
+    "text": " em",
+    "startMs": 3580,
+    "endMs": 3740,
+    "timestampMs": 3660,
+    "confidence": 0.926
+  },
+  {
+    "text": " 15",
+    "startMs": 3740,
+    "endMs": 3920,
+    "timestampMs": 3830,
+    "confidence": 0.981
+  },
+  {
+    "text": " segundos.",
+    "startMs": 3920,
+    "endMs": 4260,
+    "timestampMs": 4090,
+    "confidence": 0.956
+  }
+]

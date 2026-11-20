@@ -5,6 +5,8 @@ description: Use quando o usuário pedir para transcrever áudio ou vídeo, gera
 
 # Whisper (transcrição e legendas)
 
+> Pedido de **legenda** de um vídeo? Siga a skill `legendas`: ela já inclui a transcrição, sem o usuário precisar pedir.
+
 Roda o modelo Whisper da OpenAI (open source, MIT) via `faster-whisper`, **só na CPU**. Não usa API, chave nem placa de vídeo.
 
 > Não use o caminho do `@remotion/whisper-webgpu` descrito na skill `remotion-captions`: ele exige GPU e o container não tem. Use este.
