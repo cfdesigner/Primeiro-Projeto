@@ -14,6 +14,8 @@ export type ReelFrameProps = {
   image?: string;
   /** Enquadramento do corte 9:16, ex. "38% center". */
   imagePosition?: string;
+  /** Barras letterbox com REC, timecode, @cfdesigner e fps. Desligadas por padrão: só ligue se o usuário pedir. */
+  bars?: boolean;
   timecode?: string;
   fps?: string;
   /** Largura em px. A altura segue 9:16. Padrão 1080 (vídeo 1080×1920). */
@@ -28,6 +30,7 @@ export const ReelFrame: React.FC<ReelFrameProps> = ({
   eyebrow,
   image,
   imagePosition = "center",
+  bars = false,
   timecode = "00:00:15:00",
   fps = "24 fps · 9:16",
   width = 1080,
@@ -94,13 +97,15 @@ export const ReelFrame: React.FC<ReelFrameProps> = ({
           }}
         />
       )}
-      <div style={bar}>
-        <span style={{ display: "inline-flex", alignItems: "center", gap: 6 * s, color: c.ink }}>
-          <span style={{ width: 7 * s, height: 7 * s, borderRadius: 999, background: c.rec }} />
-          REC
-        </span>
-        <span>{timecode}</span>
-      </div>
+      {bars ? (
+        <div style={bar}>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 6 * s, color: c.ink }}>
+            <span style={{ width: 7 * s, height: 7 * s, borderRadius: 999, background: c.rec }} />
+            REC
+          </span>
+          <span>{timecode}</span>
+        </div>
+      ) : null}
       <div
         style={{
           position: "relative",
@@ -141,13 +146,15 @@ export const ReelFrame: React.FC<ReelFrameProps> = ({
           <HookText text={hook} accent={accent} color={c.amberText} />
         </p>
       </div>
-      <div style={bar}>
-        <span style={{ display: "inline-flex", alignItems: "center", gap: 6 * s }}>
-          <Logo layout="symbol" height={18 * s} />
-          @cfdesigner
-        </span>
-        <span>{fps}</span>
-      </div>
+      {bars ? (
+        <div style={bar}>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 6 * s }}>
+            <Logo layout="symbol" height={18 * s} />
+            @cfdesigner
+          </span>
+          <span>{fps}</span>
+        </div>
+      ) : null}
       <Grain />
     </div>
   );

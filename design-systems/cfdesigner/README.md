@@ -13,6 +13,7 @@ import { ReelFrame, Manifesto, Logo, colors, imagery } from "../design-systems/c
 - **Imagens e logos:** `assets/`, importadas por `logos` e `imagery` em `index.ts`.
 - **Props de cada componente:** `docs/props.d.ts` e `docs/components/*.md`.
 - **Vídeo sempre no tema Cinema** (escuro). Daylight é só para documentos.
+- **Sem barras de REC/timecode nos vídeos.** O `ReelFrame` traz barras letterbox (REC, timecode, @cfdesigner, fps), mas elas ficam desligadas por padrão (`bars={false}`). Só ligue se o dono pedir. Isso vale mais que as regras de letterbox do brand book abaixo.
 
 ---
 
