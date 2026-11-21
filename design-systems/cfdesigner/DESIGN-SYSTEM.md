@@ -32,6 +32,7 @@ import {
 - **Frase de efeito:** "Título de cinema": palavra-chave gigante em âmbar (Bebas), o resto pequeno em branco, fundo levemente escurecido, leve zoom. Só frases curtas e fortes. A palavra-chave é um número, se houver; senão a mais longa.
 - **Posição:** acima dos ~24% de baixo (botões de Reels/Shorts).
 - **Agrupamento** (`buildPages`): até 34 caracteres, 7 palavras, pausa de 550 ms.
+- **Entrelinha 1,12** (escolha do dono, entre 1,25, 1,12 e 1,0): as linhas ficam mais próximas, mas as letras que descem (g, p, q, ç) ainda têm folga. Parâmetro `entrelinha`.
 - Componente: `Legendas` (captions + punchLines aprovadas). As frases de efeito são sugeridas por `scripts/frases-de-efeito.mjs` e **sempre aprovadas pelo dono**.
 
 ## Terceiro de nome
