@@ -10,7 +10,7 @@ import legendasJson from "./legendas.json";
 
 const captions = legendasJson as Caption[];
 
-// Frases de efeito (propostas, aguardando aprovação do dono).
+// Frases de efeito (aprovadas pelo dono).
 const punchLines: PunchLine[] = [
   { startMs: 4100, endMs: 5400, keyword: "câmera" },
   { startMs: 17500, endMs: 18840, keyword: "experiência" },
