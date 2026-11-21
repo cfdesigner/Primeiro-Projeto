@@ -61,7 +61,6 @@
 ### Limpezas pequenas
 
 - [ ] **[dono]** (opcional) Apagar a branch `previews-legenda` no GitHub: não está no `main`, guarda só os rascunhos das opções de legenda do CFDesigner (as escolhas já foram implementadas). Apagar ou manter, tanto faz
-- [ ] **[dono]** Decidir se as reticências ("...") também somem das legendas (hoje ficam)
 
 ## Regras que valem para tudo
 

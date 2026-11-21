@@ -38,11 +38,12 @@ export const pickKeywordIndex = (texts: string[]): number => {
 };
 
 /**
- * Regra do dono: legenda NUNCA termina com ponto final. Vírgula, ? e ! ficam.
- * Só tira um ponto isolado no fim; reticências ("..." ou "…") ficam como estão.
+ * Regra do dono: legenda NUNCA termina com ponto final NEM com reticências. Vírgula, ? e ! ficam.
+ * Tira um ou mais pontos finais e reticências ("..." ou "…") do fim do texto; "certo?..." vira "certo?".
+ * Pontos no meio (ex.: "3.5") não são mexidos.
  */
 export const tiraPontoFinal = (text: string): string =>
-  text.replace(/([^.\s])\.\s*$/, "$1");
+  text.replace(/([^.\s…])\s*(?:\.+|…)+\s*$/, "$1");
 
 /** Palavras curtas que não devem terminar uma página de legenda (português). */
 const STOPWORDS = [
