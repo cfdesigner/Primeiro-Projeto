@@ -24,6 +24,8 @@ export type LegendasProps = {
   scrim?: boolean;
   /** Tamanho da legenda do dia a dia em px, na base de 1080 (padrão 65). */
   tamanho?: number;
+  /** Altura da legenda do dia a dia: distância do pé do quadro, como fração da altura (padrão 0,24). Só vale para o dia a dia; a frase de efeito fica no centro-baixo. */
+  altura?: number;
   /** Escurece o quadro em azul durante a frase de efeito. Padrão desligado: a frase entra direto sobre a cena (decisão do dono). */
   escurecerFrase?: boolean;
 };
@@ -45,7 +47,8 @@ export const Legendas: React.FC<LegendasProps> = ({
   punchLines = [],
   scrim = true,
   escurecerFrase = false,
-  tamanho = 65,
+  tamanho = 46,
+  altura = 0.24,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -211,7 +214,7 @@ export const Legendas: React.FC<LegendasProps> = ({
         />
       ) : null}
       {page ? (
-        <AbsoluteFill style={zone}>
+        <AbsoluteFill style={{ ...zone, paddingBottom: height * altura }}>
           <div
             style={{
               ...text("heading"),
