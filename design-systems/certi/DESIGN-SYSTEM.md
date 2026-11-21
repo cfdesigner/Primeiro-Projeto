@@ -68,7 +68,7 @@ Vídeo de teste (com trechos do institucional): `Certi-Transicoes-Teste`.
 
 **Estilo A, em caixa alta (escolha do dono):** componente `Legendas`.
 
-- **CAIXA ALTA**, Nunito Sans 700, branca, com **contorno preto fino** (3 px) e sombra suave, **sem tarja**. Igual à legenda do institucional da CERTI.
+- **CAIXA ALTA**, Nunito Sans 700 (**65 px** na base de 1080; era 67,6, reduzido a pedido do dono), branca, com **contorno preto fino** (3 px) e sombra suave, **sem tarja**. Igual à legenda do institucional da CERTI.
 - A **palavra falada** fica em azul-claro (`sky`), mudando a cada palavra.
 - **Entra e sai em corte seco**, como no institucional.
 - **Sem ponto final** (regra do dono). Vírgula, `?` e `!` ficam.
@@ -78,7 +78,7 @@ Vídeo de teste (com trechos do institucional): `Certi-Transicoes-Teste`.
 
 **Ponto de atenção:** sem caixa, a legenda perde força sobre imagens muito claras (jaleco branco, paredes claras). O contorno e o degradê ajudam, mas se algum plano ficar difícil de ler, conversar antes de trocar de estilo. Alternativas já mostradas ao dono: B (tarja azul), C (bloco de destaque), D (barra tech).
 
-**Frase de efeito, estilo C "leve e pesado" (escolha do dono):** o quadro escurece em azul-profundo (fade de 200 ms), o resto da frase vai em Nunito Sans **300** em caixa alta e a **palavra-chave em 900**, grande, com um fio fino branco embaixo. Corte seco na entrada e na saída. A palavra-chave é um número, se houver; senão a mais longa (ou a que o dono indicar). Tamanho ajustado para a palavra caber na largura. Sem ponto final; `?` e `!` ficam.
+**Frase de efeito, estilo C "leve e pesado" (escolha do dono):** o resto da frase vai em Nunito Sans **300** em caixa alta e a **palavra-chave em 900**, grande, com um fio fino branco embaixo. **Sem escurecer nem tingir o quadro** (o dono pediu: a frase entra direto sobre a cena, só a fonte). A legibilidade vem da sombra suave nas letras; `escurecerFrase` existe só como opção desligada. Corte seco na entrada e na saída. A palavra-chave é um número, se houver; senão a mais longa (ou a que o dono indicar), e **pode ter mais de uma palavra** (ex.: "Inteligência Artificial", empilhadas uma por linha). Tamanho ajustado para a palavra caber na largura. Sem ponto final; `?` e `!` ficam.
 
 Fluxo: o script `scripts/frases-de-efeito.mjs` **sugere** as frases (curtas, cercadas de pausa) e o dono **aprova** antes de renderizar; as aprovadas entram em `punchLines` do componente `Legendas`. No teste, achou exatamente "ideias que viram resultado" numa fala com pausas.
 
@@ -118,6 +118,10 @@ Exemplo: `Certi-Numero-Fecho-Exemplo`.
 ## Imagem e vídeo
 
 Fotos claras e reais, sem filtros coloridos (a confirmar com fotos fornecidas).
+
+## Texto da marca
+
+- O nome da marca é escrito **sempre em maiúsculas: CERTI**, nunca "Certi" nem "certi" em texto corrido, legenda ou terceiro de nome (decisão do dono). O logo continua sendo o arquivo oficial, sem redesenhar. O endereço do site é a exceção natural: `certi.org.br`.
 
 ## Proibido neste design system (proposto)
 

@@ -35,6 +35,12 @@
 
 ## Próximos passos
 
+### Produção CERTI News (branch `producao-certi-news`)
+
+- [ ] **[dono]** Passar nome e cargo reais para o terceiro de nome (hoje simulado) e dizer se a apresentação precisa dele
+- [ ] **[dono]** Aprovar o vídeo; depois eu passo a branch para o `main`
+- [ ] **[dono]** Dizer se o número do CERTI (`Numero`) também deve entrar direto sobre a cena, sem escurecer
+
 ### CERTI: o que depende do dono
 
 - [ ] **[dono]** (opcional) fotos, manual da marca e, se existirem, os arquivos oficiais do horizontal negativo e do símbolo (hoje derivados por mim)

@@ -22,6 +22,8 @@ export type LegendasProps = {
   punchLines?: PunchLine[];
   /** Degradê escuro suave no pé do quadro para ajudar a leitura em fundo claro (padrão ligado). */
   scrim?: boolean;
+  /** Escurece o quadro em azul durante a frase de efeito. Padrão desligado: a frase entra direto sobre a cena (decisão do dono). */
+  escurecerFrase?: boolean;
 };
 
 const clean = (s: string) => s.replace(/[.,!?…:;"“”()]/g, "").trim();
@@ -40,6 +42,7 @@ export const Legendas: React.FC<LegendasProps> = ({
   captions,
   punchLines = [],
   scrim = true,
+  escurecerFrase = false,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -109,9 +112,11 @@ export const Legendas: React.FC<LegendasProps> = ({
     };
     return (
       <AbsoluteFill style={{ pointerEvents: "none" }}>
-        <AbsoluteFill
-          style={{ background: "rgba(0,40,96,0.55)", opacity: dim }}
-        />
+        {escurecerFrase ? (
+          <AbsoluteFill
+            style={{ background: "rgba(0,40,96,0.55)", opacity: dim }}
+          />
+        ) : null}
         <AbsoluteFill style={zone}>
           <div
             style={{
@@ -206,7 +211,7 @@ export const Legendas: React.FC<LegendasProps> = ({
         <AbsoluteFill style={zone}>
           <div
             style={{
-              ...text("heading", 2.6 * k),
+              ...text("heading", 2.5 * k),
               maxWidth: width * 0.86,
               fontWeight: 700,
               textTransform: "uppercase",
