@@ -60,7 +60,7 @@
 
 ### Limpezas pequenas
 
-- [ ] **[dono]** Apagar no GitHub as branches antigas: `design-system-certi`, `previews-legenda`, `remover-video-teste` (o servidor recusou que eu apague)
+- [ ] **[dono]** Apagar no GitHub as 8 branches antigas, todas já incorporadas ao `main` (o servidor recusa que eu apague): `certi-etapa2`, `certi-etapa3`, `certi-etapa4`, `certi-frases-efeito`, `design-system-certi`, `producao-certi-news`, `previews-legenda`, `remover-video-teste`
 - [ ] **[dono]** Apagar o artefato "Design System" duplicado no claude.ai (não foi usado)
 - [ ] **[dono]** Decidir se os vídeos de exemplo do Root ficam ou saem
 - [ ] **[dono]** Decidir se as reticências ("...") também somem das legendas (hoje ficam)
