@@ -22,6 +22,8 @@ export type LegendasProps = {
   punchLines?: PunchLine[];
   /** Degradê escuro suave no pé do quadro para ajudar a leitura em fundo claro (padrão ligado). */
   scrim?: boolean;
+  /** Tamanho da legenda do dia a dia em px, na base de 1080 (padrão 65). */
+  tamanho?: number;
   /** Escurece o quadro em azul durante a frase de efeito. Padrão desligado: a frase entra direto sobre a cena (decisão do dono). */
   escurecerFrase?: boolean;
 };
@@ -43,6 +45,7 @@ export const Legendas: React.FC<LegendasProps> = ({
   punchLines = [],
   scrim = true,
   escurecerFrase = false,
+  tamanho = 65,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -211,7 +214,8 @@ export const Legendas: React.FC<LegendasProps> = ({
         <AbsoluteFill style={zone}>
           <div
             style={{
-              ...text("heading", 2.5 * k),
+              ...text("heading"),
+              fontSize: tamanho * k,
               maxWidth: width * 0.86,
               fontWeight: 700,
               textTransform: "uppercase",

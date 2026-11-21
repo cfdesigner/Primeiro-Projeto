@@ -22,14 +22,20 @@ export const FECHO_FROM = 267;
 /** 12,2 s no total: vídeo de 10,6 s + fecho com logo parado por ~2,4 s. */
 export const CERTI_NEWS_FRAMES = 366;
 
-export const CertiNews: React.FC = () => (
+export const CertiNews: React.FC<{ tamanhoLegenda?: number }> = ({
+  tamanhoLegenda = 65,
+}) => (
   <AbsoluteFill style={{ background: "#000" }}>
     <FechoComTransicao from={FECHO_FROM}>
       <OffthreadVideo
         src={staticFile("entrada/certi-news.mp4")}
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
-      <Legendas captions={captions} punchLines={punchLines} />
+      <Legendas
+        captions={captions}
+        punchLines={punchLines}
+        tamanho={tamanhoLegenda}
+      />
       {/* SIMULAÇÃO: nome e cargo ainda não informados pelo dono. */}
       <Sequence from={15} durationInFrames={120}>
         <TerceiroTech
