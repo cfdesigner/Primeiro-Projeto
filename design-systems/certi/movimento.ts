@@ -24,3 +24,39 @@ export const easing = {
 /** Milissegundos para quadros, no fps da composição. */
 export const frames = (ms: number, fps: number) =>
   Math.round((ms * fps) / 1000);
+
+/**
+ * Transições, medidas no institucional "40 anos" da CERTI (vídeo de referência; exportado a 15 quadros reais/s).
+ * "estimado" = visto nos quadros, sem medição direta (a conferir com o dono).
+ */
+export const transitions = {
+  /** Dissolvência entre planos: ~3 quadros distintos a 15 fps. */
+  dissolveMs: 200,
+  /** Whip: a câmera acelera para o lado e corta no pico (−3, −14, −22 px por passo @480 px). */
+  whipMs: 250,
+  whipBlurPx: 60, // estimado
+  /** Deslocamento (fração da largura) e ampliação durante o whip; a ampliação cobre a borda e evita faixa preta. */
+  whipTravel: 0.17, // estimado
+  whipScale: 1.35, // estimado
+  /** Zoom de impacto antes do corte: nitidez cai de 512 para 161 (borrão de movimento). */
+  zoomPunchMs: 170,
+  zoomPunchScale: 1.45, // estimado
+  zoomPunchBlurPx: 10, // estimado
+  /** Plano que chega desfocado e ganha foco (nitidez 7 → 353). */
+  focusInMs: 400,
+  focusInBlurPx: 24, // estimado
+  /** Abertura: fade a partir do preto. */
+  fadeFromBlackMs: 600,
+  /** Terceiro de nome: tempos de entrada e saída. */
+  lowerThird: {
+    barInStartMs: 130,
+    barInEndMs: 600,
+    nameTypeStartMs: 130,
+    nameTypeEndMs: 530,
+    roleTypeStartMs: 200,
+    roleTypeEndMs: 730,
+    emblemStartMs: 330,
+    emblemEndMs: 550,
+    exitMs: 200,
+  },
+} as const;

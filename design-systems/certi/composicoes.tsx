@@ -2,6 +2,7 @@ import React from "react";
 import { Composition, Still } from "remotion";
 import { MovimentoMedido } from "./exemplo/MovimentoMedido";
 import { MovimentoTeste } from "./exemplo/MovimentoTeste";
+import { TransicoesTeste } from "./exemplo/TransicoesTeste";
 import { CertiPrancha } from "./exemplo/Prancha";
 
 /** Composições de referência do CERTI. Entram no Root.tsx. */
@@ -26,6 +27,14 @@ export const CertiComposicoes: React.FC = () => (
       fps={30}
       width={1080}
       height={1920}
+    />
+    <Composition
+      id="Certi-Transicoes-Teste"
+      component={TransicoesTeste}
+      durationInFrames={226}
+      fps={30}
+      width={1920}
+      height={1080}
     />
   </>
 );

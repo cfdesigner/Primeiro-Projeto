@@ -25,7 +25,7 @@
 
 ### Design system CERTI
 
-- [x] Vídeo de tela recebido; movimento medido quadro a quadro e vídeo de teste criado (etapa 2, aguardando aprovação)
+- [x] Vídeo de tela do site e institucional da CERTI recebidos; movimento e transições medidos quadro a quadro, terceiro de nome e vídeos de teste criados (etapa 2, aguardando aprovação)
 - [x] Etapa 1 aprovada: cores medidas do logo, Nunito Sans, logo com fundo transparente, componentes base, brand book e ficha
 - [x] Decisões do dono: texto branco sobre as cores, Nunito Sans em tudo, cantos e sombras opção B
 - [x] Logos: vertical (colorido e negativo) fornecidos; horizontal negativo e símbolo derivados dos arquivos do dono
@@ -38,9 +38,9 @@
 
 ### CERTI: o que o Claude faz depois
 
-- [ ] **[dono]** **Aprovar a etapa 2 do CERTI** (movimento e transições): ver o vídeo de teste e a imagem das medições (branch `certi-etapa2`)
+- [ ] **[dono]** **Aprovar a etapa 2 do CERTI** (movimento, transições e terceiro de nome): ver os vídeos de teste `Certi-Movimento-Teste` e `Certi-Transicoes-Teste` e a imagem das medições (branch `certi-etapa2`)
 - [ ] **[Claude]** Etapa 3: 4 opções de legenda, simuladas em Reels, para o dono escolher
-- [ ] **[Claude]** Etapa 4: terceiro de nome, números e fecho
+- [ ] **[Claude]** Etapa 4: números e fecho (o terceiro de nome já foi feito na etapa 2)
 - [ ] **[Claude]** Apresentações (slides) do CERTI: à parte, no claude.ai, reaproveitando cores e fontes
 
 ### Testes que ainda não foram feitos
