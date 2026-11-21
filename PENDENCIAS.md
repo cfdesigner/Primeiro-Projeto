@@ -39,10 +39,6 @@
 
 - [ ] **[dono]** (opcional) fotos, manual da marca e, se existirem, os arquivos oficiais do horizontal negativo e do símbolo (hoje derivados por mim)
 
-### CERTI: o que o Claude faz depois
-
-- [ ] **[Claude]** Apresentações (slides) do CERTI: à parte, no claude.ai, reaproveitando cores e fontes
-
 ### Testes que ainda não foram feitos
 
 - [ ] **[dono + Claude]** Legendas com mais vídeos reais: música ao fundo, vídeo longo e horizontal (o primeiro vídeo real, CERTI News, já foi feito: fala real, vertical, arquivo chegou por anexo)
