@@ -2,6 +2,7 @@ import React from "react";
 import { Composition, Still } from "remotion";
 import { CFDesignerShowcase } from "./Showcase";
 import { ExemploEfeitos } from "./exemplo/ExemploEfeitos";
+import { ExemploGraficos } from "./exemplo/ExemploGraficos";
 import { ExemploLegendas } from "./exemplo/ExemploLegendas";
 
 /** Composições de referência do CFDesigner. Entram no Root.tsx; pode apagar quando quiser. */
@@ -25,6 +26,14 @@ export const CFDesignerComposicoes: React.FC = () => (
       id="CFDesigner-Efeitos-Exemplo"
       component={ExemploEfeitos}
       durationInFrames={210}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="CFDesigner-Graficos-Exemplo"
+      component={ExemploGraficos}
+      durationInFrames={360}
       fps={30}
       width={1080}
       height={1920}

@@ -27,3 +27,4 @@ export {
   type PunchCandidate,
 } from "../../tecnicas/legendas/texto";
 export * from "./efeitos";
+export * from "./graficos";
