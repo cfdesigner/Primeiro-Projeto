@@ -3,6 +3,7 @@ import { Composition, Still } from "remotion";
 import { CFDesignerShowcase } from "./Showcase";
 import { ExemploEfeitos } from "./exemplo/ExemploEfeitos";
 import { ExemploGraficos } from "./exemplo/ExemploGraficos";
+import { ExemploIcone } from "./exemplo/ExemploIcone";
 import { ExemploLegendas } from "./exemplo/ExemploLegendas";
 
 /** Composições de referência do CFDesigner. Entram no Root.tsx; pode apagar quando quiser. */
@@ -37,6 +38,15 @@ export const CFDesignerComposicoes: React.FC = () => (
       fps={30}
       width={1080}
       height={1920}
+    />
+    <Composition
+      id="CFDesigner-Icone-Inclinacao"
+      component={ExemploIcone}
+      durationInFrames={90}
+      fps={30}
+      width={1080}
+      height={1920}
+      defaultProps={{ inclinacao: 20 }}
     />
   </>
 );
