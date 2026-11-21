@@ -17,3 +17,5 @@ export {
 } from "./Transicoes";
 export { RampedVideo, type RampedVideoProps } from "./RampedVideo";
 export { TerceiroTech, type TerceiroTechProps } from "./TerceiroTech";
+export { Numero, type NumeroProps } from "./Numero";
+export { Fecho, type FechoProps } from "./Fecho";

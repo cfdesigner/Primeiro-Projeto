@@ -1,9 +1,9 @@
 import React from "react";
 import { Composition, Still } from "remotion";
 import { ExemploLegendas } from "./exemplo/ExemploLegendas";
+import { ExemploNumeroFecho } from "./exemplo/ExemploNumeroFecho";
 import { MovimentoMedido } from "./exemplo/MovimentoMedido";
 import { MovimentoTeste } from "./exemplo/MovimentoTeste";
-import { FechoOpcoes, NumerosOpcoes } from "./exemplo/NumerosFechoOpcoes";
 import { TransicoesTeste } from "./exemplo/TransicoesTeste";
 import { CertiPrancha } from "./exemplo/Prancha";
 
@@ -46,18 +46,13 @@ export const CertiComposicoes: React.FC = () => (
       width={1080}
       height={1920}
     />
-    {/* Prévias temporárias para decisão do dono (apagar depois de decidir) */}
-    <Still
-      id="Certi-Numeros-Opcoes"
-      component={NumerosOpcoes}
-      width={2500}
-      height={1300}
-    />
-    <Still
-      id="Certi-Fecho-Opcoes"
-      component={FechoOpcoes}
-      width={2500}
-      height={1300}
+    <Composition
+      id="Certi-Numero-Fecho-Exemplo"
+      component={ExemploNumeroFecho}
+      durationInFrames={210}
+      fps={30}
+      width={1080}
+      height={1920}
     />
   </>
 );
