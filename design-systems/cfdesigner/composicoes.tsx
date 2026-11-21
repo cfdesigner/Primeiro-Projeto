@@ -46,7 +46,7 @@ export const CFDesignerComposicoes: React.FC = () => (
       fps={30}
       width={1080}
       height={1920}
-      defaultProps={{ inclinacao: 20 }}
+      defaultProps={{ inclinacao: 25, inclinacaoY: 25 }}
     />
   </>
 );

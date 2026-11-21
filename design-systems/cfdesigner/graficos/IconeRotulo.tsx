@@ -21,8 +21,10 @@ export type IconeRotuloProps = {
   esquerda?: number;
   topo?: number;
   saidaMs?: number;
-  /** Inclinação no eixo X, em graus: o topo do cartão se afasta, para dentro da cena (padrão 0). */
+  /** Inclinação no eixo X, em graus: o topo do cartão se afasta, para dentro da cena (padrão 25). */
   inclinacao?: number;
+  /** Inclinação no eixo Y, em graus: positivo afasta o lado direito (padrão 25). */
+  inclinacaoY?: number;
 };
 
 const Cronometro: React.FC<{ ms: number; k: number }> = ({ ms, k }) => {
@@ -126,7 +128,8 @@ export const IconeRotulo: React.FC<IconeRotuloProps> = ({
   esquerda = 22,
   topo = 152,
   saidaMs = 250,
-  inclinacao = 0,
+  inclinacao = 25,
+  inclinacaoY = 25,
 }) => {
   const f = useCurrentFrame();
   const { fps, width } = useVideoConfig();
@@ -139,7 +142,7 @@ export const IconeRotulo: React.FC<IconeRotuloProps> = ({
       <div
         style={{
           position: "absolute",
-          transform: `perspective(${1100 * k}px) rotateX(${inclinacao}deg)`,
+          transform: `perspective(${1100 * k}px) rotateX(${inclinacao}deg) rotateY(${inclinacaoY}deg)`,
           transformOrigin: "50% 50%",
           left: esquerda * k,
           top: topo * k,
