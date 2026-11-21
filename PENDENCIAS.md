@@ -16,6 +16,7 @@
 - [x] Legendas: dia a dia (Montserrat, contorno fino, sem tarja) e frase de efeito (Título de cinema), **sem ponto final**
 - [x] 10 efeitos de movimento (terceiro de nome, contador, câmera, clarão, cortina, granulado...) e fecho discreto com o logo
 - [x] Barras de REC/timecode desligadas por padrão
+- [x] 5 gráficos do vídeo C01 (checklist, ícone com rótulo inclinado 25°/25° virado para o centro, palavra riscada, tela + rosto, fecho simples), aprovados pelo dono. Regra: nunca na frente de rostos
 
 ### Ferramentas e skills
 
@@ -49,8 +50,6 @@
 - [ ] **[dono]** Sempre abrir sessões novas no ambiente **`cf-studio`** (o dono já abriu uma e deu certo; manter o hábito)
 
 ### Plano de edição
-
-- [ ] **[dono]** Decidir o que fazer com o vídeo C01 (plano em `producoes/c01-ritmo/PLANO.md`): criar no CFDesigner os componentes que ele usa e faltam, refazer a partir dos clipes originais, ou só registrar o plano
 
 ### Skills da lista do dono
 

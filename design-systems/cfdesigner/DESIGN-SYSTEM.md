@@ -47,6 +47,18 @@ import {
 
 `LogoOutro`: logo metálico empilhado sobre void, grande. A assinatura embaixo é **minúscula, cinza e só com fade lento** (decisão do dono: o logo é o destaque).
 
+## Gráficos (`graficos/`)
+
+Vindos do vídeo de referência C01 e aprovados pelo dono. Todos em corte seco (aparecem de uma vez), sem animação de entrada.
+
+- `ChecklistCard`: cartão escuro com borda dourada fina, chamada em Montserrat espaçada e itens em Bebas Neue com caixinha. Marcas `x` (riscado e apagado) e `check` (dourado) trocam num quadro só. Marque uns décimos de segundo ANTES da palavra dita.
+- `IconeRotulo`: quadrado escuro com ícone dourado (`cronometro` com ponteiro girando, `play`) e palavra em Bebas dourado. **Inclinado 25° em X e 25° em Y por padrão** (`inclinacao`, `inclinacaoY`); o sentido do Y é automático: a caixinha fica sempre virada para o centro da imagem.
+- `PalavraRiscada`: chamada dourada pequena e palavra grande em Bebas branco com fio dourado.
+- `TelaComRosto`: fundo preto, gravação de tela em cima e câmera embaixo em moldura arredondada.
+- `FechoSimples`: preto puro e logo horizontal branco pequeno (~36% da largura), com fade. É o fecho mais discreto; o `LogoOutro` continua sendo o fecho grande.
+
+Regra do dono: **nenhum gráfico fica na frente do rosto de ninguém**; ajuste `topo`/`esquerda`.
+
 ## Imagem e foto
 
 Fotos em luz baixa, 70% ou mais em sombra, vinheta preta até `void` onde há texto. Sem filtros coloridos. Retratos em `assets/imagery` (`imagery.*`).
@@ -57,4 +69,4 @@ Neon, gradientes coloridos (só vinheta preta), emoji em peças, barras de REC/t
 
 ## Exemplos que renderizam
 
-`CFDesigner-Componentes` (quadro com tudo), `CFDesigner-Legendas-Exemplo`, `CFDesigner-Efeitos-Exemplo`.
+`CFDesigner-Componentes` (quadro com tudo), `CFDesigner-Legendas-Exemplo`, `CFDesigner-Efeitos-Exemplo`, `CFDesigner-Graficos-Exemplo` (os 5 gráficos, usa imagens de apoio de `public/entrada/`) e `CFDesigner-Icone-Inclinacao` (amostra da inclinação).
