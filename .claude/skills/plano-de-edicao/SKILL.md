@@ -31,12 +31,12 @@ python3 scripts/analisar-video.py <video> [pasta-de-saida]
 
 Padrão de saída: `public/entrada/analise/<nome>/` (ignorada pelo Git). Gera `resumo.md`, `analise.json`, `contato.jpg` (folha de contato) e `legendas.json` (transcrição com tempo por palavra). Leia o `resumo.md` e **olhe o `contato.jpg`**. Use `--sem-transcricao` para vídeos sem fala.
 
-O que ela entrega: formato real (já corrigindo a rotação), avisos de conversão, volume em LUFS, silêncios, cortes de plano, fala com pausas, palavras de baixa confiança (nomes próprios!) e uma sugestão de aparo.
+O que ela entrega: formato real (já corrigindo a rotação), avisos de conversão, volume em LUFS, silêncios, cortes de plano, fala com pausas, **som de fundo nas pausas (indício de música)**, palavras de baixa confiança (nomes próprios!) e uma sugestão de aparo.
 
 **Limitações conhecidas (não confie cegamente):**
 
 - **Silêncio:** o limiar vem do volume do próprio vídeo; ruído de ambiente acima dele esconde o silêncio. Num teste real, 1,5 s de quieto no começo não foi detectado. A sugestão de aparo pela fala compensa.
-- **Cortes:** detecta só cortes secos (mudança brusca). Dissolvências e movimentos de câmera podem passar.
+- **Cortes:** detecta cortes secos com limiar 8 e mostra a pontuação de cada um. Pontuação abaixo de ~10 costuma ser troca entre planos parecidos (com o limiar antigo, 12, dois cortes reais passaram batido num vídeo real). Dissolvências, zooms e movimentos de câmera ainda podem passar: confira na folha de contato.
 - **Whisper:** erra nome próprio e termo técnico. Sempre mostre ao dono as palavras de baixa confiança.
 - Não vê conteúdo: quem está na cena, o que acontece. Isso é com a folha de contato e com o dono.
 

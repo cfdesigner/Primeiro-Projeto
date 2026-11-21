@@ -114,14 +114,44 @@ def silencios(caminho, thresh, dur_total, min_d=0.5):
     return {"limiar_db": round(noise, 1), "trechos": out}
 
 
-def cortes(caminho, limiar=12):
+def cortes(caminho, limiar=8):
+    """Mudanças de plano (scdet). Limiar 8: com 12 passavam cortes entre planos parecidos (testado)."""
     r = sh(["ffmpeg", "-hide_banner", "-i", caminho, "-an", "-vf", f"scdet=threshold={limiar}", "-f", "null", "-"])
-    ts = []
+    achados = []
     for linha in r.stderr.splitlines():
-        m = re.search(r"lavfi\.scd\.time:\s*([\d.]+)", linha)
+        m = re.search(r"lavfi\.scd\.score:\s*([\d.]+),\s*lavfi\.scd\.time:\s*([\d.]+)", linha)
         if m:
-            ts.append(round(float(m.group(1)), 2))
-    return ts
+            achados.append({"tempo_s": round(float(m.group(2)), 2), "pontuacao": round(float(m.group(1)), 1)})
+    return sorted(achados, key=lambda c: c["tempo_s"])
+
+
+def volume_medio(caminho, ini, dur):
+    r = sh(["ffmpeg", "-hide_banner", "-ss", str(ini), "-t", str(dur), "-i", caminho, "-af", "volumedetect", "-vn", "-f", "null", "-"])
+    m = re.search(r"mean_volume:\s*(-?[\d.]+)", r.stderr)
+    return float(m.group(1)) if m else None
+
+
+def som_de_fundo(caminho, fala):
+    """Mede o volume na fala e nas pausas longas: som que não some nas pausas indica música ou ruído constante."""
+    if not fala:
+        return None
+    ini = fala["fala_inicio_s"]
+    na_fala = volume_medio(caminho, ini, min(5.0, fala["fala_fim_s"] - ini))
+    pausas = []
+    for p in fala["pausas_maiores_que_0_4s"]:
+        if p["duracao_s"] >= 1.0:
+            v = volume_medio(caminho, p["inicio_s"] + 0.2, max(0.3, p["duracao_s"] - 0.4))
+            if v is not None:
+                pausas.append({"inicio_s": p["inicio_s"], "duracao_s": p["duracao_s"], "volume_db": v})
+    if na_fala is None or not pausas:
+        return {"volume_na_fala_db": na_fala, "pausas": pausas, "leitura": None}
+    media = sum(p["volume_db"] for p in pausas) / len(pausas)
+    dif = round(na_fala - media, 1)
+    leitura = (
+        f"Som de fundo nas pausas: {round(media, 1)} dB, {dif} dB abaixo da fala. "
+        + ("Há som constante (provavelmente música ou ruído de ambiente); não dá para saber qual sem ouvir." if media > -45 else "Pausas quase silenciosas: provavelmente sem música.")
+    )
+    return {"volume_na_fala_db": na_fala, "volume_nas_pausas_db": round(media, 1), "pausas": pausas, "leitura": leitura}
 
 
 def contato(caminho, destino, dur):
@@ -198,7 +228,8 @@ def resumo_md(a):
         L += [f"- {t['inicio_s']} s a {t['fim_s']} s ({t['duracao_s']} s)" for t in s["trechos"]] or ["- nenhum"]
         L.append("")
     L.append(f"## Cortes (mudanças de plano detectadas): {len(a['cortes_s'])}")
-    L.append("- " + (", ".join(f"{t} s" for t in a["cortes_s"]) if a["cortes_s"] else "nenhum: provavelmente um plano único (sem cortes na origem)"))
+    L.append("- " + (", ".join(f"{c['tempo_s']} s (pontuação {c['pontuacao']})" for c in a["cortes"]) if a["cortes"] else "nenhum: provavelmente um plano único (sem cortes na origem)"))
+    L.append("- Pontuação baixa (abaixo de ~10) pode ser movimento de câmera, zoom ou troca entre planos parecidos: conferir na folha de contato.")
     L.append("")
     if a.get("fala"):
         f = a["fala"]
@@ -210,6 +241,10 @@ def resumo_md(a):
             L.append("- Pausas ≥ 0,4 s (candidatas a respiro, corte ou frase de efeito): " + "; ".join(f"depois de “{p['depois_de']}” em {p['inicio_s']} s ({p['duracao_s']} s)" for p in f["pausas_maiores_que_0_4s"]))
         else:
             L.append("- Sem pausas ≥ 0,4 s: fala emendada (o sugeridor de frases de efeito não achará nada; as frases são escolhidas pelo dono).")
+        L.append("")
+    if a.get("som_de_fundo") and a["som_de_fundo"].get("leitura"):
+        L.append("## Som de fundo")
+        L.append("- " + a["som_de_fundo"]["leitura"])
         L.append("")
     if a.get("sugestao_de_corte"):
         c = a["sugestao_de_corte"]
@@ -233,12 +268,13 @@ def main():
     os.makedirs(saida, exist_ok=True)
 
     info = sonda(args.video)
-    a = {"info": info, "loudness": None, "silencios": None, "cortes_s": [], "fala": None, "sugestao_de_corte": None, "avisos_da_analise": []}
+    a = {"info": info, "loudness": None, "silencios": None, "cortes": [], "cortes_s": [], "som_de_fundo": None, "fala": None, "sugestao_de_corte": None, "avisos_da_analise": []}
     if info["tem_audio"]:
         a["loudness"] = loudness(args.video)
         if a["loudness"]:
             a["silencios"] = silencios(args.video, a["loudness"]["input_thresh"], info["duracao_s"])
-    a["cortes_s"] = cortes(args.video)
+    a["cortes"] = cortes(args.video)
+    a["cortes_s"] = [c["tempo_s"] for c in a["cortes"]]
     ok = contato(args.video, os.path.join(saida, "contato.jpg"), info["duracao_s"])
     if not ok:
         a["avisos_da_analise"].append("Não foi possível gerar a folha de contato.")
@@ -249,6 +285,7 @@ def main():
         else:
             a["fala"] = fala_e_pausas(pal, info["duracao_s"])
             a["sugestao_de_corte"] = sugestao_de_corte(info, a["fala"], a["silencios"])
+            a["som_de_fundo"] = som_de_fundo(args.video, a["fala"])
     with open(os.path.join(saida, "analise.json"), "w", encoding="utf-8") as f:
         json.dump(a, f, ensure_ascii=False, indent=2)
     md = resumo_md(a)

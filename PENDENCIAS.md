@@ -50,7 +50,7 @@
 
 ### Plano de edição
 
-- [ ] **[dono + Claude]** Testar o plano de edição num vídeo com **vários planos** (b-roll, cortes) e com **música**: até agora só foi testado em plano único e em vídeo sintético
+- [ ] **[dono]** Decidir o que fazer com o vídeo C01 (plano em `producoes/c01-ritmo/PLANO.md`): criar no CFDesigner os componentes que ele usa e faltam, refazer a partir dos clipes originais, ou só registrar o plano
 
 ### Skills da lista do dono
 
