@@ -6,7 +6,8 @@ import { IconeRotulo } from "../index";
 export const ExemploIcone: React.FC<{
   inclinacao: number;
   inclinacaoY: number;
-}> = ({ inclinacao, inclinacaoY }) => (
+  esquerda?: number;
+}> = ({ inclinacao, inclinacaoY, esquerda }) => (
   <AbsoluteFill>
     <OffthreadVideo
       src={staticFile("entrada/clips/b.mp4")}
@@ -19,6 +20,7 @@ export const ExemploIcone: React.FC<{
       durationInFrames={90}
       inclinacao={inclinacao}
       inclinacaoY={inclinacaoY}
+      esquerda={esquerda}
     />
   </AbsoluteFill>
 );

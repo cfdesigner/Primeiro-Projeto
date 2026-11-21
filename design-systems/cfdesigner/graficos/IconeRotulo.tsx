@@ -23,7 +23,7 @@ export type IconeRotuloProps = {
   saidaMs?: number;
   /** Inclinação no eixo X, em graus: o topo do cartão se afasta, para dentro da cena (padrão 25). */
   inclinacao?: number;
-  /** Inclinação no eixo Y, em graus: positivo afasta o lado direito (padrão 25). */
+  /** Inclinação no eixo Y, em graus (intensidade). O sentido é automático: o cartão sempre fica virado para o centro da imagem (padrão 25). */
   inclinacaoY?: number;
 };
 
@@ -134,6 +134,9 @@ export const IconeRotulo: React.FC<IconeRotuloProps> = ({
   const f = useCurrentFrame();
   const { fps, width } = useVideoConfig();
   const k = width / 1080;
+  // cartão à esquerda do centro: afasta o lado direito (+); à direita: afasta o lado esquerdo (−)
+  const centroCartao = (esquerda + 358 / 2) * k;
+  const sentidoY = centroCartao <= width / 2 ? 1 : -1;
   const ms = (f / fps) * 1000;
   const endMs = (durationInFrames / fps) * 1000;
   const opacity = interpolate(ms, [endMs - saidaMs, endMs], [1, 0], clamp);
@@ -142,7 +145,7 @@ export const IconeRotulo: React.FC<IconeRotuloProps> = ({
       <div
         style={{
           position: "absolute",
-          transform: `perspective(${1100 * k}px) rotateX(${inclinacao}deg) rotateY(${inclinacaoY}deg)`,
+          transform: `perspective(${1100 * k}px) rotateX(${inclinacao}deg) rotateY(${sentidoY * Math.abs(inclinacaoY)}deg)`,
           transformOrigin: "50% 50%",
           left: esquerda * k,
           top: topo * k,
