@@ -1,4 +1,6 @@
-// Lógica das legendas do CFDesigner. Sem imports: também roda direto no Node (scripts/frases-de-efeito.mjs).
+// TÉCNICA GERAL (sem marca): lógica de TEXTO e TEMPO das legendas. Nada de visual aqui.
+// Cada design system decide como desenhar, animar e agrupar; estas funções são ajudantes opcionais.
+// Sem imports: também roda direto no Node (scripts/frases-de-efeito.mjs).
 
 /** Compatível com o tipo Caption do Remotion e com a saída de scripts/transcrever.py. */
 export type Caption = {

@@ -5,7 +5,7 @@ import {
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { clamp } from "./util";
+import { clamp } from "../movimento";
 import { Easing } from "remotion";
 
 export type PushInProps = {

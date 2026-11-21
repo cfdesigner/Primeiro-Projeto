@@ -1,6 +1,6 @@
 import React from "react";
 import { interpolate, useCurrentFrame } from "remotion";
-import { clamp, outExpo } from "./util";
+import { clamp, outExpo } from "../movimento";
 
 export type BlurInProps = {
   children: React.ReactNode;

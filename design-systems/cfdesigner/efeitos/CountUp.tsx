@@ -2,7 +2,7 @@ import React from "react";
 import { interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import "../fonts";
 import { colors, fontFamilies } from "../tokens";
-import { clamp, outExpo } from "./util";
+import { clamp, outExpo } from "../movimento";
 
 export type CountUpProps = {
   from?: number;

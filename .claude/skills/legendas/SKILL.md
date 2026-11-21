@@ -1,43 +1,33 @@
 ---
 name: legendas
-description: Use SEMPRE que o usuário enviar um vídeo ou áudio e pedir legenda, legendar, "colocar texto da fala" ou subtítulos, mesmo sem pedir transcrição. Transcreve com Whisper, sugere frases de efeito para aprovação e renderiza a legenda no estilo do design system (CFDesigner).
+description: Use SEMPRE que o usuário enviar um vídeo ou áudio e pedir legenda, legendar, "colocar texto da fala" ou subtítulos, mesmo sem pedir transcrição. Fluxo geral: transcreve com Whisper, sugere destaques para aprovação e renderiza a legenda no estilo do design system escolhido.
 ---
 
-# Legendas automáticas
+# Legendas automáticas (fluxo geral)
 
 Quando o usuário mandar um vídeo/áudio e pedir legenda: **transcreva primeiro, sem perguntar.** Ele nunca precisa pedir a transcrição.
 
-## Estilos (aprovados pelo dono)
-
-- **Dia a dia (70–80% do vídeo):** Montserrat 700 branco gelo, **contorno preto fino e SEM tarja/caixa/linha**, a palavra falada em âmbar. É o padrão.
-- **Frase de efeito:** "Título de cinema": palavra-chave gigante em âmbar (Bebas), o resto da frase pequeno em branco, fundo levemente escurecido e um leve zoom. Só em frases curtas e fortes.
-- **Sem ponto final, nunca** (regra do dono: acha feio). Toda legenda termina sem ponto. Vírgula, `?` e `!` ficam. O componente `Legendas` já tira o ponto sozinho (`tiraPontoFinal`); se escrever texto de legenda à mão ou em outro componente, aplique a mesma regra. Reticências não são mexidas.
-- Posição: acima dos ~24% de baixo (botões de Reels/Shorts). Nunca barras de REC/timecode.
-
-Tudo isso já está no componente `Legendas` (`design-systems/cfdesigner/components/Legendas.tsx`). Não reinvente o visual.
+**O visual é do design system escolhido**, não daqui: estilo do dia a dia, estilo de destaque (se houver), posição, agrupamento das palavras e componente estão na seção "Legendas" da `DESIGN-SYSTEM.md` dele. Leia antes. Regras do dono (`CLAUDE.md`): **legenda nunca termina com ponto final**; limpo e premium.
 
 ## Passo a passo
 
-1. **Vídeo de entrada:** coloque em `public/entrada/` (pasta ignorada pelo Git; nunca versione vídeos). Se o arquivo chegar de outro jeito, copie para lá.
-2. **Transcrever** (veja a skill `whisper`):
+1. **Vídeo de entrada:** em `public/entrada/` (ignorada pelo Git; nunca versione vídeos).
+2. **Transcrever** (skill `whisper`):
    ```bash
    /opt/whisper-venv/bin/python scripts/transcrever.py public/entrada/<nome>.mp4 public/entrada/<nome>.captions.json --lingua pt
    ```
-3. **Sugerir frases de efeito:**
+3. **Destaques (só se o design system tiver estilo de destaque/frase de efeito):**
    ```bash
    node scripts/frases-de-efeito.mjs public/entrada/<nome>.captions.json
    ```
-4. **Mostrar ao usuário e esperar aprovação** (obrigatório): a transcrição completa + a lista numerada de frases de efeito sugeridas, cada uma com o destaque proposto. Ele aprova, remove, adiciona ou troca a palavra-chave. É uma heurística: sempre peça aprovação. Peça também que confira nomes próprios e termos técnicos na transcrição.
-5. **Montar a composição:** o vídeo com `<OffthreadVideo src={staticFile("entrada/<nome>.mp4")} />` e, por cima, `<Legendas captions={...} punchLines={[...]} />` (captions = o JSON; punchLines = só as aprovadas, `{startMs, endMs, keyword}`). Tamanho/fps/duração do próprio vídeo. Registre em `src/Root.tsx`. Exemplo funcionando: `design-systems/cfdesigner/exemplo/ExemploLegendas.tsx`.
-6. **Conferir antes de entregar:** renderize 2 quadros (`npx remotion still <id> <arquivo.png> --frame=N`): um de legenda do dia a dia e um de frase de efeito. Veja se está legível.
-7. **Renderizar o vídeo** (`npx remotion render <id> out/<nome>.mp4`, usando `--browser-executable=/opt/pw-browsers/chromium`) e **enviar ao usuário na conversa**. O MP4 não vai para o repositório (`out/` é ignorada).
+4. **Mostrar ao usuário e esperar aprovação** (obrigatório): a transcrição completa e a lista numerada de destaques sugeridos (é uma heurística). Ele aprova, remove, adiciona ou troca a palavra-chave. Peça que confira nomes próprios e termos técnicos.
+5. **Montar:** o vídeo com `<OffthreadVideo src={staticFile("entrada/<nome>.mp4")} />` e, por cima, o componente de legenda **do design system escolhido**, com as palavras (JSON) e os destaques aprovados. Dimensões e fps do próprio vídeo. Registre a composição em `producoes/index.tsx`.
+6. **Conferir:** 2 quadros (um do dia a dia, um de destaque) com `npx remotion still ... --frame=N`.
+7. **Renderizar** e **enviar o MP4 na conversa** (`out/` é ignorada pelo Git).
 
-## Ajustes comuns
+## Ajudantes gerais
 
-- `buildPages(captions, punchLines, { maxChars, maxWords, maxGapMs })` controla como as palavras se agrupam (padrão: 34 caracteres, 7 palavras, pausa de 550 ms).
-- Se a legenda ficar apagada em trecho claro do vídeo, aumente o contorno (`WebkitTextStroke`) ou escureça o fundo no componente.
-- Vídeo horizontal: o componente escala pela largura e pela altura do vídeo; confira o enquadramento em 1 quadro.
-- Outro design system: crie o equivalente em `design-systems/<nome>/` seguindo o mesmo contrato (captions + punchLines) e aprove o visual com o usuário antes.
+`tecnicas/legendas/texto.ts` (tipos `Caption`, `buildPages`, `tiraPontoFinal`, `suggestPunchLines`, `pickKeywordIndex`) são opcionais: um design system pode agrupar e destacar de outro jeito. Exemplo funcionando (CFDesigner): `design-systems/cfdesigner/exemplo/ExemploLegendas.tsx`.
 
 ## Ainda não testado em condições reais
 

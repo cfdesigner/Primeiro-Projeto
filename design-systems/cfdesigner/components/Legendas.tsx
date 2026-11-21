@@ -11,7 +11,7 @@ import {
   tiraPontoFinal,
   type Caption,
   type PunchLine,
-} from "../captions";
+} from "../../../tecnicas/legendas/texto";
 import { colors } from "../tokens";
 import { fam } from "./shared";
 import "../fonts";

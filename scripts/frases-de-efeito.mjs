@@ -2,7 +2,7 @@
 // Lista a transcrição e SUGERE frases de efeito para o dono aprovar.
 // Uso: node scripts/frases-de-efeito.mjs <legendas.json>
 import { readFileSync } from "node:fs";
-import { buildPages, suggestPunchLines } from "../design-systems/cfdesigner/captions.ts";
+import { buildPages, suggestPunchLines } from "../tecnicas/legendas/texto.ts";
 
 const file = process.argv[2];
 if (!file) {

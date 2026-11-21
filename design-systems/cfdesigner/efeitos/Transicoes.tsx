@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { colors } from "../tokens";
-import { clamp, outExpo } from "./util";
+import { clamp, outExpo } from "../movimento";
 
 const c = colors.cinema;
 

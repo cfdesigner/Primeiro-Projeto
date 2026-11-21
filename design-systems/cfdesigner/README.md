@@ -11,7 +11,7 @@ import { ReelFrame, Manifesto, Logo, colors, imagery } from "../design-systems/c
 - **Tokens:** `tokens.ts` (cores dos temas `cinema` e `daylight`, tipografia, espaço, raios, sombras, proporções). `tokens.json` é o original.
 - **Componentes:** `components/*.tsx`, versões Remotion dos componentes do design system. Todos aceitam `scale` (padrão 1 = tamanho de web) para ajustar a vídeo 1080×1920.
 - **Imagens e logos:** `assets/`, importadas por `logos` e `imagery` em `index.ts`.
-- **Legendas, sem ponto final (decisão do dono):** `components/Legendas.tsx` + `captions.ts`. Veja a skill `legendas`.
+- **Como produzir (movimento, transições, legendas, terceiro, números, fecho):** veja `DESIGN-SYSTEM.md`. Legendas: `components/Legendas.tsx`.
 - **Efeitos de movimento** (terceiro de nome, contador, câmera, clarão, cortina, fecho...): `efeitos/`, veja `docs/efeitos.md`.
 - **Props de cada componente:** `docs/props.d.ts` e `docs/components/*.md`.
 - **Vídeo sempre no tema Cinema** (escuro). Daylight é só para documentos.

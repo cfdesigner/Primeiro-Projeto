@@ -7,7 +7,7 @@ import {
 } from "remotion";
 import "../fonts";
 import { colors, fontFamilies } from "../tokens";
-import { clamp, inQuad, outBack, outExpo } from "./util";
+import { clamp, inQuad, outBack, outExpo } from "../movimento";
 
 export type LowerThirdProps = {
   /** Rótulo pequeno acima do nome (ex.: "Editor de vídeo"). */

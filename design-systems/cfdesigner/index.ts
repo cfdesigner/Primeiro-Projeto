@@ -16,5 +16,5 @@ export const imagery = {
   timelineCloseup,
   manifestoBanner,
 };
-export { buildPages, tiraPontoFinal, suggestPunchLines, pickKeywordIndex, type Caption, type PunchLine, type Page, type PunchCandidate } from "./captions";
+export { buildPages, tiraPontoFinal, suggestPunchLines, pickKeywordIndex, type Caption, type PunchLine, type Page, type PunchCandidate } from "../../tecnicas/legendas/texto";
 export * from "./efeitos";

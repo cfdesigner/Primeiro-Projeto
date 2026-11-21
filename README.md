@@ -1,54 +1,30 @@
-# Remotion video
+# Produções audiovisuais (repositório master)
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Repositório master para produzir vídeos e peças com [Remotion](https://www.remotion.dev). Reúne as técnicas gerais, os design systems e as produções.
 
-Welcome to your Remotion project!
-
-## Commands
-
-**Install Dependencies**
-
-```console
-npm i --loglevel=error
+```
+design-systems/   cada design system: cores, tipografia, movimento, transições, legendas, terceiros, números, fecho
+tecnicas/         só o que não tem marca (lógica de texto das legendas)
+scripts/          ferramentas gerais (transcrição com Whisper, sugestão de frases de efeito)
+producoes/        os vídeos e peças de verdade, cada um com um design system
+src/Root.tsx      registro das composições
+.claude/skills/   skills para o Claude Code (fluxos, design systems, Remotion)
+CLAUDE.md         regras do dono e comandos
 ```
 
-**Start Preview**
+Veja `design-systems/README.md` para o índice e o contrato de cada design system.
+
+## Comandos
 
 ```console
-npm run dev
+npm ci                     # instalar
+npm run dev                # Remotion Studio (no computador)
+npm run lint               # eslint + tsc
+npx remotion render <id> out/<nome>.mp4
 ```
 
-**Render video**
+Vídeos renderizados (`out/`) e vídeos de entrada (`public/entrada/`) não vão para o Git.
 
-```console
-npx remotion render
-```
+## Licença do Remotion
 
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
-
-## License
-
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Para algumas entidades é necessária uma licença de empresa. [Leia os termos](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).

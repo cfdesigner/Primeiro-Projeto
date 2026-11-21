@@ -13,6 +13,6 @@
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true
   },
-  "include": ["src", "design-systems"],
+  "include": ["src", "design-systems", "tecnicas", "producoes"],
   "exclude": ["remotion.config.ts"]
 }

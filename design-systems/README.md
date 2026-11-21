@@ -1,27 +1,33 @@
 # Design systems
 
-Cada design system fica numa pasta própria: `design-systems/<nome>/`.
+Cada design system é **independente e completo**: tem o seu jeito de fazer cores, tipografia, movimento, transições, legendas, terceiros, números e fecho. Nada de um vaza para o outro.
 
-| Pasta | Marca | Origem |
+| Pasta | Marca / estilo | Ficha de produção |
 | --- | --- | --- |
-| `cfdesigner/` | CFDesigner (Carlos Felipe, editor de vídeo cinematográfico) | artefato "CFDesigner" no claude.ai |
+| `cfdesigner/` | CFDesigner: cinema escuro com ponto de luz dourada | `cfdesigner/DESIGN-SYSTEM.md` |
 
-## Estrutura de cada pasta
+## O que cada pasta tem
 
 ```
 <nome>/
-  README.md        brand book: voz, cor, tipografia, regras de uso
-  tokens.json      tokens originais
-  tokens.ts        tokens em TypeScript (cores por tema, tipografia, espaço...)
-  fonts.ts         carrega as fontes
-  components/      componentes Remotion (aceitam scale / width)
-  assets/          logos e imagens
-  docs/            props e regras de cada componente
-  index.ts         ponto de entrada: import { ... } from "../design-systems/<nome>"
+  README.md          brand book (identidade, voz, cor, tipografia, regras)
+  DESIGN-SYSTEM.md   ficha de produção (movimento, transições, legendas, terceiro, números, fecho, proibido)
+  tokens.ts/.json    tokens (cores por tema, tipografia, espaço, raios, sombras, proporções)
+  movimento.ts       personalidade de movimento (curvas e velocidades)
+  fonts.ts           fontes
+  components/        componentes visuais
+  efeitos/           transições e animações deste design system
+  assets/            logos e imagens
+  docs/              documentação por componente
+  exemplo/           exemplos que renderizam
+  composicoes.tsx    composições de exemplo, registradas no src/Root.tsx
+  index.ts           ponto de entrada
 ```
 
-## Adicionar um design system novo
+## Criar um novo
 
-1. Criar a pasta `design-systems/<nome>/` com essa estrutura.
-2. Adicionar uma linha na tabela acima.
-3. Adicionar uma linha na skill `.claude/skills/design-systems/SKILL.md`.
+Use a skill `criar-design-system` (parte de imagens ou vídeos de referência). O ponto de partida é `_modelo/`.
+
+## O que NÃO fica aqui
+
+Técnicas gerais sem marca (transcrição, lógica de texto das legendas) ficam em `scripts/` e `tecnicas/`. Os vídeos de verdade ficam em `producoes/`.

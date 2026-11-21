@@ -1,7 +1,7 @@
 {
-  "name": "meu-primeiro-projeto",
+  "name": "producoes-audiovisuais",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "Repositório master das produções audiovisuais: técnicas gerais, design systems e produções",
   "repository": {},
   "license": "UNLICENSED",
   "engines": {
@@ -27,7 +27,7 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src design-systems tecnicas && tsc"
   },
   "allowScripts": {
     "esbuild": false

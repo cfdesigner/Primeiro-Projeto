@@ -1,34 +1,26 @@
 ---
 name: design-systems
-description: Use sempre que o usuário pedir um vídeo, imagem ou peça visual "com o design system X" (ex.: CFDesigner), ou pedir para criar, importar ou atualizar um design system. Lista os design systems deste repositório e explica como usá-los nas composições Remotion.
+description: Use sempre que o usuário pedir um vídeo, imagem ou peça "com o design system X", perguntar quais design systems existem, ou quando for escolher o visual de uma produção. Índice dos design systems do repositório e o contrato de cada um.
 ---
 
 # Design systems do repositório
 
-Cada design system vive em `design-systems/<nome>/`. Veja `design-systems/README.md` para a estrutura.
+Cada design system é **independente e completo**: tem o seu próprio jeito de fazer movimento, transições, legendas, terceiros, números e fecho. Nunca aplique regras ou componentes de um em outro.
 
 ## Disponíveis
 
-| Nome | Pasta | Quando usar |
+| Nome | Pasta | Estilo |
 | --- | --- | --- |
-| CFDesigner | `design-systems/cfdesigner/` | Marca pessoal de Carlos Felipe: edição de vídeo cinematográfica. Visual escuro (tema Cinema) com um ponto de luz dourada. |
+| CFDesigner | `design-systems/cfdesigner/` | Cinema escuro com um ponto de luz dourada; marca pessoal de Carlos Felipe. |
 
-## Como usar ao fazer um vídeo ou imagem
+## Como usar
 
-1. Identifique qual design system o usuário pediu. Se ele não disser, pergunte.
-2. Leia **`design-systems/<nome>/README.md`** (brand book) antes de desenhar qualquer coisa: voz, cores, tipografia e o que é proibido.
-3. Importe do ponto de entrada: `import { ReelFrame, Manifesto, Logo, colors, imagery } from "../design-systems/<nome>";`
-4. Use os componentes e tokens do sistema. Não invente cores, fontes nem logos. Nunca recrie o logo: use `Logo`.
-5. Componentes têm tamanho de web por padrão. Em vídeo 1080×1920, use `width` (ReelFrame, ProfileBanner, Manifesto) ou `scale` (os demais).
-6. Registre o vídeo em `src/Root.tsx` como `<Composition>`; imagens estáticas como `<Still>`. Para conferir o visual: `npx remotion still <id> <arquivo.png>`.
-7. Vídeos renderizados NÃO vão para o repositório (a pasta `out/` é ignorada). Entregue o arquivo ao usuário na conversa.
+1. Identifique qual design system o usuário quer. Se não disser, pergunte.
+2. Leia, nesta ordem, na pasta dele: `README.md` (brand book) e `DESIGN-SYSTEM.md` (ficha de produção: movimento, transições, legendas...). **A ficha manda** sobre como produzir cada coisa.
+3. Importe do ponto de entrada: `import { ... } from "../design-systems/<nome>"` e use os componentes e efeitos dele. Não invente cores, fontes, logos nem animações.
+4. As regras do dono (`CLAUDE.md`) valem para todos.
+5. Fluxo completo de uma produção: skill `producao-de-video`. Criar um design system novo: skill `criar-design-system`.
 
-## Observações
+## Contrato de cada pasta
 
-- Em sessão nova, rode `npm ci` antes de renderizar. O render usa o Chromium já instalado: `--browser-executable=/opt/pw-browsers/chromium`.
-- As fontes vêm do Google Fonts no momento do render.
-- CFDesigner: vídeo é sempre tema Cinema. Inglês para público internacional, português para o Brasil, nunca misturados na mesma linha. Um único destaque âmbar por peça.
-- **CFDesigner, regra do dono: NÃO colocar as barras letterbox do ReelFrame** (ponto REC, timecode, símbolo + "@cfdesigner", "24 fps · 9:16"). Elas ficam desligadas por padrão (`bars={false}`). Só ligue com `bars` se o usuário pedir explicitamente. Também não escreva timecode, REC ou fps em vídeos por conta própria.
-- **Legendas: sem ponto final, nunca** (vírgula, ? e ! podem). Use o componente `Legendas` do CFDesigner (skill `legendas`). Dia a dia: Montserrat com contorno preto fino, sem tarja. Frase de efeito: Título de cinema.
-- **Efeitos de movimento do CFDesigner:** `LowerThird`, `CountUp`, `PushIn`, `CameraShake`, `FlashCut`, `LightLeak`, `WipeReveal`, `BlurIn`, `FilmGrain`, `LogoOutro` (pasta `efeitos/`, guia em `docs/efeitos.md`, exemplo `ExemploEfeitos.tsx`). Use-os em vez de inventar animações. Não use o HyperFrames: o dono decidiu ficar só com Remotion; ele serviu apenas de inspiração.
-- **Critério de design do dono (vale para qualquer peça):** limpo e premium. O elemento principal (logo, número, palavra-chave) manda; texto de apoio é pequeno, suave e discreto, nunca "textão" nem chamativo. Na dúvida, menos texto, menor e mais cinza. Exemplo aprovado: o fecho `LogoOutro` (logo grande, assinatura minúscula em cinza com fade lento).
+`README.md`, `DESIGN-SYSTEM.md`, `tokens.ts`, `movimento.ts`, `fonts.ts`, `components/`, `efeitos/`, `assets/`, `exemplo/`, `composicoes.tsx`, `index.ts`. Modelo em `design-systems/_modelo/`. Ao criar ou alterar um design system, atualize a tabela acima e `design-systems/README.md`.

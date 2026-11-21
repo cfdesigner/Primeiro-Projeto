@@ -9,7 +9,7 @@ import "../fonts";
 import { Logo } from "../components/Logo";
 import { Grain } from "../components/shared";
 import { colors, fontFamilies } from "../tokens";
-import { clamp, outExpo } from "./util";
+import { clamp, outExpo } from "../movimento";
 
 export type LogoOutroProps = {
   tagline?: string;
