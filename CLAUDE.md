@@ -22,6 +22,7 @@ Leia `PENDENCIAS.md` no começo da sessão e **lembre o dono das pendências abe
 - **Limpo e premium.** O elemento principal manda; texto de apoio é pequeno, suave e discreto. Nunca "textão" nem texto chamativo sobrando. Na dúvida: menos texto, menor, mais suave.
 - **Vídeo bruto: primeiro o plano de edição** (skill `plano-de-edicao`), mostrar ao dono e esperar aprovação, depois editar.
 - **Light leak oficial (`@remotion/effects`) não usar:** instável sem GPU (testado).
+- **Motion blur: só `HtmlInCanvasMotionBlur`** (testado, estável). Não usar `Trail` (sem efeito) nem `CameraMotionBlur` (tinge o fundo).
 - **Frases de efeito e escolhas de estilo novas: mostrar e esperar a aprovação** antes de renderizar o vídeo final.
 - **Terceiro de nome (lower third): NÃO colocar, a menos que o dono peça no comando.** É raro nos vídeos dele. Se pedir, perguntar nome e cargo; nunca inventar.
 - **Salvar no `main`** (autorizado pelo dono, sem perguntar). Sessões novas podem começar numa branch própria (ex.: `claude/...`): ao concluir o trabalho, mesclar no `main` e dar push, senão ele fica fora do `main` e pode se perder. Ao mesclar, buscar antes o histórico (`git fetch --depth=10 origin main`).

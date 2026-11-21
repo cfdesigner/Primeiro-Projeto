@@ -11,7 +11,7 @@ description: Use SEMPRE que o dono enviar um vídeo bruto (ou vários) para edit
 
 - **FFmpeg 6.1** no sistema (`ffmpeg`, `ffprobe`; H.264, H.265/HEVC, AAC; filtros `xfade`, `scdet`, `silencedetect`, `loudnorm`). O Remotion traz o dele: `npx remotion ffmpeg`.
 - **Whisper** (CPU) para transcrição: skill `whisper`.
-- **Pacotes oficiais do Remotion 4.0.544**: `@remotion/transitions` (`TransitionSeries`, 21 apresentações), `@remotion/motion-blur`, `@remotion/media-utils`, `@remotion/captions`.
+- **Pacotes oficiais do Remotion 4.0.544**: `@remotion/transitions` (`TransitionSeries`, 21 apresentações), `@remotion/motion-blur` (só o `HtmlInCanvasMotionBlur` funciona bem: veja o passo 5), `@remotion/media-utils`, `@remotion/captions`.
 - **`scripts/analisar-video.py`**: a ferramenta de análise (abaixo).
 - Skills oficiais de apoio (leia só a que for usar): `remotion-markup/transitions.md`, `video-editing.md`, `silence-detection.md`, `ffmpeg.md`, `sfx.md`, `audio.md`.
 
@@ -67,8 +67,9 @@ Exemplo real: `producoes/certi-news/PLANO.md`.
 3. Use os **componentes do design system** quando existirem. Os pacotes oficiais servem como **mecanismo** (`TransitionSeries` encadeia as cenas e calcula os tempos) ou quando a ficha permite.
 4. Catálogo oficial de `@remotion/transitions/<nome>`: `fade`, `dissolve`, `slide`, `push-cut`, `wipe`, `zoom-in-out`, `zoom-blur`, `cross-zoom`, `blur-slide`, `linear-blur`, `iris`, `clock-wipe`, `flip`, `book-flip`, `cube`, `swap`, `ripple`, `crosswarp`, `dreamy-zoom`, `film-burn`, `none`. Aproximações úteis: whip ≈ `push-cut` ou `slide` com borrão; zoom de impacto ≈ `zoom-blur`; dissolvência ≈ `dissolve`/`fade`.
 5. **Não use o light leak oficial** (`@remotion/effects/light-leak`): em testes neste ambiente (sem GPU) o mesmo quadro saiu branco ou normal ao acaso, em renderizações idênticas. Use o light leak em CSS de um design system que o tenha (ex.: CFDesigner `LightLeak`).
-6. Exemplo verificado de como encadear: `tecnicas/transicoes/ExemploTransicoes.tsx` (composição `Tecnicas-Transicoes-Exemplo`; fade e slide renderizam de forma estável).
-7. Escolha nova de estilo (algo que a ficha não cobre): **mostre em imagem e peça aprovação**.
+6. **Motion blur:** use `HtmlInCanvasMotionBlur` (`@remotion/motion-blur`) para suavizar movimentos rápidos (zoom de impacto, whip). Testado com vídeo real: estável, cores exatas, custo de ~2,8× no tempo de render; envolva só o trecho que se move. **Não use `Trail`** (não fez efeito) **nem `CameraMotionBlur`** (desloca o rastro e tinge o fundo). Exemplo e medições: `tecnicas/transicoes/ExemploMotionBlur.tsx`.
+7. Exemplo verificado de como encadear: `tecnicas/transicoes/ExemploTransicoes.tsx` (composição `Tecnicas-Transicoes-Exemplo`; fade e slide renderizam de forma estável).
+8. Escolha nova de estilo (algo que a ficha não cobre): **mostre em imagem e peça aprovação**.
 
 ### 6. Mostrar o plano e esperar aprovação
 
