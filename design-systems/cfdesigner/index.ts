@@ -17,3 +17,4 @@ export const imagery = {
   manifestoBanner,
 };
 export { buildPages, tiraPontoFinal, suggestPunchLines, pickKeywordIndex, type Caption, type PunchLine, type Page, type PunchCandidate } from "./captions";
+export * from "./efeitos";

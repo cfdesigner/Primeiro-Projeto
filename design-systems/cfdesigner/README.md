@@ -12,6 +12,7 @@ import { ReelFrame, Manifesto, Logo, colors, imagery } from "../design-systems/c
 - **Componentes:** `components/*.tsx`, versões Remotion dos componentes do design system. Todos aceitam `scale` (padrão 1 = tamanho de web) para ajustar a vídeo 1080×1920.
 - **Imagens e logos:** `assets/`, importadas por `logos` e `imagery` em `index.ts`.
 - **Legendas, sem ponto final (decisão do dono):** `components/Legendas.tsx` + `captions.ts`. Veja a skill `legendas`.
+- **Efeitos de movimento** (terceiro de nome, contador, câmera, clarão, cortina, fecho...): `efeitos/`, veja `docs/efeitos.md`.
 - **Props de cada componente:** `docs/props.d.ts` e `docs/components/*.md`.
 - **Vídeo sempre no tema Cinema** (escuro). Daylight é só para documentos.
 - **Sem barras de REC/timecode nos vídeos.** O `ReelFrame` traz barras letterbox (REC, timecode, @cfdesigner, fps), mas elas ficam desligadas por padrão (`bars={false}`). Só ligue se o dono pedir. Isso vale mais que as regras de letterbox do brand book abaixo.
