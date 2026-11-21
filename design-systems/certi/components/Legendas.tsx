@@ -18,7 +18,7 @@ import { text } from "./shared";
 export type LegendasProps = {
   /** Palavras com tempo, de scripts/transcrever.py (ou @remotion/captions). */
   captions: Caption[];
-  /** Frases de efeito APROVADAS pelo dono. Viram o estilo "leve e pesado". */
+  /** Frases de efeito APROVADAS pelo dono. Viram o estilo "leve e pesado". A palavra-chave pode ter mais de uma palavra. */
   punchLines?: PunchLine[];
   /** Degradê escuro suave no pé do quadro para ajudar a leitura em fundo claro (padrão ligado). */
   scrim?: boolean;
@@ -33,6 +33,7 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
  *   a palavra falada em azul-claro; entra e sai em corte seco; entrelinha compacta.
  * - Frase de efeito (estilo C "leve e pesado", aprovado): o quadro escurece em azul-profundo, o resto da frase vai em
  *   Nunito Sans 300 e a palavra-chave em 900, grande, com um fio fino embaixo. Corte seco; só o escurecimento tem fade (200 ms).
+ *   Palavra-chave com várias palavras (ex.: "Inteligência Artificial") fica empilhada, uma por linha.
  * Sem ponto final (regra do dono; `?` e `!` ficam). Fica acima dos ~24% de baixo (botões de Reels/Shorts).
  */
 export const Legendas: React.FC<LegendasProps> = ({
@@ -68,23 +69,29 @@ export const Legendas: React.FC<LegendasProps> = ({
     const lastRaw = words.length ? words[words.length - 1].text.trim() : "";
     if (texts.length && /[?!]$/.test(lastRaw))
       texts[texts.length - 1] += lastRaw.slice(-1);
-    const byName = punch.keyword
-      ? texts.findIndex(
-          (w) =>
-            clean(w).toLowerCase() ===
-            clean(punch.keyword as string).toLowerCase(),
-        )
-      : -1;
-    const ki = byName >= 0 ? byName : pickKeywordIndex(texts);
+    const kwTokens = punch.keyword
+      ? clean(punch.keyword).toLowerCase().split(/\s+/).filter(Boolean)
+      : [];
+    let ki = -1;
+    for (
+      let i = 0;
+      kwTokens.length > 0 && i + kwTokens.length <= texts.length;
+      i++
+    ) {
+      if (kwTokens.every((tk, j) => clean(texts[i + j]).toLowerCase() === tk)) {
+        ki = i;
+        break;
+      }
+    }
+    const kn = ki >= 0 ? kwTokens.length : 1;
+    if (ki < 0) ki = pickKeywordIndex(texts);
     const above = texts.slice(0, ki).join(" ");
-    const below = texts.slice(ki + 1).join(" ");
-    const keyword = texts[ki] ?? "";
+    const below = texts.slice(ki + kn).join(" ");
+    const keyLines = texts.slice(ki, ki + kn);
     const maxW = width * 0.85;
     // Nunito Sans 900 em caixa alta ocupa ~0,72 em por letra; 300 ocupa ~0,6 em.
-    const keySize = Math.min(
-      128 * k,
-      maxW / (Math.max(keyword.length, 1) * 0.72),
-    );
+    const longest = Math.max(...keyLines.map((l) => l.length), 1);
+    const keySize = Math.min(128 * k, maxW / (longest * 0.72));
     const sideSize = (s: string) =>
       Math.min(84 * k, maxW / (Math.max(s.length, 1) * 0.6));
     const dim = interpolate(
@@ -119,6 +126,7 @@ export const Legendas: React.FC<LegendasProps> = ({
                 style={{
                   ...common,
                   fontWeight: 300,
+                  textWrap: "balance",
                   fontSize: sideSize(above),
                   letterSpacing: "0.02em",
                   textShadow: "0 3px 18px rgba(0,0,0,0.4)",
@@ -132,17 +140,21 @@ export const Legendas: React.FC<LegendasProps> = ({
                 ...common,
                 fontWeight: 900,
                 fontSize: keySize,
+                lineHeight: 0.95,
                 letterSpacing: "-0.01em",
                 textShadow: "0 6px 30px rgba(0,0,0,0.45)",
               }}
             >
-              {keyword}
+              {keyLines.map((l, i) => (
+                <div key={i}>{l}</div>
+              ))}
             </div>
             {below ? (
               <div
                 style={{
                   ...common,
                   fontWeight: 300,
+                  textWrap: "balance",
                   fontSize: sideSize(below),
                   letterSpacing: "0.02em",
                   textShadow: "0 3px 18px rgba(0,0,0,0.4)",

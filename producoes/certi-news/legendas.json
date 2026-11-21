@@ -1,0 +1,149 @@
+[
+  {
+    "text": " Olá",
+    "startMs": 1550,
+    "endMs": 2070,
+    "timestampMs": 1810,
+    "confidence": 0.964
+  },
+  {
+    "text": " pessoal,",
+    "startMs": 2070,
+    "endMs": 2390,
+    "timestampMs": 2230,
+    "confidence": 0.83
+  },
+  {
+    "text": " a",
+    "startMs": 2950,
+    "endMs": 3030,
+    "timestampMs": 2990,
+    "confidence": 0.904
+  },
+  {
+    "text": " CERTI",
+    "startMs": 3030,
+    "endMs": 3310,
+    "timestampMs": 3170,
+    "confidence": 0.321
+  },
+  {
+    "text": " News",
+    "startMs": 3310,
+    "endMs": 3530,
+    "timestampMs": 3420,
+    "confidence": 0.916
+  },
+  {
+    "text": " de",
+    "startMs": 3530,
+    "endMs": 3710,
+    "timestampMs": 3620,
+    "confidence": 0.673
+  },
+  {
+    "text": " outubro",
+    "startMs": 3710,
+    "endMs": 3970,
+    "timestampMs": 3840,
+    "confidence": 0.735
+  },
+  {
+    "text": " está",
+    "startMs": 3970,
+    "endMs": 4190,
+    "timestampMs": 4080,
+    "confidence": 0.987
+  },
+  {
+    "text": " no",
+    "startMs": 4190,
+    "endMs": 4410,
+    "timestampMs": 4300,
+    "confidence": 0.993
+  },
+  {
+    "text": " ar",
+    "startMs": 4410,
+    "endMs": 4590,
+    "timestampMs": 4500,
+    "confidence": 0.986
+  },
+  {
+    "text": " e",
+    "startMs": 4590,
+    "endMs": 4990,
+    "timestampMs": 4790,
+    "confidence": 0.709
+  },
+  {
+    "text": " nessa",
+    "startMs": 4990,
+    "endMs": 5130,
+    "timestampMs": 5060,
+    "confidence": 0.401
+  },
+  {
+    "text": " edição",
+    "startMs": 5130,
+    "endMs": 5550,
+    "timestampMs": 5340,
+    "confidence": 0.981
+  },
+  {
+    "text": " a",
+    "startMs": 5550,
+    "endMs": 6070,
+    "timestampMs": 5810,
+    "confidence": 0.768
+  },
+  {
+    "text": " Inteligência",
+    "startMs": 6070,
+    "endMs": 6610,
+    "timestampMs": 6340,
+    "confidence": 0.756
+  },
+  {
+    "text": " Artificial",
+    "startMs": 6610,
+    "endMs": 7110,
+    "timestampMs": 6860,
+    "confidence": 0.825
+  },
+  {
+    "text": " está",
+    "startMs": 7110,
+    "endMs": 7350,
+    "timestampMs": 7230,
+    "confidence": 0.991
+  },
+  {
+    "text": " no",
+    "startMs": 7350,
+    "endMs": 7490,
+    "timestampMs": 7420,
+    "confidence": 0.991
+  },
+  {
+    "text": " centro",
+    "startMs": 7490,
+    "endMs": 7830,
+    "timestampMs": 7660,
+    "confidence": 0.917
+  },
+  {
+    "text": " das",
+    "startMs": 7830,
+    "endMs": 8090,
+    "timestampMs": 7960,
+    "confidence": 0.99
+  },
+  {
+    "text": " discussões.",
+    "startMs": 8090,
+    "endMs": 8550,
+    "timestampMs": 8320,
+    "confidence": 0.594
+  }
+]
