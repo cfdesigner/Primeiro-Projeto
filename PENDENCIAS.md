@@ -46,7 +46,6 @@
 ### Testes que ainda não foram feitos
 
 - [ ] **[dono + Claude]** Legendas com mais vídeos reais: música ao fundo, vídeo longo e horizontal (o primeiro vídeo real, CERTI News, já foi feito: fala real, vertical, arquivo chegou por anexo)
-- [ ] **[Claude]** Terminar de provar o script de preparação numa sessão nova. **Provado:** `npm ci` (existe `node_modules` e `npx remotion compositions` lista as 10 composições). **Falta:** conferir que `/opt/whisper-venv/bin/python -c "import faster_whisper"` roda sem erro e que o modelo do Whisper está em `~/.cache/huggingface/hub` (o atalho do Python existir não prova isso)
 - [ ] **[Claude]** Confirmar com mais uma referência real o processo `criar-design-system` (já usado no CERTI com prints, sem vídeo)
 
 ### Conferências rápidas
