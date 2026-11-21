@@ -1,7 +1,12 @@
 import React from "react";
 import { palette, fam, type BaseProps } from "./shared";
 
-export type HighlightIcon = "reels" | "process" | "clients" | "collabs" | "cinestyle";
+export type HighlightIcon =
+  | "reels"
+  | "process"
+  | "clients"
+  | "collabs"
+  | "cinestyle";
 
 const stroke = {
   fill: "none",
@@ -15,7 +20,10 @@ const icons: Record<HighlightIcon, React.ReactNode> = {
   reels: (
     <>
       <rect x={3} y={4} width={18} height={16} {...stroke} />
-      <path d="M3 8h18M3 16h18M7 4v4M12 4v4M17 4v4M7 16v4M12 16v4M17 16v4" {...stroke} />
+      <path
+        d="M3 8h18M3 16h18M7 4v4M12 4v4M17 4v4M7 16v4M12 16v4M17 16v4"
+        {...stroke}
+      />
     </>
   ),
   process: (
@@ -35,7 +43,10 @@ const icons: Record<HighlightIcon, React.ReactNode> = {
   collabs: (
     <>
       <circle cx={12} cy={12} r={8.5} {...stroke} />
-      <path d="M3.5 12h17M12 3.5c-3 3.2-3 13.8 0 17M12 3.5c3 3.2 3 13.8 0 17" {...stroke} />
+      <path
+        d="M3.5 12h17M12 3.5c-3 3.2-3 13.8 0 17M12 3.5c3 3.2 3 13.8 0 17"
+        {...stroke}
+      />
     </>
   ),
   cinestyle: (
@@ -46,7 +57,10 @@ const icons: Record<HighlightIcon, React.ReactNode> = {
   ),
 };
 
-export type HighlightCoverProps = BaseProps & { icon: HighlightIcon; label: string };
+export type HighlightCoverProps = BaseProps & {
+  icon: HighlightIcon;
+  label: string;
+};
 
 export const HighlightCover: React.FC<HighlightCoverProps> = ({
   icon,
@@ -79,11 +93,18 @@ export const HighlightCover: React.FC<HighlightCoverProps> = ({
           boxShadow: `inset 0 0 0 ${4 * scale}px ${c.void}, inset 0 0 0 ${5 * scale}px ${c.line}`,
         }}
       >
-        <svg viewBox="0 0 24 24" style={{ width: 28 * scale, height: 28 * scale }}>
+        <svg
+          viewBox="0 0 24 24"
+          style={{ width: 28 * scale, height: 28 * scale }}
+        >
           {icons[icon]}
         </svg>
       </div>
-      <span style={{ fontFamily: fam.body, fontSize: 12 * scale, color: c.ink }}>{label}</span>
+      <span
+        style={{ fontFamily: fam.body, fontSize: 12 * scale, color: c.ink }}
+      >
+        {label}
+      </span>
     </div>
   );
 };

@@ -73,7 +73,12 @@ export const ReelFrame: React.FC<ReelFrameProps> = ({
         <div style={{ position: "absolute", inset: 0 }}>
           <Img
             src={image}
-            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: imagePosition }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: imagePosition,
+            }}
           />
           <div
             style={{
@@ -93,14 +98,29 @@ export const ReelFrame: React.FC<ReelFrameProps> = ({
             width: "70%",
             aspectRatio: "1",
             borderRadius: 999,
-            background: "radial-gradient(circle, rgba(217,164,65,.45), rgba(217,164,65,0) 65%)",
+            background:
+              "radial-gradient(circle, rgba(217,164,65,.45), rgba(217,164,65,0) 65%)",
           }}
         />
       )}
       {bars ? (
         <div style={bar}>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 6 * s, color: c.ink }}>
-            <span style={{ width: 7 * s, height: 7 * s, borderRadius: 999, background: c.rec }} />
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 6 * s,
+              color: c.ink,
+            }}
+          >
+            <span
+              style={{
+                width: 7 * s,
+                height: 7 * s,
+                borderRadius: 999,
+                background: c.rec,
+              }}
+            />
             REC
           </span>
           <span>{timecode}</span>
@@ -148,7 +168,9 @@ export const ReelFrame: React.FC<ReelFrameProps> = ({
       </div>
       {bars ? (
         <div style={bar}>
-          <span style={{ display: "inline-flex", alignItems: "center", gap: 6 * s }}>
+          <span
+            style={{ display: "inline-flex", alignItems: "center", gap: 6 * s }}
+          >
             <Logo layout="symbol" height={18 * s} />
             @cfdesigner
           </span>

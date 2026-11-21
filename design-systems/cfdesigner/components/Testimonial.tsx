@@ -34,15 +34,42 @@ export const Testimonial: React.FC<TestimonialProps> = ({
         ...style,
       }}
     >
-      <p style={{ margin: 0, fontFamily: fam.heading, fontWeight: 600, fontSize: 18 * scale, lineHeight: `${27 * scale}px`, color: c.ink }}>
+      <p
+        style={{
+          margin: 0,
+          fontFamily: fam.heading,
+          fontWeight: 600,
+          fontSize: 18 * scale,
+          lineHeight: `${27 * scale}px`,
+          color: c.ink,
+        }}
+      >
         {quote}
       </p>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 * scale, fontFamily: fam.body, fontSize: 14 * scale, color: c.inkMuted }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 12 * scale,
+          fontFamily: fam.body,
+          fontSize: 14 * scale,
+          color: c.inkMuted,
+        }}
+      >
         <span>
-          <strong style={{ display: "block", color: c.ink, fontWeight: 700 }}>{author}</strong>
+          <strong style={{ display: "block", color: c.ink, fontWeight: 700 }}>
+            {author}
+          </strong>
           {context}
         </span>
-        <span style={{ color: c.amberText, letterSpacing: 2 * scale, fontSize: 14 * scale }}>
+        <span
+          style={{
+            color: c.amberText,
+            letterSpacing: 2 * scale,
+            fontSize: 14 * scale,
+          }}
+        >
           {"★★★★★".slice(0, rating)}
         </span>
       </div>

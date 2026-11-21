@@ -1,0 +1,100 @@
+[
+  {
+    "text": " A",
+    "startMs": 0,
+    "endMs": 320,
+    "timestampMs": 160,
+    "confidence": 0.915
+  },
+  {
+    "text": " inovação",
+    "startMs": 320,
+    "endMs": 780,
+    "timestampMs": 550,
+    "confidence": 0.988
+  },
+  {
+    "text": " acelera",
+    "startMs": 780,
+    "endMs": 1140,
+    "timestampMs": 960,
+    "confidence": 0.978
+  },
+  {
+    "text": " a",
+    "startMs": 1140,
+    "endMs": 1200,
+    "timestampMs": 1170,
+    "confidence": 0.75
+  },
+  {
+    "text": " competitividade",
+    "startMs": 1200,
+    "endMs": 1860,
+    "timestampMs": 1530,
+    "confidence": 0.991
+  },
+  {
+    "text": " das",
+    "startMs": 1860,
+    "endMs": 2040,
+    "timestampMs": 1950,
+    "confidence": 0.996
+  },
+  {
+    "text": " empresas",
+    "startMs": 2040,
+    "endMs": 2460,
+    "timestampMs": 2250,
+    "confidence": 0.996
+  },
+  {
+    "text": " e",
+    "startMs": 2460,
+    "endMs": 2820,
+    "timestampMs": 2640,
+    "confidence": 0.845
+  },
+  {
+    "text": " a",
+    "startMs": 2820,
+    "endMs": 2880,
+    "timestampMs": 2850,
+    "confidence": 0.989
+  },
+  {
+    "text": " tecnologia",
+    "startMs": 2880,
+    "endMs": 3340,
+    "timestampMs": 3110,
+    "confidence": 0.999
+  },
+  {
+    "text": " transforma",
+    "startMs": 3340,
+    "endMs": 3940,
+    "timestampMs": 3640,
+    "confidence": 0.986
+  },
+  {
+    "text": " a",
+    "startMs": 3940,
+    "endMs": 3980,
+    "timestampMs": 3960,
+    "confidence": 0.994
+  },
+  {
+    "text": " indústria",
+    "startMs": 3980,
+    "endMs": 4360,
+    "timestampMs": 4170,
+    "confidence": 0.993
+  },
+  {
+    "text": " brasileira.",
+    "startMs": 4360,
+    "endMs": 4940,
+    "timestampMs": 4650,
+    "confidence": 0.998
+  }
+]

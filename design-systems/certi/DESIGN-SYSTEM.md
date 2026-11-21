@@ -1,6 +1,6 @@
 # CERTI: ficha de produção
 
-> **Status: em construção.** Etapas 1 e 2 (cores, tipografia, logo, componentes, movimento, transições e terceiro de nome) aprovadas. Faltam legendas, números e fecho.
+> **Status: em construção.** Etapas 1, 2 e 3 (cores, tipografia, logo, componentes, movimento, transições, terceiro de nome e legendas) aprovadas. Faltam números e fecho.
 
 **Identidade em uma linha:** institucional, claro e tecnológico; azul da marca com acentos nas cores do símbolo.
 
@@ -66,7 +66,21 @@ Vídeo de teste (com trechos do institucional): `Certi-Transicoes-Teste`.
 
 ## Legendas
 
-**A definir** (etapa 3, com 4 opções em imagem simuladas em Reels). _Referência vista no institucional:_ branca, pequena, centralizada embaixo, com contorno/sombra preta fina e sem tarja, na mesma fonte do resto. Restrições já conhecidas: sem ponto final (regra do dono); texto branco, e sobre `sky`, `orange` e `green` só grande e em negrito.
+**Estilo A, em caixa alta (escolha do dono):** componente `Legendas`.
+
+- **CAIXA ALTA**, Nunito Sans 700, branca, com **contorno preto fino** (3 px) e sombra suave, **sem tarja**. Igual à legenda do institucional da CERTI.
+- A **palavra falada** fica em azul-claro (`sky`), mudando a cada palavra.
+- **Entra e sai em corte seco**, como no institucional.
+- **Sem ponto final** (regra do dono). Vírgula, `?` e `!` ficam.
+- Posição: acima dos ~24% de baixo (botões de Reels/Shorts). Até 30 caracteres e 6 palavras por página, em até 2 linhas balanceadas.
+- Artigos e preposições (a, o, de, da, em, e, que...) não ficam sozinhos no fim de uma página: vão junto da palavra seguinte (`carryStopwords`).
+- **Degradê escuro suave no pé do quadro** (`scrim`, ligado por padrão), _adição minha_, que ajuda a ler em fundo claro. Pode ser desligado com `scrim={false}`.
+
+**Ponto de atenção:** sem caixa, a legenda perde força sobre imagens muito claras (jaleco branco, paredes claras). O contorno e o degradê ajudam, mas se algum plano ficar difícil de ler, conversar antes de trocar de estilo. Alternativas já mostradas ao dono: B (tarja azul), C (bloco de destaque), D (barra tech).
+
+**Frases de efeito:** o CERTI ainda não tem um estilo próprio para isso (o CFDesigner tem o "Título de cinema"). A definir, se o dono quiser.
+
+Fluxo: skill `legendas` (transcreve com Whisper, agrupa, renderiza). Exemplo: `Certi-Legendas-Exemplo` (fala sintética transcrita pelo Whisper).
 
 ## Terceiro de nome
 

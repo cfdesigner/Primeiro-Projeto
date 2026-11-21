@@ -16,7 +16,14 @@ import {
 
 /** Quadro de referência com todos os componentes (um Still). Serve para conferir o visual. */
 export const CFDesignerShowcase: React.FC = () => (
-  <AbsoluteFill style={{ background: colors.cinema.void, padding: 48, gap: 32, flexDirection: "row" }}>
+  <AbsoluteFill
+    style={{
+      background: colors.cinema.void,
+      padding: 48,
+      gap: 32,
+      flexDirection: "row",
+    }}
+  >
     <ReelFrame
       width={405}
       hook="Cinema em 15 segundos."
@@ -25,7 +32,15 @@ export const CFDesignerShowcase: React.FC = () => (
       image={imagery.portraitEditingDesk}
       imagePosition="38% center"
     />
-    <div style={{ display: "grid", gap: 28, alignContent: "start", width: 1000, flexShrink: 0 }}>
+    <div
+      style={{
+        display: "grid",
+        gap: 28,
+        alignContent: "start",
+        width: 1000,
+        flexShrink: 0,
+      }}
+    >
       <ProfileBanner
         width={1000}
         image={imagery.timelineCloseup}

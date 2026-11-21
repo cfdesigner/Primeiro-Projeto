@@ -5,7 +5,13 @@
 ## Como usar num vídeo
 
 ```tsx
-import { ReelFrame, Manifesto, Logo, colors, imagery } from "../design-systems/cfdesigner";
+import {
+  ReelFrame,
+  Manifesto,
+  Logo,
+  colors,
+  imagery,
+} from "../design-systems/cfdesigner";
 ```
 
 - **Tokens:** `tokens.ts` (cores dos temas `cinema` e `daylight`, tipografia, espaço, raios, sombras, proporções). `tokens.json` é o original.
@@ -22,9 +28,9 @@ import { ReelFrame, Manifesto, Logo, colors, imagery } from "../design-systems/c
 **Essência:** transformar segundos em emoção. CFDesigner é a marca pessoal de Carlos Felipe, editor de vídeo cinematográfico que une IA, Adobe e ritmo. Tudo aqui deve parecer um frame de filme: escuro, contido, com um único ponto de luz dourada.
 
 > I turn seconds into cinematic stories.
-> *Transformo segundos em histórias cinematográficas.*
+> _Transformo segundos em histórias cinematográficas._
 
-**Frase-assinatura (manifesto):** "A edição é o instante em que a emoção encontra o tempo." / *"Editing is the moment when emotion meets time."* — Carlos Felipe Moura. Use pelo componente `Manifesto`.
+**Frase-assinatura (manifesto):** "A edição é o instante em que a emoção encontra o tempo." / _"Editing is the moment when emotion meets time."_ — Carlos Felipe Moura. Use pelo componente `Manifesto`.
 
 O tema principal é **Cinema** (escuro). **Daylight** (claro) existe para documentos, propostas e PDFs; peças de redes sociais usam sempre Cinema.
 
@@ -41,13 +47,13 @@ Técnica, criativa e humana: metade artista, metade engenheiro visual.
 
 **Headlines aprovadas**
 
-| Inglês | Português |
-| --- | --- |
-| Cinematic editing powered by AI. | Edição cinematográfica com alma e IA. |
-| Every second tells a story. | Cada segundo conta uma história. |
-| From raw clips to emotion. | Olhar de cinema, ritmo digital. |
-| Filmmaker's eye, editor's precision. | Histórias que cabem em 30 segundos. |
-| Short-form, long impact. | |
+| Inglês                               | Português                             |
+| ------------------------------------ | ------------------------------------- |
+| Cinematic editing powered by AI.     | Edição cinematográfica com alma e IA. |
+| Every second tells a story.          | Cada segundo conta uma história.      |
+| From raw clips to emotion.           | Olhar de cinema, ritmo digital.       |
+| Filmmaker's eye, editor's precision. | Histórias que cabem em 30 segundos.   |
+| Short-form, long impact.             |                                       |
 
 **Hooks para Reels e legendas:** "Um corte certo pode mudar uma história." · "Cinema em 15 segundos." · "A emoção está no ritmo." · "IA é a nova lente do olhar humano." · "Edição é o novo roteiro."
 

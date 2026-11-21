@@ -35,7 +35,12 @@ export const Logo: React.FC<LogoProps> = ({
   return (
     <Img
       src={l.src}
-      style={{ height, width: Math.round(height * l.ratio), display: "block", ...style }}
+      style={{
+        height,
+        width: Math.round(height * l.ratio),
+        display: "block",
+        ...style,
+      }}
     />
   );
 };

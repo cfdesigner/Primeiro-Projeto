@@ -61,10 +61,22 @@ export const Manifesto: React.FC<ManifestoProps> = ({
           ].join(", "),
         }}
       />
-      <div style={{ position: "relative", zIndex: 2, display: "grid", gap: 4 * s }}>
-        <p style={{ ...heading, fontSize: 20 * s, lineHeight: `${28 * s}px` }}>{`“${quote}”`}</p>
+      <div
+        style={{ position: "relative", zIndex: 2, display: "grid", gap: 4 * s }}
+      >
+        <p
+          style={{ ...heading, fontSize: 20 * s, lineHeight: `${28 * s}px` }}
+        >{`“${quote}”`}</p>
         {translation === null ? null : (
-          <p style={{ ...heading, fontStyle: "italic", fontSize: 18 * s, lineHeight: `${26 * s}px`, color: c.amberText }}>
+          <p
+            style={{
+              ...heading,
+              fontStyle: "italic",
+              fontSize: 18 * s,
+              lineHeight: `${26 * s}px`,
+              color: c.amberText,
+            }}
+          >
             {`“${translation}”`}
           </p>
         )}

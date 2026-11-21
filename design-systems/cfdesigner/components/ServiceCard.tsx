@@ -42,8 +42,24 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
         ...style,
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12 * scale }}>
-        <h3 style={{ fontFamily: fam.heading, fontWeight: 600, fontSize: 20 * scale, lineHeight: `${28 * scale}px`, margin: 0, color: c.ink }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          gap: 12 * scale,
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: fam.heading,
+            fontWeight: 600,
+            fontSize: 20 * scale,
+            lineHeight: `${28 * scale}px`,
+            margin: 0,
+            color: c.ink,
+          }}
+        >
           {title}
         </h3>
         {badge ? (
@@ -52,24 +68,60 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           </Tag>
         ) : null}
       </div>
-      <div style={{ fontFamily: fam.display, fontSize: 40 * scale, lineHeight: 1, color: c.ink }}>
+      <div
+        style={{
+          fontFamily: fam.display,
+          fontSize: 40 * scale,
+          lineHeight: 1,
+          color: c.ink,
+        }}
+      >
         {price}
         {unit ? (
-          <span style={{ fontFamily: fam.body, fontSize: 14 * scale, color: c.inkMuted, marginLeft: 4 * scale }}>
+          <span
+            style={{
+              fontFamily: fam.body,
+              fontSize: 14 * scale,
+              color: c.inkMuted,
+              marginLeft: 4 * scale,
+            }}
+          >
             {unit}
           </span>
         ) : null}
       </div>
-      <div style={{ display: "grid", gap: 8 * scale, fontFamily: fam.body, fontSize: 14 * scale, lineHeight: `${22 * scale}px`, color: c.inkMuted }}>
+      <div
+        style={{
+          display: "grid",
+          gap: 8 * scale,
+          fontFamily: fam.body,
+          fontSize: 14 * scale,
+          lineHeight: `${22 * scale}px`,
+          color: c.inkMuted,
+        }}
+      >
         {items.map((it) => (
           <div key={it} style={{ display: "flex", gap: 8 * scale }}>
-            <span style={{ flex: "none", width: 10 * scale, height: 2 * scale, marginTop: 10 * scale, background: c.amber }} />
+            <span
+              style={{
+                flex: "none",
+                width: 10 * scale,
+                height: 2 * scale,
+                marginTop: 10 * scale,
+                background: c.amber,
+              }}
+            />
             {it}
           </div>
         ))}
       </div>
       {cta ? (
-        <Button variant={featured ? "primary" : "ghost"} theme={theme} scale={scale} style={{ justifySelf: "start" }}>
+        <Button
+          variant={featured ? "primary" : "ghost"}
+          theme={theme}
+          scale={scale}
+          style={{ justifySelf: "start" }}
+        >
           {cta}
         </Button>
       ) : null}

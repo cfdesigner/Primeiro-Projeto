@@ -47,7 +47,13 @@ export const ProfileBanner: React.FC<ProfileBannerProps> = ({
       {image ? (
         <Img
           src={image}
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
         />
       ) : null}
       <div
@@ -82,7 +88,11 @@ export const ProfileBanner: React.FC<ProfileBannerProps> = ({
           justifyItems: "start",
         }}
       >
-        <Logo layout="horizontal" height={40 * s} style={{ marginBottom: 8 * s }} />
+        <Logo
+          layout="horizontal"
+          height={40 * s}
+          style={{ marginBottom: 8 * s }}
+        />
         <span
           style={{
             fontFamily: fam.heading,
@@ -107,7 +117,15 @@ export const ProfileBanner: React.FC<ProfileBannerProps> = ({
           <HookText text={headline} accent={accent} color={c.amberText} />
         </p>
         {sub ? (
-          <p style={{ fontFamily: fam.body, fontSize: 15 * s, lineHeight: `${22 * s}px`, color: c.inkMuted, margin: 0 }}>
+          <p
+            style={{
+              fontFamily: fam.body,
+              fontSize: 15 * s,
+              lineHeight: `${22 * s}px`,
+              color: c.inkMuted,
+              margin: 0,
+            }}
+          >
             {sub}
           </p>
         ) : null}

@@ -48,7 +48,12 @@ export const Tag: React.FC<TagProps> = ({
     >
       {tone === "rec" ? (
         <span
-          style={{ width: 8 * scale, height: 8 * scale, borderRadius: 999, background: c.rec }}
+          style={{
+            width: 8 * scale,
+            height: 8 * scale,
+            borderRadius: 999,
+            background: c.rec,
+          }}
         />
       ) : null}
       {children}

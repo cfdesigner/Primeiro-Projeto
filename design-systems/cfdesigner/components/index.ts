@@ -1,7 +1,11 @@
 export { Button, type ButtonProps } from "./Button";
 export { Tag, type TagProps } from "./Tag";
 export { Logo, logos, type LogoProps } from "./Logo";
-export { HighlightCover, type HighlightCoverProps, type HighlightIcon } from "./HighlightCover";
+export {
+  HighlightCover,
+  type HighlightCoverProps,
+  type HighlightIcon,
+} from "./HighlightCover";
 export { ReelFrame, type ReelFrameProps } from "./ReelFrame";
 export { ProfileBanner, type ProfileBannerProps } from "./ProfileBanner";
 export { ServiceCard, type ServiceCardProps } from "./ServiceCard";

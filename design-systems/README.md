@@ -2,10 +2,10 @@
 
 Cada design system é **independente e completo**: tem o seu jeito de fazer cores, tipografia, movimento, transições, legendas, terceiros, números e fecho. Nada de um vaza para o outro.
 
-| Pasta | Marca / estilo | Ficha de produção |
-| --- | --- | --- |
-| `cfdesigner/` | CFDesigner: cinema escuro com ponto de luz dourada | `cfdesigner/DESIGN-SYSTEM.md` |
-| `certi/` | CERTI: institucional, claro e tecnológico (em construção: etapas 1 e 2 aprovadas) | `certi/DESIGN-SYSTEM.md` |
+| Pasta         | Marca / estilo                                                                    | Ficha de produção             |
+| ------------- | --------------------------------------------------------------------------------- | ----------------------------- |
+| `cfdesigner/` | CFDesigner: cinema escuro com ponto de luz dourada                                | `cfdesigner/DESIGN-SYSTEM.md` |
+| `certi/`      | CERTI: institucional, claro e tecnológico (em construção: etapas 1 a 3 aprovadas) | `certi/DESIGN-SYSTEM.md`      |
 
 ## O que cada pasta tem
 

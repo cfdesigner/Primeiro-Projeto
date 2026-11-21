@@ -39,7 +39,8 @@ export const Button: React.FC<ButtonProps> = ({
         fontSize: (size === "sm" ? 13 : 14) * scale,
         letterSpacing: "0.04em",
         whiteSpace: "nowrap",
-        boxShadow: variant === "primary" ? shadow[theme].shadowFlare : undefined,
+        boxShadow:
+          variant === "primary" ? shadow[theme].shadowFlare : undefined,
         ...style,
       }}
     >

@@ -26,18 +26,23 @@ export const Grain: React.FC = () => (
     }}
   >
     <filter id="cf-grain">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves={2} stitchTiles="stitch" />
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.9"
+        numOctaves={2}
+        stitchTiles="stitch"
+      />
     </filter>
     <rect width="100%" height="100%" filter="url(#cf-grain)" />
   </svg>
 );
 
 /** Quebra o texto e destaca o trecho `accent` com a cor dada. */
-export const HookText: React.FC<{ text: string; accent?: string; color: string }> = ({
-  text,
-  accent,
-  color,
-}) => {
+export const HookText: React.FC<{
+  text: string;
+  accent?: string;
+  color: string;
+}> = ({ text, accent, color }) => {
   const i = accent ? text.indexOf(accent) : -1;
   if (!accent || i < 0) return <>{text}</>;
   return (

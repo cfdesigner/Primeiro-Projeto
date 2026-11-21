@@ -5,9 +5,15 @@
 **Essência:** <uma frase>.
 
 ## Voz e conteúdo
+
 ## Logo
+
 ## Cor (tokens e quando usar cada um)
+
 ## Tipografia
+
 ## Espaço, forma e enquadramento
+
 ## Textura e imagem
+
 ## Iconografia

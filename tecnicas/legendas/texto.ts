@@ -41,7 +41,39 @@ export const pickKeywordIndex = (texts: string[]): number => {
  * Regra do dono: legenda NUNCA termina com ponto final. Vírgula, ? e ! ficam.
  * Só tira um ponto isolado no fim; reticências ("..." ou "…") ficam como estão.
  */
-export const tiraPontoFinal = (text: string): string => text.replace(/([^.\s])\.\s*$/, "$1");
+export const tiraPontoFinal = (text: string): string =>
+  text.replace(/([^.\s])\.\s*$/, "$1");
+
+/** Palavras curtas que não devem terminar uma página de legenda (português). */
+const STOPWORDS = [
+  "a",
+  "o",
+  "as",
+  "os",
+  "um",
+  "uma",
+  "de",
+  "da",
+  "do",
+  "das",
+  "dos",
+  "em",
+  "na",
+  "no",
+  "nas",
+  "nos",
+  "e",
+  "que",
+  "para",
+  "com",
+  "por",
+  "ao",
+  "à",
+  "se",
+  "ou",
+  "pela",
+  "pelo",
+];
 
 const endsSentence = (text: string) => /[.!?…]$/.test(text.trim());
 
@@ -49,11 +81,17 @@ const endsSentence = (text: string) => /[.!?…]$/.test(text.trim());
 export const buildPages = (
   captions: Caption[],
   punchLines: PunchLine[] = [],
-  opts: { maxChars?: number; maxWords?: number; maxGapMs?: number } = {},
+  opts: {
+    maxChars?: number;
+    maxWords?: number;
+    maxGapMs?: number;
+    carryStopwords?: boolean;
+  } = {},
 ): Page[] => {
   const maxChars = opts.maxChars ?? 34;
   const maxWords = opts.maxWords ?? 7;
   const maxGapMs = opts.maxGapMs ?? 550;
+  const carryStopwords = opts.carryStopwords ?? false;
   const inPunch = (c: Caption) =>
     punchLines.some((p) => c.startMs >= p.startMs && c.startMs < p.endMs);
 
@@ -61,7 +99,11 @@ export const buildPages = (
   let cur: Caption[] = [];
   const flush = () => {
     if (cur.length) {
-      pages.push({ words: cur, startMs: cur[0].startMs, endMs: cur[cur.length - 1].endMs });
+      pages.push({
+        words: cur,
+        startMs: cur[0].startMs,
+        endMs: cur[cur.length - 1].endMs,
+      });
       cur = [];
     }
   };
@@ -72,7 +114,9 @@ export const buildPages = (
       continue;
     }
     const prev = cur[cur.length - 1];
-    const chars = cur.reduce((n, w) => n + clean(w.text).length + 1, 0) + clean(c.text).length;
+    const chars =
+      cur.reduce((n, w) => n + clean(w.text).length + 1, 0) +
+      clean(c.text).length;
     if (
       prev &&
       (c.startMs - prev.endMs > maxGapMs ||
@@ -81,7 +125,22 @@ export const buildPages = (
         endsSentence(prev.text) ||
         (cur.length >= 3 && /[,;:]$/.test(prev.text.trim())))
     ) {
+      // Quebra por tamanho: não deixa artigo/preposição sozinho no fim da página (vai junto da palavra seguinte).
+      const bySize = chars > maxChars || cur.length >= maxWords;
+      const carry: Caption[] = [];
+      if (
+        carryStopwords &&
+        bySize &&
+        cur.length > 1 &&
+        !endsSentence(prev.text) &&
+        !/[,;:]$/.test(prev.text.trim()) &&
+        c.startMs - prev.endMs <= maxGapMs &&
+        STOPWORDS.indexOf(clean(prev.text).toLowerCase()) >= 0
+      ) {
+        carry.push(cur.pop() as Caption);
+      }
       flush();
+      cur.push(...carry);
     }
     cur.push(c);
   }
@@ -115,11 +174,14 @@ export const suggestPunchLines = (
     const next = sentences[i + 1];
     const first = s[0];
     const last = s[s.length - 1];
-    const before = prev ? first.startMs - prev[prev.length - 1].endMs : Infinity;
+    const before = prev
+      ? first.startMs - prev[prev.length - 1].endMs
+      : Infinity;
     const after = next ? next[0].startMs - last.endMs : Infinity;
     const dur = last.endMs - first.startMs;
     if (s.length < 3 || s.length > 9 || dur > 4000) return;
-    if (!(before >= minPause || i === 0) || !(after >= minPause || !next)) return;
+    if (!(before >= minPause || i === 0) || !(after >= minPause || !next))
+      return;
     const texts = s.map((w) => w.text);
     const k = pickKeywordIndex(texts);
     scored.push({
@@ -127,7 +189,8 @@ export const suggestPunchLines = (
       endMs: last.endMs + 200,
       text: texts.join("").trim(),
       keyword: clean(texts[k]),
-      score: (Math.min(before, 1500) + Math.min(after, 1500)) / 3000 - s.length / 20,
+      score:
+        (Math.min(before, 1500) + Math.min(after, 1500)) / 3000 - s.length / 20,
     });
   });
 
@@ -136,5 +199,10 @@ export const suggestPunchLines = (
     .sort((a, b) => b.score - a.score)
     .slice(0, cap)
     .sort((a, b) => a.startMs - b.startMs)
-    .map((c) => ({ startMs: c.startMs, endMs: c.endMs, text: c.text, keyword: c.keyword }));
+    .map((c) => ({
+      startMs: c.startMs,
+      endMs: c.endMs,
+      text: c.text,
+      keyword: c.keyword,
+    }));
 };

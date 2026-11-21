@@ -5,7 +5,14 @@ Como ESTE design system faz cada coisa. O brand book (cores, voz, logo) está em
 **Identidade em uma linha:** cinema escuro, contido, com um único ponto de luz dourada (âmbar). Limpo e premium.
 
 ```ts
-import { Legendas, LowerThird, CountUp, LogoOutro, colors, imagery } from "../design-systems/cfdesigner";
+import {
+  Legendas,
+  LowerThird,
+  CountUp,
+  LogoOutro,
+  colors,
+  imagery,
+} from "../design-systems/cfdesigner";
 ```
 
 ## Movimento (a personalidade)
