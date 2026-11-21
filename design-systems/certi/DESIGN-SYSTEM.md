@@ -72,7 +72,7 @@ Vídeo de teste (com trechos do institucional): `Certi-Transicoes-Teste`.
 - A **palavra falada** fica em azul-claro (`sky`), mudando a cada palavra.
 - **Entra e sai em corte seco**, como no institucional.
 - **Sem ponto final** (regra do dono). Vírgula, `?` e `!` ficam.
-- Posição: acima dos ~24% de baixo (botões de Reels/Shorts). Até 30 caracteres e 6 palavras por página, em até 2 linhas balanceadas.
+- Posição: acima dos ~24% de baixo (botões de Reels/Shorts). Até 30 caracteres e 6 palavras por página, em até 2 linhas balanceadas e **entrelinha compacta (1,0)**: em caixa alta não há letras que descem, então linhas afastadas ficam soltas (ajuste pedido pelo dono).
 - Artigos e preposições (a, o, de, da, em, e, que...) não ficam sozinhos no fim de uma página: vão junto da palavra seguinte (`carryStopwords`).
 - **Degradê escuro suave no pé do quadro** (`scrim`, ligado por padrão), _adição minha_, que ajuda a ler em fundo claro. Pode ser desligado com `scrim={false}`.
 

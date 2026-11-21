@@ -79,7 +79,7 @@ export const Legendas: React.FC<LegendasProps> = ({
               textTransform: "uppercase",
               textAlign: "center",
               textWrap: "balance",
-              lineHeight: 1.25,
+              lineHeight: 1,
               color: colors.white,
               WebkitTextStroke: `${3 * k}px #000`,
               paintOrder: "stroke fill",
