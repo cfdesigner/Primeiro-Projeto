@@ -1,6 +1,6 @@
 # CERTI: ficha de produção
 
-> **Status: em construção.** Etapas 1 a 3 (cores, tipografia, logo, componentes, movimento, transições, terceiro de nome, legendas e frase de efeito) aprovadas. Faltam números e fecho.
+> **Status: completo.** Etapas 1 a 4 aprovadas pelo dono (cores, tipografia, logo, componentes, movimento, transições, terceiro de nome, legendas, frase de efeito, números e fecho). Pendente só material opcional (fotos, manual, arquivos oficiais do logo horizontal negativo e do símbolo).
 
 **Identidade em uma linha:** institucional, claro e tecnológico; azul da marca com acentos nas cores do símbolo.
 
@@ -96,11 +96,24 @@ Componente `TerceiroTech`, medido no institucional da CERTI:
 
 ## Números e destaques
 
-**A definir** (etapa 4).
+**Sobre a imagem, com a identidade do estilo A (escolha do dono):** componente `Numero`.
+
+- O quadro escurece em azul-profundo (fade de 200 ms); o **número aparece enorme, em branco, Nunito Sans 900**, com o **prefixo (+) em azul-claro**.
+- Linha pequena de peso leve em cima ("MAIS DE"), **rótulo em caixa alta e negrito** embaixo ("CLIENTES NO MUNDO") e um **fio fino** branco no fim.
+- Sem colchetes nos cantos (eram do estilo C da prancha, que o dono não escolheu).
+- **A contagem é proposta minha:** o site não mostrou contador. Sobe com desaceleração em 1,2 s e termina exatamente no valor. Se o dono preferir o número já pronto, em corte seco, basta `countMs={0}`.
+- O tamanho se ajusta para o número sempre caber na largura.
+
+Exemplo: `Certi-Numero-Fecho-Exemplo`.
 
 ## Fecho
 
-**A definir** (etapa 4). O logo negativo (todo branco) já existe para fundos escuros e azuis.
+**Opção A, com a logo menor (escolha do dono):** componente `Fecho`.
+
+- Fundo azul-profundo, **logo vertical negativo (todo branco)** no centro e o endereço `certi.org.br` bem discreto embaixo (pequeno, branco a 55%).
+- **A logo é menor que na prancha:** 440 px de altura em 1080 (a opção A tinha 640 e a D, 560). O dono quer um fecho mais premium, sem logo grande demais. É um parâmetro (`logoHeight`).
+- A logo entra por fade de 400 ms (o crossfade do site); o endereço aparece 300 ms depois, mais suave. Entra por crossfade sobre a cena anterior (`Dissolve`).
+- Regra do dono "limpo e premium": o logo manda, texto de apoio mínimo.
 
 ## Imagem e vídeo
 
@@ -115,4 +128,4 @@ Fotos claras e reais, sem filtros coloridos (a confirmar com fotos fornecidas).
 
 ## Exemplos que renderizam
 
-`Certi-Componentes` (prancha com cores, tipografia e componentes).
+`Certi-Componentes` (prancha), `Certi-Movimento-Teste`, `Certi-Transicoes-Teste`, `Certi-Legendas-Exemplo` e `Certi-Numero-Fecho-Exemplo`.

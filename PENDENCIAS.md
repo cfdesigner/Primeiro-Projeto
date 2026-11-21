@@ -25,6 +25,7 @@
 
 ### Design system CERTI
 
+- [x] Etapa 4: números sobre a imagem (identidade do A) e fecho A com logo menor (440 px), escolhas do dono. **Design system CERTI completo**
 - [x] Frase de efeito do CERTI: estilo C "leve e pesado" (escolha do dono), testada com fala com pausas passando por Whisper e sugeridor
 - [x] Etapa 3: legenda do CERTI feita (estilo A em caixa alta, escolha do dono), testada com fala sintética transcrita pelo Whisper
 - [x] Etapa 2 aprovada e no `main`: movimento e transições medidos (site e institucional), terceiro de nome e vídeos de teste
@@ -40,7 +41,6 @@
 
 ### CERTI: o que o Claude faz depois
 
-- [ ] **[Claude]** Etapa 4: números e fecho (o terceiro de nome já foi feito na etapa 2)
 - [ ] **[Claude]** Apresentações (slides) do CERTI: à parte, no claude.ai, reaproveitando cores e fontes
 
 ### Testes que ainda não foram feitos
