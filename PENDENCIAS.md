@@ -9,8 +9,9 @@ Lista viva do que ainda falta. **No começo de cada sessão e quando fizer senti
 3. **Provar o script de preparação numa sessão nova.** Foi testado, mas nunca rodou de verdade ao criar uma sessão. Conferir `/opt/whisper-venv` e `node_modules`.
 4. **Testar legendas com um vídeo real:** fala real (ruído/música), vídeo longo, horizontal, o vídeo animado inteiro, e descobrir como o arquivo de vídeo chega até a sessão.
 5. **Testar `criar-design-system` com a primeira referência real** (imagem ou vídeo). Pedir logo e fontes originais ao dono.
-6. **Próximas skills da lista do dono** (ele traz os nomes): achar, ver se é gratuita, ler antes de instalar, checar conflito com Remotion/design systems.
-7. **Limpezas pequenas (perguntar):** branch `previews-legenda` e branch `remover-video-teste` no GitHub; composições de exemplo no Root; artefato "Design System" duplicado no claude.ai; decidir se reticências também somem das legendas.
+6. **Criar o design system `certi`** (para vídeos em geral e, à parte, apresentações). O site `certi.org.br` está bloqueado na rede e o dono negou liberar. Ele vai mandar prints (home, página com cards/botões, rodapé), vídeo de tela de ~15 s (rolagem e hover, para estimar o movimento), manual da marca (PDF), logo e fontes originais. Seguir a skill `criar-design-system`, por etapas. Não inventar valores nem redesenhar o logo.
+7. **Próximas skills da lista do dono** (ele traz os nomes): achar, ver se é gratuita, ler antes de instalar, checar conflito com Remotion/design systems.
+8. **Limpezas pequenas (perguntar):** branch `previews-legenda` e branch `remover-video-teste` no GitHub; composições de exemplo no Root; artefato "Design System" duplicado no claude.ai; decidir se reticências também somem das legendas.
 
 ## Feitas
 
