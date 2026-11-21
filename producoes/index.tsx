@@ -1,5 +1,6 @@
 import React from "react";
 import { Composition } from "remotion";
+import { C02_FRAMES, C02Legendas } from "./c02-legendas/C02Legendas";
 import { CERTI_NEWS_FRAMES, CertiNews } from "./certi-news/CertiNews";
 
 /**
@@ -13,6 +14,14 @@ export const Producoes: React.FC = () => (
       id="CertiNews"
       component={CertiNews}
       durationInFrames={CERTI_NEWS_FRAMES}
+      fps={30}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="C02Legendas"
+      component={C02Legendas}
+      durationInFrames={C02_FRAMES}
       fps={30}
       width={1080}
       height={1920}

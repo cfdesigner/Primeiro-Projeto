@@ -1,0 +1,457 @@
+[
+  {
+    "text": " Sabe",
+    "startMs": 0,
+    "endMs": 260,
+    "timestampMs": 130,
+    "confidence": 0.931
+  },
+  {
+    "text": " quando",
+    "startMs": 260,
+    "endMs": 440,
+    "timestampMs": 350,
+    "confidence": 0.455
+  },
+  {
+    "text": " tu",
+    "startMs": 440,
+    "endMs": 620,
+    "timestampMs": 530,
+    "confidence": 0.533
+  },
+  {
+    "text": " olha",
+    "startMs": 620,
+    "endMs": 740,
+    "timestampMs": 680,
+    "confidence": 0.844
+  },
+  {
+    "text": " para",
+    "startMs": 740,
+    "endMs": 900,
+    "timestampMs": 820,
+    "confidence": 0.704
+  },
+  {
+    "text": " uma",
+    "startMs": 900,
+    "endMs": 940,
+    "timestampMs": 920,
+    "confidence": 0.93
+  },
+  {
+    "text": " imagem",
+    "startMs": 940,
+    "endMs": 1260,
+    "timestampMs": 1100,
+    "confidence": 0.997
+  },
+  {
+    "text": " e",
+    "startMs": 1260,
+    "endMs": 1320,
+    "timestampMs": 1410,
+    "confidence": 0.577
+  },
+  {
+    "text": " sente",
+    "startMs": 1320,
+    "endMs": 1560,
+    "timestampMs": 1410,
+    "confidence": 0.577
+  },
+  {
+    "text": " que",
+    "startMs": 1560,
+    "endMs": 1700,
+    "timestampMs": 1630,
+    "confidence": 0.871
+  },
+  {
+    "text": " ela",
+    "startMs": 1700,
+    "endMs": 1800,
+    "timestampMs": 1750,
+    "confidence": 0.866
+  },
+  {
+    "text": " poderia",
+    "startMs": 1800,
+    "endMs": 2100,
+    "timestampMs": 1950,
+    "confidence": 0.984
+  },
+  {
+    "text": " ser",
+    "startMs": 2100,
+    "endMs": 2280,
+    "timestampMs": 2190,
+    "confidence": 0.996
+  },
+  {
+    "text": " muito",
+    "startMs": 2280,
+    "endMs": 2480,
+    "timestampMs": 2380,
+    "confidence": 0.985
+  },
+  {
+    "text": " mais",
+    "startMs": 2480,
+    "endMs": 2680,
+    "timestampMs": 2580,
+    "confidence": 0.998
+  },
+  {
+    "text": " interessante?",
+    "startMs": 2680,
+    "endMs": 3180,
+    "timestampMs": 2930,
+    "confidence": 0.991
+  },
+  {
+    "text": " Às",
+    "startMs": 3480,
+    "endMs": 3640,
+    "timestampMs": 3560,
+    "confidence": 0.734
+  },
+  {
+    "text": " vezes,",
+    "startMs": 3640,
+    "endMs": 3900,
+    "timestampMs": 3770,
+    "confidence": 1.0
+  },
+  {
+    "text": " não",
+    "startMs": 4100,
+    "endMs": 4220,
+    "timestampMs": 4160,
+    "confidence": 0.977
+  },
+  {
+    "text": " precisa",
+    "startMs": 4220,
+    "endMs": 4420,
+    "timestampMs": 4320,
+    "confidence": 0.997
+  },
+  {
+    "text": " de",
+    "startMs": 4420,
+    "endMs": 4640,
+    "timestampMs": 4530,
+    "confidence": 0.994
+  },
+  {
+    "text": " uma",
+    "startMs": 4640,
+    "endMs": 4740,
+    "timestampMs": 4690,
+    "confidence": 0.934
+  },
+  {
+    "text": " câmera",
+    "startMs": 4740,
+    "endMs": 5000,
+    "timestampMs": 4870,
+    "confidence": 0.988
+  },
+  {
+    "text": " melhor,",
+    "startMs": 5000,
+    "endMs": 5360,
+    "timestampMs": 5180,
+    "confidence": 0.982
+  },
+  {
+    "text": " nem",
+    "startMs": 5500,
+    "endMs": 5620,
+    "timestampMs": 5560,
+    "confidence": 0.99
+  },
+  {
+    "text": " de",
+    "startMs": 5620,
+    "endMs": 5700,
+    "timestampMs": 5660,
+    "confidence": 0.981
+  },
+  {
+    "text": " uma",
+    "startMs": 5700,
+    "endMs": 5760,
+    "timestampMs": 5730,
+    "confidence": 0.968
+  },
+  {
+    "text": " produção",
+    "startMs": 5760,
+    "endMs": 6040,
+    "timestampMs": 5900,
+    "confidence": 0.995
+  },
+  {
+    "text": " gigantesca.",
+    "startMs": 6040,
+    "endMs": 6780,
+    "timestampMs": 6410,
+    "confidence": 0.998
+  },
+  {
+    "text": " Com",
+    "startMs": 6860,
+    "endMs": 6940,
+    "timestampMs": 6900,
+    "confidence": 0.994
+  },
+  {
+    "text": " algumas",
+    "startMs": 6940,
+    "endMs": 7140,
+    "timestampMs": 7040,
+    "confidence": 0.944
+  },
+  {
+    "text": " escolhas",
+    "startMs": 7140,
+    "endMs": 7660,
+    "timestampMs": 7400,
+    "confidence": 0.996
+  },
+  {
+    "text": " de",
+    "startMs": 7660,
+    "endMs": 7800,
+    "timestampMs": 7730,
+    "confidence": 0.995
+  },
+  {
+    "text": " direção,",
+    "startMs": 7800,
+    "endMs": 8340,
+    "timestampMs": 8070,
+    "confidence": 0.993
+  },
+  {
+    "text": " composição,",
+    "startMs": 8500,
+    "endMs": 9120,
+    "timestampMs": 8810,
+    "confidence": 0.996
+  },
+  {
+    "text": " cor,",
+    "startMs": 9320,
+    "endMs": 9460,
+    "timestampMs": 9390,
+    "confidence": 0.984
+  },
+  {
+    "text": " iluminação",
+    "startMs": 9720,
+    "endMs": 10180,
+    "timestampMs": 9950,
+    "confidence": 0.995
+  },
+  {
+    "text": " e",
+    "startMs": 10180,
+    "endMs": 10400,
+    "timestampMs": 10290,
+    "confidence": 0.98
+  },
+  {
+    "text": " som,",
+    "startMs": 10400,
+    "endMs": 10640,
+    "timestampMs": 10520,
+    "confidence": 0.994
+  },
+  {
+    "text": " você",
+    "startMs": 10840,
+    "endMs": 11020,
+    "timestampMs": 10930,
+    "confidence": 0.994
+  },
+  {
+    "text": " consegue",
+    "startMs": 11020,
+    "endMs": 11340,
+    "timestampMs": 11180,
+    "confidence": 0.998
+  },
+  {
+    "text": " transformar",
+    "startMs": 11340,
+    "endMs": 11900,
+    "timestampMs": 11830,
+    "confidence": 0.995
+  },
+  {
+    "text": " completamente",
+    "startMs": 11900,
+    "endMs": 12320,
+    "timestampMs": 12110,
+    "confidence": 0.991
+  },
+  {
+    "text": " a",
+    "startMs": 12320,
+    "endMs": 12620,
+    "timestampMs": 12470,
+    "confidence": 0.983
+  },
+  {
+    "text": " composição",
+    "startMs": 12620,
+    "endMs": 13080,
+    "timestampMs": 12850,
+    "confidence": 0.999
+  },
+  {
+    "text": " daquela",
+    "startMs": 13080,
+    "endMs": 13380,
+    "timestampMs": 13230,
+    "confidence": 0.988
+  },
+  {
+    "text": " cena.",
+    "startMs": 13380,
+    "endMs": 13700,
+    "timestampMs": 13540,
+    "confidence": 0.995
+  },
+  {
+    "text": " E",
+    "startMs": 13940,
+    "endMs": 13960,
+    "timestampMs": 13950,
+    "confidence": 0.93
+  },
+  {
+    "text": " é",
+    "startMs": 13960,
+    "endMs": 14040,
+    "timestampMs": 14000,
+    "confidence": 0.992
+  },
+  {
+    "text": " justamente",
+    "startMs": 14040,
+    "endMs": 14260,
+    "timestampMs": 14150,
+    "confidence": 0.997
+  },
+  {
+    "text": " aí",
+    "startMs": 14260,
+    "endMs": 14720,
+    "timestampMs": 14490,
+    "confidence": 0.967
+  },
+  {
+    "text": " onde",
+    "startMs": 14720,
+    "endMs": 14880,
+    "timestampMs": 14800,
+    "confidence": 0.887
+  },
+  {
+    "text": " está",
+    "startMs": 14880,
+    "endMs": 15120,
+    "timestampMs": 15000,
+    "confidence": 0.991
+  },
+  {
+    "text": " a",
+    "startMs": 15120,
+    "endMs": 15200,
+    "timestampMs": 15160,
+    "confidence": 0.991
+  },
+  {
+    "text": " diferença",
+    "startMs": 15200,
+    "endMs": 15600,
+    "timestampMs": 15400,
+    "confidence": 0.997
+  },
+  {
+    "text": " entre",
+    "startMs": 15600,
+    "endMs": 15900,
+    "timestampMs": 15750,
+    "confidence": 0.986
+  },
+  {
+    "text": " simplesmente",
+    "startMs": 15900,
+    "endMs": 16360,
+    "timestampMs": 16130,
+    "confidence": 0.995
+  },
+  {
+    "text": " editar",
+    "startMs": 16360,
+    "endMs": 16780,
+    "timestampMs": 16570,
+    "confidence": 0.983
+  },
+  {
+    "text": " um",
+    "startMs": 16780,
+    "endMs": 16920,
+    "timestampMs": 16850,
+    "confidence": 0.99
+  },
+  {
+    "text": " vídeo",
+    "startMs": 16920,
+    "endMs": 17200,
+    "timestampMs": 17060,
+    "confidence": 0.997
+  },
+  {
+    "text": " e",
+    "startMs": 17200,
+    "endMs": 17500,
+    "timestampMs": 17350,
+    "confidence": 0.964
+  },
+  {
+    "text": " construir",
+    "startMs": 17500,
+    "endMs": 17820,
+    "timestampMs": 17660,
+    "confidence": 0.987
+  },
+  {
+    "text": " uma",
+    "startMs": 17820,
+    "endMs": 18040,
+    "timestampMs": 17930,
+    "confidence": 0.997
+  },
+  {
+    "text": " experiência",
+    "startMs": 18040,
+    "endMs": 18440,
+    "timestampMs": 18240,
+    "confidence": 0.998
+  },
+  {
+    "text": " visual.",
+    "startMs": 18440,
+    "endMs": 18840,
+    "timestampMs": 18640,
+    "confidence": 0.942
+  }
+]
