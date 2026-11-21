@@ -2,6 +2,10 @@
 
 Repositório do dono para produzir vídeos e peças com Remotion. Falar em português do Brasil.
 
+## Pendências
+
+Leia `PENDENCIAS.md` no começo da sessão e **lembre o dono das pendências abertas**: ele pediu, porque pode esquecer.
+
 ## Estrutura
 
 - `design-systems/<nome>/`: cada design system é independente e traz o seu movimento, transições, legendas, terceiros, números e fecho. Índice e contrato em `design-systems/README.md`. Modelo em `design-systems/_modelo/`.
