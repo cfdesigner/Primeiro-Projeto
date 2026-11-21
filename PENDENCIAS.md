@@ -51,7 +51,6 @@
 
 ### Conferências rápidas
 
-- [ ] **[dono]** Conferir, nas configurações do ambiente `cf-studio` no claude.ai, se a lista de repositórios mostra `cf-studio` (pode mostrar o nome antigo; minhas ferramentas não editam essa lista)
 - [ ] **[dono]** Abrir as sessões novas no ambiente **`cf-studio`**, não no Default (só ele tem a rede liberada e o Whisper)
 
 ### Skills da lista do dono
