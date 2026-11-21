@@ -17,6 +17,8 @@ import { fam } from "./shared";
 import "../fonts";
 
 export type LegendasProps = {
+  /** Entrelinha da legenda do dia a dia (padrão 1,25). */
+  entrelinha?: number;
   /** Palavras com tempo, de scripts/transcrever.py (ou @remotion/captions). */
   captions: Caption[];
   /** Frases de efeito aprovadas pelo dono. Viram o "Título de cinema". */
@@ -36,6 +38,7 @@ const fit = (chars: number, maxW: number, max: number, min: number) =>
  * - Frase de efeito: "Título de cinema" (palavra-chave gigante em âmbar, resto pequeno em branco).
  */
 export const Legendas: React.FC<LegendasProps> = ({
+  entrelinha = 1.25,
   captions,
   punchLines = [],
 }) => {
@@ -173,7 +176,7 @@ export const Legendas: React.FC<LegendasProps> = ({
           fontFamily: fam.heading,
           fontWeight: 700,
           fontSize: 64 * k,
-          lineHeight: 1.25,
+          lineHeight: entrelinha,
           color: c.ink,
           textAlign: "center",
           textWrap: "balance",

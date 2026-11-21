@@ -8,7 +8,9 @@ const captions = captionsJson as Caption[];
 const punchLines: PunchLine[] = [{ startMs: 3280, endMs: 4460, keyword: "15" }];
 
 /** Exemplo de referência: legenda do dia a dia + uma frase de efeito sobre a foto da marca. */
-export const ExemploLegendas: React.FC = () => (
+export const ExemploLegendas: React.FC<{ entrelinha?: number }> = ({
+  entrelinha,
+}) => (
   <AbsoluteFill style={{ background: "#0b0c0e" }}>
     <Img
       src={imagery.portraitEditingDesk}
@@ -19,6 +21,10 @@ export const ExemploLegendas: React.FC = () => (
         objectPosition: "38% center",
       }}
     />
-    <Legendas captions={captions} punchLines={punchLines} />
+    <Legendas
+      captions={captions}
+      punchLines={punchLines}
+      entrelinha={entrelinha}
+    />
   </AbsoluteFill>
 );
