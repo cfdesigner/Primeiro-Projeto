@@ -1,25 +1,60 @@
-# Pendências
+# Checklist do projeto
 
-Lista viva do que ainda falta. **No começo de cada sessão e quando fizer sentido, lembre o dono das pendências abertas** (ele pediu, porque pode esquecer). Ao concluir uma, mova para "Feitas".
+**No começo de cada sessão e quando fizer sentido, lembre o dono do que está aberto** (ele pediu, porque pode esquecer). Ao concluir um item, marque `[x]`. Cada item diz quem faz: **[dono]** ou **[Claude]**.
 
-## Abertas
+## Feito
 
-1. **Conferir a lista de repositórios do ambiente `cf-studio`** (nas configurações do ambiente, no claude.ai): ela ainda pode mostrar o nome antigo `cfdesigner/primeiro-projeto`. As minhas ferramentas não conseguem editar essa lista. O GitHub redireciona o nome antigo, então provavelmente funciona, mas vale conferir ao abrir a primeira sessão nova.
-2. **Abrir sessões novas no ambiente `cf-studio`, não no Default.** Só ele tem a rede liberada (Hugging Face, GitHub) e o script que instala o Whisper.
-3. **Provar o script de preparação numa sessão nova.** Foi testado, mas nunca rodou de verdade ao criar uma sessão. Conferir `/opt/whisper-venv` e `node_modules`.
-4. **Testar legendas com um vídeo real:** fala real (ruído/música), vídeo longo, horizontal, o vídeo animado inteiro, e descobrir como o arquivo de vídeo chega até a sessão.
-5. **Testar `criar-design-system` com a primeira referência real** (imagem ou vídeo). Pedir logo e fontes originais ao dono.
-6. **Design system `certi`: continuar (etapa 1 aprovada e no `main`).** Decisões do dono: texto branco sobre as cores, Nunito Sans em tudo, cantos/sombras opção B. Faltam: **vídeo de tela do site** (para movimento e transições), **versão negativa (branca) do logo** e do símbolo, fotos, manual da marca se houver. Etapas seguintes: movimento/transições, 4 opções de legenda (simuladas em Reels), terceiro/números/fecho. O site `certi.org.br` está bloqueado na rede (o dono negou liberar): trabalhar com prints. O dono é muito visual: mostrar decisões como imagens simuladas em Reels, lado a lado.
-7. **Próximas skills da lista do dono** (ele traz os nomes): achar, ver se é gratuita, ler antes de instalar, checar conflito com Remotion/design systems.
-8. **Limpezas pequenas (perguntar):** branch `previews-legenda` e branch `remover-video-teste` no GitHub; composições de exemplo no Root; artefato "Design System" duplicado no claude.ai; decidir se reticências também somem das legendas.
+### Base do repositório
+- [x] Remotion configurado e vídeo de teste removido
+- [x] Repositório renomeado para `cf-studio` (remoto, ambiente e script de preparação ajustados)
+- [x] Repositório reorganizado como "master": design systems independentes, `tecnicas/`, `producoes/`, `CLAUDE.md` com as regras do dono
 
-## Feitas
+### Design system CFDesigner
+- [x] Tokens, componentes, logos, fotos e brand book (vindos do artefato do claude.ai)
+- [x] Legendas: dia a dia (Montserrat, contorno fino, sem tarja) e frase de efeito (Título de cinema), **sem ponto final**
+- [x] 10 efeitos de movimento (terceiro de nome, contador, câmera, clarão, cortina, granulado...) e fecho discreto com o logo
+- [x] Barras de REC/timecode desligadas por padrão
 
-- Design system `certi`, etapa 1: cores do logo, Nunito Sans, logo, componentes base, brand book e ficha (aprovada).
-- Repositório renomeado para `cf-studio`: remoto local atualizado, ambiente renomeado para `cf-studio` e script de preparação reescrito para achar o projeto pelo conteúdo (não depende mais do nome da pasta).
-- Remotion + repositório configurados; vídeo de teste removido.
-- Design system CFDesigner (tokens, componentes, brand book).
-- Whisper (faster-whisper, CPU) e transcrição para legendas.
-- Legendas do CFDesigner (dia a dia + frase de efeito), sem ponto final.
-- Efeitos de movimento do CFDesigner, inspirados no HyperFrames (que não foi instalado).
-- Reorganização como repositório master (design systems independentes, `tecnicas/`, `producoes/`, `CLAUDE.md`).
+### Ferramentas e skills
+- [x] Whisper instalado (transcrição em português, só CPU) e script de transcrição
+- [x] Skills: `producao-de-video`, `design-systems`, `criar-design-system`, `legendas`, `whisper`
+- [x] HyperFrames avaliado: não instalado (conflita com o Remotion); virou inspiração para os efeitos
+
+### Design system CERTI
+- [x] Etapa 1 aprovada: cores medidas do logo, Nunito Sans, logo com fundo transparente, componentes base, brand book e ficha
+- [x] Decisões do dono: texto branco sobre as cores, Nunito Sans em tudo, cantos e sombras opção B
+
+## Próximos passos
+
+### CERTI: o que depende do dono
+- [ ] **[dono]** Mandar o **logo negativo (branco)** e o símbolo sozinho (sem eles o logo só funciona em fundo claro)
+- [ ] **[dono]** Mandar um **vídeo de tela do site** (~15 s, rolando e passando o mouse) para definir movimento e transições
+- [ ] **[dono]** (opcional) fotos e manual da marca
+
+### CERTI: o que o Claude faz depois
+- [ ] **[Claude]** Etapa 2: movimento e transições
+- [ ] **[Claude]** Etapa 3: 4 opções de legenda, simuladas em Reels, para o dono escolher
+- [ ] **[Claude]** Etapa 4: terceiro de nome, números e fecho
+- [ ] **[Claude]** Apresentações (slides) do CERTI: à parte, no claude.ai, reaproveitando cores e fontes
+
+### Testes que ainda não foram feitos
+- [ ] **[dono + Claude]** Legendas com um **vídeo real do dono**: fala real, música ao fundo, vídeo longo, horizontal, e descobrir como o arquivo chega até a sessão
+- [ ] **[Claude]** Provar o script de preparação numa **sessão nova** (Whisper e `npm ci` instalados sozinhos?)
+- [ ] **[Claude]** Confirmar com mais uma referência real o processo `criar-design-system` (já usado no CERTI com prints, sem vídeo)
+
+### Conferências rápidas
+- [ ] **[dono]** Conferir, nas configurações do ambiente `cf-studio` no claude.ai, se a lista de repositórios mostra `cf-studio` (pode mostrar o nome antigo; minhas ferramentas não editam essa lista)
+- [ ] **[dono]** Abrir as sessões novas no ambiente **`cf-studio`**, não no Default (só ele tem a rede liberada e o Whisper)
+
+### Skills da lista do dono
+- [ ] **[dono]** Trazer os nomes das próximas skills
+- [ ] **[Claude]** Para cada uma: achar, ver se é gratuita, ler antes de instalar, checar conflito com Remotion/design systems
+
+### Limpezas pequenas
+- [ ] **[dono]** Apagar no GitHub as branches antigas: `design-system-certi`, `previews-legenda`, `remover-video-teste` (o servidor recusou que eu apague)
+- [ ] **[dono]** Apagar o artefato "Design System" duplicado no claude.ai (não foi usado)
+- [ ] **[dono]** Decidir se os vídeos de exemplo do Root ficam ou saem
+- [ ] **[dono]** Decidir se as reticências ("...") também somem das legendas (hoje ficam)
+
+## Regras que valem para tudo
+Estão no `CLAUDE.md`: sem ponto final nas legendas, sem barras de REC, visual limpo e premium, aprovar escolhas de estilo antes de renderizar, nunca versionar vídeos.
