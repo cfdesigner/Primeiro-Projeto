@@ -60,7 +60,7 @@
 
 ### Limpezas pequenas
 
-- [ ] **[dono]** Apagar no GitHub as 8 branches antigas, todas já incorporadas ao `main` (o servidor recusa que eu apague): `certi-etapa2`, `certi-etapa3`, `certi-etapa4`, `certi-frases-efeito`, `design-system-certi`, `producao-certi-news`, `previews-legenda`, `remover-video-teste`
+- [ ] **[dono]** Apagar no GitHub as 8 branches antigas (o servidor recusa que eu apague). **7 estão 100% dentro do `main`** (verificado): `certi-etapa2`, `certi-etapa3`, `certi-etapa4`, `certi-frases-efeito`, `design-system-certi`, `producao-certi-news`, `remover-video-teste`. **`previews-legenda` NÃO está no `main`**: guarda só os rascunhos das opções de legenda do CFDesigner (as escolhas já foram implementadas); pode apagar se não quiser os rascunhos
 - [ ] **[dono]** Decidir se os vídeos de exemplo do Root ficam ou saem
 - [ ] **[dono]** Decidir se as reticências ("...") também somem das legendas (hoje ficam)
 
