@@ -35,11 +35,11 @@
 
 ## Próximos passos
 
-### Produção CERTI News (branch `producao-certi-news`)
+### Produção CERTI News (no `main`, em `producoes/certi-news/`)
 
-- [ ] **[dono]** Passar nome e cargo reais para o terceiro de nome (hoje simulado) e dizer se a apresentação precisa dele
-- [ ] **[dono]** Aprovar o vídeo; depois eu passo a branch para o `main`
+- [ ] **[dono]** Passar nome e cargo reais se quiser o terceiro de nome (hoje desligado; a apresentação provavelmente nem precisa)
 - [ ] **[dono]** Dizer se o número do CERTI (`Numero`) também deve entrar direto sobre a cena, sem escurecer
+- [ ] **[dono]** Dizer se a vírgula depois de "PESSOAL" ou o endereço `certi.org.br` do fecho incomodam (legendas não têm ponto final)
 
 ### CERTI: o que depende do dono
 
@@ -51,7 +51,7 @@
 
 ### Testes que ainda não foram feitos
 
-- [ ] **[dono + Claude]** Legendas com um **vídeo real do dono**: fala real, música ao fundo, vídeo longo, horizontal, e descobrir como o arquivo chega até a sessão
+- [ ] **[dono + Claude]** Legendas com mais vídeos reais: música ao fundo, vídeo longo e horizontal (o primeiro vídeo real, CERTI News, já foi feito: fala real, vertical, arquivo chegou por anexo)
 - [ ] **[Claude]** Provar o script de preparação numa **sessão nova** (Whisper e `npm ci` instalados sozinhos?)
 - [ ] **[Claude]** Confirmar com mais uma referência real o processo `criar-design-system` (já usado no CERTI com prints, sem vídeo)
 

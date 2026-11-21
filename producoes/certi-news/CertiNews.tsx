@@ -25,7 +25,8 @@ export const CERTI_NEWS_FRAMES = 366;
 export const CertiNews: React.FC<{
   tamanhoLegenda?: number;
   alturaLegenda?: number;
-}> = ({ tamanhoLegenda = 46, alturaLegenda = 0.24 }) => (
+  terceiroDeNome?: boolean;
+}> = ({ tamanhoLegenda = 46, alturaLegenda = 0.3, terceiroDeNome = false }) => (
   <AbsoluteFill style={{ background: "#000" }}>
     <FechoComTransicao from={FECHO_FROM}>
       <OffthreadVideo
@@ -38,14 +39,18 @@ export const CertiNews: React.FC<{
         tamanho={tamanhoLegenda}
         altura={alturaLegenda}
       />
-      {/* SIMULAÇÃO: nome e cargo ainda não informados pelo dono. */}
-      <Sequence from={15} durationInFrames={120}>
-        <TerceiroTech
-          name="Nome Sobrenome"
-          role="Apresentadora - CERTI"
-          durationInFrames={120}
-        />
-      </Sequence>
+      {terceiroDeNome ? (
+        <>
+          {/* SIMULAÇÃO: nome e cargo ainda não informados pelo dono. */}
+          <Sequence from={15} durationInFrames={120}>
+            <TerceiroTech
+              name="Nome Sobrenome"
+              role="Apresentadora - CERTI"
+              durationInFrames={120}
+            />
+          </Sequence>
+        </>
+      ) : null}
     </FechoComTransicao>
   </AbsoluteFill>
 );
