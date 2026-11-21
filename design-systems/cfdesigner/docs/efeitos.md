@@ -13,7 +13,7 @@ Componentes em `efeitos/`, importados de `design-systems/cfdesigner`. Todos usam
 | `WipeReveal` | Revela o conteúdo com uma cortina reta. | `direction`, `from`, `durationInFrames` |
 | `BlurIn` | Entrada suave: sai do desfoque, sobe e ganha opacidade. | `from`, `durationInFrames`, `blur`, `y` |
 | `FilmGrain` | Granulado de filme animado (muda a cada quadro), 7% por padrão. Não usar sobre texto pequeno. | `opacity` |
-| `LogoOutro` | Fecho: logo metálico empilhado sobre void + assinatura em Bebas. | `tagline`, `durationInFrames` |
+| `LogoOutro` | Fecho: logo metálico empilhado sobre void. A assinatura embaixo é de propósito bem discreta (pequena, cinza, só um fade): o logo é o destaque. | `tagline`, `durationInFrames` |
 
 ## Regras de uso
 

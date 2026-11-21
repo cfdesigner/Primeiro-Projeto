@@ -19,7 +19,7 @@ export type LogoOutroProps = {
 
 const c = colors.cinema;
 
-/** Fecho do vídeo: logo metálico sobre void, assinatura em Bebas. Inspirado em "logo-outro". */
+/** Fecho do vídeo: logo metálico sobre void; a assinatura é pequena e suave (o logo é o destaque). Inspirado em "logo-outro". */
 export const LogoOutro: React.FC<LogoOutroProps> = ({
   tagline = "I turn seconds into cinematic stories",
   durationInFrames,
@@ -32,7 +32,7 @@ export const LogoOutro: React.FC<LogoOutroProps> = ({
     ...clamp,
     easing: outExpo,
   });
-  const textP = interpolate(f, [fps * 0.5, fps * 1.1], [0, 1], {
+  const textP = interpolate(f, [fps * 0.8, fps * 1.5], [0, 1], {
     ...clamp,
     easing: outExpo,
   });
@@ -47,7 +47,7 @@ export const LogoOutro: React.FC<LogoOutroProps> = ({
         opacity: out,
       }}
     >
-      <div style={{ display: "grid", justifyItems: "center", gap: 48 * k }}>
+      <div style={{ display: "grid", justifyItems: "center", gap: 56 * k }}>
         <div
           style={{ opacity: logoP, transform: `scale(${0.94 + 0.06 * logoP})` }}
         >
@@ -55,16 +55,16 @@ export const LogoOutro: React.FC<LogoOutroProps> = ({
         </div>
         <div
           style={{
-            opacity: textP,
-            transform: `translateY(${(1 - textP) * 16 * k}px)`,
-            fontFamily: fontFamilies.display,
-            fontSize: 64 * k,
-            letterSpacing: "0.04em",
+            opacity: textP * 0.8,
+            fontFamily: fontFamilies.heading,
+            fontWeight: 600,
+            fontSize: 22 * k,
+            letterSpacing: "0.26em",
             textTransform: "uppercase",
-            color: c.ink,
+            color: c.inkMuted,
             textAlign: "center",
-            maxWidth: 900 * k,
-            lineHeight: 1,
+            maxWidth: 800 * k,
+            lineHeight: 1.5,
           }}
         >
           {tagline}
