@@ -23,13 +23,13 @@
 ### Design system CERTI
 - [x] Etapa 1 aprovada: cores medidas do logo, Nunito Sans, logo com fundo transparente, componentes base, brand book e ficha
 - [x] Decisões do dono: texto branco sobre as cores, Nunito Sans em tudo, cantos e sombras opção B
+- [x] Logos: vertical (colorido e negativo) fornecidos; horizontal negativo e símbolo derivados dos arquivos do dono
 
 ## Próximos passos
 
 ### CERTI: o que depende do dono
-- [ ] **[dono]** Mandar o **logo negativo (branco)** e o símbolo sozinho (sem eles o logo só funciona em fundo claro)
 - [ ] **[dono]** Mandar um **vídeo de tela do site** (~15 s, rolando e passando o mouse) para definir movimento e transições
-- [ ] **[dono]** (opcional) fotos e manual da marca
+- [ ] **[dono]** (opcional) fotos, manual da marca e, se existirem, os arquivos oficiais do horizontal negativo e do símbolo (hoje derivados por mim)
 
 ### CERTI: o que o Claude faz depois
 - [ ] **[Claude]** Etapa 2: movimento e transições

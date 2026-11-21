@@ -24,7 +24,7 @@ import {
 
 ## Referências de origem
 
-- Logo (arquivo fornecido): cores do símbolo medidas por pixel.
+- Logos fornecidos pelo dono (horizontal e vertical, colorido e negativo): cores do símbolo medidas por pixel.
 - 5 prints do site certi.org.br: paleta de interface, tipografia, componentes.
 - Fonte indicada pelo dono: Nunito Sans, todos os pesos.
 - O site em si não pôde ser lido (bloqueado na rede).
@@ -51,7 +51,7 @@ import {
 
 ## Fecho
 
-**A definir** (etapa 4). Precisa da versão negativa (branca) do logo para fundo escuro, ou usar fundo claro.
+**A definir** (etapa 4). O logo negativo (todo branco) já existe para fundos escuros e azuis.
 
 ## Imagem e vídeo
 
@@ -60,7 +60,7 @@ Fotos claras e reais, sem filtros coloridos (a confirmar com fotos fornecidas).
 ## Proibido neste design system (proposto)
 
 - Logo recolorido, distorcido ou recriado.
-- Logo azul sobre fundo escuro.
+- Logo colorido sobre fundo escuro (usar o negativo).
 - Texto pequeno sobre verde, laranja ou azul-claro.
 - Mais de uma cor de categoria como preenchimento grande na mesma peça.
 

@@ -92,19 +92,69 @@ export const CertiPrancha: React.FC = () => (
       }}
     >
       <div>
-        <div style={label}>Logo (arquivo fornecido)</div>
+        <div style={label}>
+          Logo · colorido (fundo claro) e negativo (fundo escuro)
+        </div>
         <div
           style={{
-            marginTop: 10,
-            background: colors.white,
-            border: `1px solid ${colors.line}`,
-            borderRadius: 8,
-            padding: 32,
             display: "grid",
-            placeItems: "center",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 10,
+            marginTop: 10,
           }}
         >
-          <Logo height={120} />
+          <div
+            style={{
+              background: colors.white,
+              border: `1px solid ${colors.line}`,
+              borderRadius: 8,
+              height: 120,
+              display: "grid",
+              placeItems: "center",
+            }}
+          >
+            <Logo height={62} />
+          </div>
+          <div
+            style={{
+              background: colors.deep,
+              borderRadius: 8,
+              height: 120,
+              display: "grid",
+              placeItems: "center",
+            }}
+          >
+            <Logo height={62} finish="negative" />
+          </div>
+          <div
+            style={{
+              background: colors.white,
+              border: `1px solid ${colors.line}`,
+              borderRadius: 8,
+              height: 250,
+              display: "flex",
+              gap: 22,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Logo layout="vertical" height={150} />
+            <Logo layout="symbol" height={64} />
+          </div>
+          <div
+            style={{
+              background: colors.deep,
+              borderRadius: 8,
+              height: 250,
+              display: "flex",
+              gap: 22,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Logo layout="vertical" height={150} finish="negative" />
+            <Logo layout="symbol" height={64} finish="negative" />
+          </div>
         </div>
       </div>
       <div>

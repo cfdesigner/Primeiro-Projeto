@@ -6,10 +6,21 @@
 
 ## Logo
 
-- Arquivo original fornecido: `assets/logos/certi-logo-original.png` (fundo branco). Versão com fundo transparente, gerada do original sem alterar o desenho: `assets/logos/certi-logo.png`. Use pelo componente `Logo`.
+Arquivos em `assets/logos/`, todos com fundo transparente. Use pelo componente `Logo` (`layout`: horizontal, vertical ou symbol; `finish`: color ou negative).
+
+| Variante                          | Arquivo                                           | Origem                                                                         |
+| --------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Vertical colorido                 | `certi-vertical.png`                              | fornecido pelo dono                                                            |
+| Vertical negativo (todo branco)   | `certi-vertical-negativo.png`                     | fornecido pelo dono                                                            |
+| Horizontal colorido               | `certi-horizontal.png`                            | fornecido pelo dono (fundo branco removido, desenho intacto)                   |
+| Horizontal negativo (todo branco) | `certi-horizontal-negativo.png`                   | **derivado**: mesmo contorno do horizontal, todo branco, como o dono descreveu |
+| Símbolo colorido / negativo       | `certi-simbolo.png`, `certi-simbolo-negativo.png` | **derivados**: recorte do símbolo no topo do vertical                          |
+
+Os arquivos exatamente como chegaram estão em `assets/logos/originais/`.
+
 - O símbolo são anéis segmentados nas cores da marca; "certi" em azul. **Nunca recolorir, distorcer ou recriar.**
-- **Só sobre fundo claro.** O nome é azul e some em fundo escuro. Falta a **versão negativa (branca)** oficial para vídeos com fundo escuro.
-- Faltam: versão só do símbolo e versões para fundo escuro.
+- **Colorido só sobre fundo claro.** O nome é azul e some em fundo escuro. **Sobre fundo escuro ou azul, use o negativo** (todo branco).
+- Se existirem os arquivos oficiais do horizontal negativo e do símbolo, eles substituem os derivados.
 
 ## Cor
 
