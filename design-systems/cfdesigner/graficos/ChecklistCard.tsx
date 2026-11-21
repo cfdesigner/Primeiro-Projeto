@@ -29,6 +29,8 @@ export type ChecklistCardProps = {
   topo?: number;
   /** Fade de saída em ms (padrão 250). */
   saidaMs?: number;
+  /** Tamanho do texto dos itens em px na base de 1080 (padrão 74). Com 5 itens use ~56: eles passam para uma segunda linha. */
+  tamanho?: number;
 };
 
 const Caixa: React.FC<{ estado: "vazio" | "x" | "check"; k: number }> = ({
@@ -86,6 +88,7 @@ export const ChecklistCard: React.FC<ChecklistCardProps> = ({
   durationInFrames,
   topo = 340,
   saidaMs = 250,
+  tamanho = 74,
 }) => {
   const f = useCurrentFrame();
   const { fps, width } = useVideoConfig();
@@ -124,7 +127,8 @@ export const ChecklistCard: React.FC<ChecklistCardProps> = ({
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 44 * k,
+            gap: `${14 * k}px ${40 * k}px`,
+            flexWrap: "wrap",
             marginTop: 22 * k,
           }}
         >
@@ -136,11 +140,11 @@ export const ChecklistCard: React.FC<ChecklistCardProps> = ({
                 key={it.texto}
                 style={{ display: "flex", alignItems: "center", gap: 14 * k }}
               >
-                <Caixa estado={estado} k={k} />
+                <Caixa estado={estado} k={(k * tamanho) / 74} />
                 <div
                   style={{
                     fontFamily: fontFamilies.display,
-                    fontSize: 74 * k,
+                    fontSize: tamanho * k,
                     lineHeight: 1,
                     letterSpacing: "0.01em",
                     textTransform: "uppercase",

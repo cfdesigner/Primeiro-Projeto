@@ -1,4 +1,4 @@
-// PRODUÇÃO: C02, teste de legendas com o CFDesigner. O vídeo fica em public/entrada/ (ignorada pelo Git).
+// PRODUÇÃO: C02, legendas + gráficos + b-roll com o CFDesigner. Vídeos em public/entrada/ (ignorada pelo Git).
 import React from "react";
 import {
   AbsoluteFill,
@@ -10,9 +10,13 @@ import {
   useCurrentFrame,
 } from "remotion";
 import {
+  ChecklistCard,
   FechoSimples,
+  FlashCut,
   LightLeak,
   Legendas,
+  PalavraRiscada,
+  WipeReveal,
   type Caption,
   type PunchLine,
 } from "../../design-systems/cfdesigner";
@@ -26,33 +30,58 @@ const punchLines: PunchLine[] = [
   { startMs: 17500, endMs: 18840, keyword: "experiência" },
 ];
 
-/** Vídeo: 19,5 s (585 quadros). Fecho com o logo: +2,5 s. */
+const f = (s: number) => Math.round(s * 30);
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+
+/** Vídeo: 19,5 s. Fecho com o logo: +2,5 s. */
 const VIDEO_FRAMES = 585;
 const FECHO_FRAMES = 75;
 export const C02_FRAMES = VIDEO_FRAMES + FECHO_FRAMES;
-
-/** Transição para o fecho: o vídeo avança (zoom), desfoca e escurece enquanto um vazamento de luz âmbar atravessa; o logo sai do desfoque. */
 const TRANSICAO = 27;
-const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+
+const Broll: React.FC<{ arquivo: string; startFrom?: number }> = ({
+  arquivo,
+  startFrom = 0,
+}) => (
+  <AbsoluteFill>
+    <OffthreadVideo
+      src={staticFile(arquivo)}
+      muted
+      startFrom={startFrom}
+      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+    />
+  </AbsoluteFill>
+);
 
 const Corpo: React.FC = () => {
-  const f = useCurrentFrame();
-  const t = VIDEO_FRAMES - TRANSICAO;
-  const p = interpolate(f, [t, VIDEO_FRAMES], [0, 1], {
+  const fr = useCurrentFrame();
+  // transição final: zoom + desfoque + escurece
+  const p = interpolate(fr, [VIDEO_FRAMES - TRANSICAO, VIDEO_FRAMES], [0, 1], {
     ...clamp,
     easing: Easing.in(Easing.cubic),
   });
   const escuro = interpolate(
-    f,
+    fr,
     [VIDEO_FRAMES - 12, VIDEO_FRAMES],
     [1, 0],
     clamp,
   );
+  // zoom de impacto em "câmera" (4,1 a 5,4 s)
+  const punch = interpolate(
+    fr,
+    [f(4.1), f(4.1) + 10, f(5.2), f(5.5)],
+    [0, 1, 1, 0],
+    {
+      ...clamp,
+      easing: Easing.out(Easing.cubic),
+    },
+  );
+  const escala = (1 + p * 0.16) * (1 + punch * 0.07);
   return (
     <AbsoluteFill
       style={{
         opacity: escuro,
-        transform: `scale(${1 + p * 0.16})`,
+        transform: `scale(${escala})`,
         filter: `blur(${p * 16}px)`,
       }}
     >
@@ -60,7 +89,53 @@ const Corpo: React.FC = () => {
         src={staticFile("entrada/C02.mp4")}
         style={{ width: "100%", height: "100%", objectFit: "cover" }}
       />
+      {/* B-roll 1: "uma imagem" (imagem sem vida) */}
+      <Sequence from={f(0.9)} durationInFrames={f(1.4)}>
+        <Broll arquivo="entrada/broll/b1.mp4" />
+      </Sequence>
+      {/* B-roll 2: "produção gigantesca" */}
+      <Sequence from={f(5.5)} durationInFrames={f(1.3)}>
+        <Broll arquivo="entrada/broll/b2.mp4" />
+      </Sequence>
+      <Sequence from={f(5.5) - 2} durationInFrames={14}>
+        <FlashCut at={2} durationInFrames={12} />
+      </Sequence>
+      {/* B-roll 3: "transformar": a mesma cena sem tratamento e com cor e luz, revelada por cortina */}
+      <Sequence from={f(11.3)} durationInFrames={f(2.4)}>
+        <WipeReveal direction="right" durationInFrames={14}>
+          <Broll arquivo="entrada/broll/b3.mp4" startFrom={30} />
+        </WipeReveal>
+      </Sequence>
       <Legendas captions={captions} punchLines={punchLines} />
+      {/* Checklist: "direção, composição, cor, iluminação e som" (no topo, acima da cabeça) */}
+      <Sequence from={f(7.3)} durationInFrames={f(3.6)}>
+        <ChecklistCard
+          titulo="O que muda a cena"
+          durationInFrames={f(3.6)}
+          topo={70}
+          tamanho={56}
+          itens={[
+            { texto: "Direção", marcaEmMs: 300 },
+            { texto: "Composição", marcaEmMs: 1000 },
+            { texto: "Cor", marcaEmMs: 1820 },
+            { texto: "Iluminação", marcaEmMs: 2220 },
+            { texto: "Som", marcaEmMs: 2900 },
+          ]}
+        />
+      </Sequence>
+      {/* Vazamento de luz na virada: "E é justamente aí" */}
+      <Sequence from={f(13.9)} durationInFrames={36}>
+        <LightLeak durationInFrames={36} from="left" />
+      </Sequence>
+      {/* Palavra riscada: "simplesmente editar" */}
+      <Sequence from={f(15.8)} durationInFrames={f(1.1)}>
+        <PalavraRiscada
+          chamada="Simplesmente"
+          palavra="Editar"
+          topoPct={3.2}
+          escala={0.72}
+        />
+      </Sequence>
     </AbsoluteFill>
   );
 };

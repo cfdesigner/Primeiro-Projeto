@@ -14,6 +14,8 @@ export type PalavraRiscadaProps = {
   riscada?: boolean;
   /** Distância do topo da chamada, em % da altura (padrão 61,5, como no vídeo de referência). */
   topoPct?: number;
+  /** Escala do tamanho da chamada e da palavra (padrão 1). Use ~0.75 para caber acima da cabeça de quem fala. */
+  escala?: number;
 };
 
 /**
@@ -25,12 +27,13 @@ export const PalavraRiscada: React.FC<PalavraRiscadaProps> = ({
   palavra,
   riscada = true,
   topoPct = 61.5,
+  escala = 1,
 }) => {
   const { width, height } = useVideoConfig();
-  const k = width / 1080;
+  const k = (width / 1080) * escala;
   const tamanho = Math.min(
     290 * k,
-    (width * 0.7) / (Math.max(palavra.length, 1) * 0.5),
+    ((width * 0.7) / (Math.max(palavra.length, 1) * 0.5)) * escala,
   );
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
