@@ -24,7 +24,7 @@ Roda o modelo Whisper da OpenAI (open source, MIT) via `faster-whisper`, **só n
 
 ## Preparação (só se `/opt/whisper-venv` não existir)
 
-O ambiente `primeiro-projeto` normalmente instala isso sozinho ao criar a sessão. Se não existir:
+O ambiente `cf-studio` normalmente instala isso sozinho ao criar a sessão. Se não existir:
 
 ```bash
 python3 -m venv /opt/whisper-venv
