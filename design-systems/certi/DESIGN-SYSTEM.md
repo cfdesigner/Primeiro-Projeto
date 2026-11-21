@@ -1,6 +1,6 @@
 # CERTI: ficha de produção
 
-> **Status: em construção.** Etapas 1, 2 e 3 (cores, tipografia, logo, componentes, movimento, transições, terceiro de nome e legendas) aprovadas. Faltam números e fecho.
+> **Status: em construção.** Etapas 1 a 3 (cores, tipografia, logo, componentes, movimento, transições, terceiro de nome, legendas e frase de efeito) aprovadas. Faltam números e fecho.
 
 **Identidade em uma linha:** institucional, claro e tecnológico; azul da marca com acentos nas cores do símbolo.
 
@@ -78,9 +78,11 @@ Vídeo de teste (com trechos do institucional): `Certi-Transicoes-Teste`.
 
 **Ponto de atenção:** sem caixa, a legenda perde força sobre imagens muito claras (jaleco branco, paredes claras). O contorno e o degradê ajudam, mas se algum plano ficar difícil de ler, conversar antes de trocar de estilo. Alternativas já mostradas ao dono: B (tarja azul), C (bloco de destaque), D (barra tech).
 
-**Frases de efeito:** o CERTI ainda não tem um estilo próprio para isso (o CFDesigner tem o "Título de cinema"). A definir, se o dono quiser.
+**Frase de efeito, estilo C "leve e pesado" (escolha do dono):** o quadro escurece em azul-profundo (fade de 200 ms), o resto da frase vai em Nunito Sans **300** em caixa alta e a **palavra-chave em 900**, grande, com um fio fino branco embaixo. Corte seco na entrada e na saída. A palavra-chave é um número, se houver; senão a mais longa (ou a que o dono indicar). Tamanho ajustado para a palavra caber na largura. Sem ponto final; `?` e `!` ficam.
 
-Fluxo: skill `legendas` (transcreve com Whisper, agrupa, renderiza). Exemplo: `Certi-Legendas-Exemplo` (fala sintética transcrita pelo Whisper).
+Fluxo: o script `scripts/frases-de-efeito.mjs` **sugere** as frases (curtas, cercadas de pausa) e o dono **aprova** antes de renderizar; as aprovadas entram em `punchLines` do componente `Legendas`. No teste, achou exatamente "ideias que viram resultado" numa fala com pausas.
+
+Fluxo: skill `legendas` (transcreve com Whisper, agrupa, renderiza). Exemplo: `Certi-Legendas-Exemplo` (fala sintética com pausas, transcrita pelo Whisper, com uma frase de efeito).
 
 ## Terceiro de nome
 

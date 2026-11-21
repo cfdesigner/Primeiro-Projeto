@@ -1,7 +1,6 @@
 import React from "react";
 import { Composition, Still } from "remotion";
 import { ExemploLegendas } from "./exemplo/ExemploLegendas";
-import { FrasesEfeitoOpcoes } from "./exemplo/FrasesEfeitoOpcoes";
 import { MovimentoMedido } from "./exemplo/MovimentoMedido";
 import { MovimentoTeste } from "./exemplo/MovimentoTeste";
 import { TransicoesTeste } from "./exemplo/TransicoesTeste";
@@ -41,17 +40,10 @@ export const CertiComposicoes: React.FC = () => (
     <Composition
       id="Certi-Legendas-Exemplo"
       component={ExemploLegendas}
-      durationInFrames={165}
+      durationInFrames={285}
       fps={30}
       width={1080}
       height={1920}
-    />
-    {/* Prévia temporária para decisão do dono (apagar depois de decidir) */}
-    <Still
-      id="Certi-Frases-Opcoes"
-      component={FrasesEfeitoOpcoes}
-      width={2900}
-      height={1300}
     />
   </>
 );
