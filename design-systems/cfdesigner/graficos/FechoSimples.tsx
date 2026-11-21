@@ -1,6 +1,7 @@
 import React from "react";
 import {
   AbsoluteFill,
+  Easing,
   interpolate,
   useCurrentFrame,
   useVideoConfig,
@@ -13,6 +14,8 @@ export type FechoSimplesProps = {
   durationInFrames: number;
   /** Altura do logo em px na base de 1080 (padrão 96: o logo ocupa ~36% da largura, como no vídeo de referência). */
   logoHeight?: number;
+  /** Desfoque inicial do logo em px (0 = só fade). Com 18, o logo sai do desfoque ao entrar. */
+  desfoque?: number;
 };
 
 /**
@@ -23,6 +26,7 @@ export type FechoSimplesProps = {
 export const FechoSimples: React.FC<FechoSimplesProps> = ({
   durationInFrames,
   logoHeight = 96,
+  desfoque = 0,
 }) => {
   const f = useCurrentFrame();
   const { fps, width } = useVideoConfig();
@@ -30,6 +34,10 @@ export const FechoSimples: React.FC<FechoSimplesProps> = ({
   const ms = (f / fps) * 1000;
   const endMs = (durationInFrames / fps) * 1000;
   const o = interpolate(ms, [0, 400, endMs - 400, endMs], [0, 1, 1, 0], clamp);
+  const p = interpolate(ms, [0, 700], [1, 0], {
+    ...clamp,
+    easing: Easing.out(Easing.cubic),
+  });
   return (
     <AbsoluteFill
       style={{
@@ -38,7 +46,7 @@ export const FechoSimples: React.FC<FechoSimplesProps> = ({
         alignItems: "center",
       }}
     >
-      <div style={{ opacity: o }}>
+      <div style={{ opacity: o, filter: `blur(${p * desfoque}px)` }}>
         <Logo layout="horizontal" finish="white" height={logoHeight * k} />
       </div>
     </AbsoluteFill>
