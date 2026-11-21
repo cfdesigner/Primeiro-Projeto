@@ -5,7 +5,7 @@ Cada design system é **independente e completo**: tem o seu jeito de fazer core
 | Pasta | Marca / estilo | Ficha de produção |
 | --- | --- | --- |
 | `cfdesigner/` | CFDesigner: cinema escuro com ponto de luz dourada | `cfdesigner/DESIGN-SYSTEM.md` |
-| `certi/` | CERTI: institucional, claro e tecnológico (em construção: etapa 1 aprovada) | `certi/DESIGN-SYSTEM.md` |
+| `certi/` | CERTI: institucional, claro e tecnológico (em construção: etapas 1 e 2 aprovadas) | `certi/DESIGN-SYSTEM.md` |
 
 ## O que cada pasta tem
 

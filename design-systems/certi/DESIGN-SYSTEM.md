@@ -1,6 +1,6 @@
 # CERTI: ficha de produção
 
-> **Status: em construção.** Etapa 1 aprovada. **Etapa 2 (movimento, transições e terceiro de nome) pronta para aprovação.** Faltam legendas, números e fecho.
+> **Status: em construção.** Etapas 1 e 2 (cores, tipografia, logo, componentes, movimento, transições e terceiro de nome) aprovadas. Faltam legendas, números e fecho.
 
 **Identidade em uma linha:** institucional, claro e tecnológico; azul da marca com acentos nas cores do símbolo.
 
