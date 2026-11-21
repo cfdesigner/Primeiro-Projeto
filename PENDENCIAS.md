@@ -51,7 +51,7 @@
 
 ### Conferências rápidas
 
-- [ ] **[dono]** Abrir as sessões novas no ambiente **`cf-studio`**, não no Default (só ele tem a rede liberada e o Whisper)
+- [ ] **[dono]** Sempre abrir sessões novas no ambiente **`cf-studio`** (o dono já abriu uma e deu certo; manter o hábito)
 
 ### Skills da lista do dono
 
@@ -61,7 +61,6 @@
 ### Limpezas pequenas
 
 - [ ] **[dono]** Apagar no GitHub as 8 branches antigas, todas já incorporadas ao `main` (o servidor recusa que eu apague): `certi-etapa2`, `certi-etapa3`, `certi-etapa4`, `certi-frases-efeito`, `design-system-certi`, `producao-certi-news`, `previews-legenda`, `remover-video-teste`
-- [ ] **[dono]** Apagar o artefato "Design System" duplicado no claude.ai (não foi usado)
 - [ ] **[dono]** Decidir se os vídeos de exemplo do Root ficam ou saem
 - [ ] **[dono]** Decidir se as reticências ("...") também somem das legendas (hoje ficam)
 
