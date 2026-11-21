@@ -1,6 +1,6 @@
 # CERTI: ficha de produção
 
-> **Status: em construção.** Etapa 1 (cores, tipografia, logo e componentes base) pronta para aprovação. As demais etapas aguardam referência de movimento (vídeo de tela) e as aprovações do dono.
+> **Status: em construção.** Etapa 1 (cores, tipografia, logo, componentes base) **aprovada pelo dono**. As demais etapas aguardam referência de movimento (vídeo de tela) e as aprovações do dono.
 
 **Identidade em uma linha:** institucional, claro e tecnológico; azul da marca com acentos nas cores do símbolo.
 
@@ -15,6 +15,12 @@ import {
   colors,
 } from "../design-systems/certi";
 ```
+
+## Decisões do dono (etapa 1)
+
+1. **Cor do texto sobre verde, laranja e azul-claro: branco** (como o site). Contraste baixo: usar texto grande e em negrito (700+) nesses fundos.
+2. **Fonte: Nunito Sans em tudo,** inclusive no título leve de seção (peso 300).
+3. **Cantos e sombras: opção B** (4 px botões/etiquetas, 8 px cards e imagens, sombra suave azulada).
 
 ## Referências de origem
 
@@ -33,7 +39,7 @@ import {
 
 ## Legendas
 
-**A definir** (etapa 3, com 4 opções em imagem para o dono escolher). Restrições já conhecidas: sem ponto final (regra do dono); texto branco só sobre azul/azul-profundo/marinho, texto escuro sobre `sky`, `orange` e `green`.
+**A definir** (etapa 3, com 4 opções em imagem simuladas em Reels). Restrições já conhecidas: sem ponto final (regra do dono); texto branco, e sobre `sky`, `orange` e `green` só grande e em negrito.
 
 ## Terceiro de nome
 
@@ -55,7 +61,7 @@ Fotos claras e reais, sem filtros coloridos (a confirmar com fotos fornecidas).
 
 - Logo recolorido, distorcido ou recriado.
 - Logo azul sobre fundo escuro.
-- Texto branco sobre verde, laranja ou azul-claro.
+- Texto pequeno sobre verde, laranja ou azul-claro.
 - Mais de uma cor de categoria como preenchimento grande na mesma peça.
 
 ## Exemplos que renderizam

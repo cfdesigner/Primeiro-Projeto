@@ -1,5 +1,5 @@
 // Tokens do design system CERTI. Origem: símbolo do logo (cores da marca, medidas por pixel) e prints do site.
-// Valores marcados "estimado" vêm de prints de baixa resolução: confirmar com o manual da marca.
+// Decisões do dono (etapa 1): texto branco sobre as cores, fonte Nunito Sans, cantos e sombras da opção B.
 
 export const colors = {
   // Marca: as cores do símbolo do logo
@@ -24,15 +24,19 @@ export const colors = {
 export const accents = ["primary", "green", "orange", "pink", "sky"] as const;
 export type Accent = (typeof accents)[number];
 
-/** Texto sobre cada cor de preenchimento (contraste WCAG medido). */
+/**
+ * Texto sobre cada cor de preenchimento. DECISÃO DO DONO: branco em todas, como no site.
+ * Atenção à legibilidade (contraste do branco): primary 7,6:1, deep 9,3:1, navy 14,3:1, pink 4,3:1,
+ * sky 2,6:1, orange 2,6:1, green 2,1:1. Sobre sky, orange e green use texto grande e em negrito (700+).
+ */
 export const onColor = {
-  primary: colors.white, // 7,6:1
-  deep: colors.white, // 9,3:1
-  navy: colors.white, // 14,3:1
-  pink: colors.white, // 4,3:1: só texto grande/negrito (18px+ bold)
-  sky: colors.ink, // 4,3:1 (branco daria só 2,6:1)
-  orange: colors.ink, // 4,3:1 (branco daria só 2,6:1)
-  green: colors.ink, // 5,3:1 (branco daria só 2,1:1)
+  primary: colors.white,
+  deep: colors.white,
+  navy: colors.white,
+  pink: colors.white,
+  sky: colors.white,
+  orange: colors.white,
+  green: colors.white,
 } as const;
 
 export const fontFamilies = {
@@ -100,10 +104,10 @@ export const space = {
   s24: 96,
 } as const;
 
-/** Estimado dos prints. */
+/** Aprovado pelo dono (opção B): 4 px em botões/etiquetas, 8 px em cards e imagens. */
 export const radius = { none: 0, sm: 4, md: 8, pill: 999 } as const;
 
-/** Estimado dos prints: sombra suave e azulada nos cards. */
+/** Aprovado pelo dono (opção B): sombra suave e azulada nos cards. */
 export const shadow = { card: "0 8px 24px rgba(0,87,141,0.10)" } as const;
 
 /** Degradê de destaque visto no site (item ativo, banners). */

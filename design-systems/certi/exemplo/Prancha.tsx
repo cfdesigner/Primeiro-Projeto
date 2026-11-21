@@ -130,14 +130,14 @@ export const CertiPrancha: React.FC = () => (
         </div>
       </div>
       <div>
-        <div style={label}>Texto sobre cada cor (contraste)</div>
+        <div style={label}>Texto branco sobre as cores (decisão do dono)</div>
         <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
           {[
             ["primary", colors.primary, colors.white],
             ["deep", colors.deep, colors.white],
-            ["sky", colors.sky, colors.ink],
-            ["orange", colors.orange, colors.ink],
-            ["green", colors.green, colors.ink],
+            ["sky", colors.sky, colors.white],
+            ["orange", colors.orange, colors.white],
+            ["green", colors.green, colors.white],
           ].map(([n, bg, fg]) => (
             <div
               key={n}

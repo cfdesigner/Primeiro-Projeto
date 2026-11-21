@@ -1,6 +1,6 @@
-# CERTI: brand book (rascunho da etapa 1)
+# CERTI: brand book
 
-> Extraído de: o **logo** fornecido pelo dono (cores medidas por pixel) e **5 prints do site** certi.org.br (home, blog, institucional, insights). Itens marcados _estimado_ vêm de prints de baixa resolução: confirmar com o manual da marca, se existir. Ainda não há referência de movimento (vídeo de tela).
+> Extraído de: o **logo** fornecido pelo dono (cores medidas por pixel) e **5 prints do site** certi.org.br (home, blog, institucional, insights). Etapa 1 aprovada pelo dono. Ainda não há referência de movimento (vídeo de tela).
 
 **Essência observada:** institucional, claro e tecnológico. Fundo branco ou azul profundo, títulos azuis, e as cores do símbolo usadas como acentos de categoria. Passa confiança e organização, sem exagero decorativo.
 
@@ -27,11 +27,11 @@ Apoio de interface (medido no site): `deep #024a77` (painel escuro do hero), `na
 
 **As 5 cores de categoria** (`primary`, `green`, `orange`, `pink`, `sky`) se alternam em ciclo nas etiquetas de competências, sempre como **contorno de 2 px**, nunca como preenchimento grande.
 
-**Texto sobre cor (contraste medido):** branco só sobre `primary` (7,6:1), `deep` (9,3:1) e `navy` (14,3:1); sobre `pink` só texto grande/negrito (4,3:1). Sobre `sky`, `orange` e `green` o branco falha (2,1 a 2,6:1): usar texto escuro `ink` (4,3 a 5,3:1). _Isto difere do site, que usa branco nesses fundos: é uma proposta, a aprovar._
+**Texto sobre cor (decisão do dono): branco sobre todas as cores, como no site.** Nota de legibilidade, para vídeo: o contraste do branco é 7,6:1 sobre `primary`, 9,3:1 sobre `deep`, 14,3:1 sobre `navy`, 4,3:1 sobre `pink`, mas só 2,6:1 sobre `sky` e `orange` e 2,1:1 sobre `green`. Sobre essas três, use texto **grande e em negrito (700+)**, nunca texto pequeno.
 
 ## Tipografia
 
-**Nunito Sans**, em todos os pesos (200 a 900) e itálico, em tudo. Indicado pelo dono. Escala em `tokens.ts` (`textStyles`):
+**Nunito Sans**, em todos os pesos (200 a 900) e itálico, em tudo. Indicado pelo dono; **inclusive no título leve de seção** (decisão do dono, mesmo o site parecendo usar outra fonte ali). Escala em `tokens.ts` (`textStyles`):
 
 - `display` 300, azul: títulos leves de seção ("Competências").
 - `title` 700 em caixa alta: título de hero.
@@ -40,19 +40,17 @@ Apoio de interface (medido no site): `deep #024a77` (painel escuro do hero), `na
 - `label` 700 em caixa alta com espaçamento: menu, "LEIA MAIS".
 - `button` 700.
 
-_Observação:_ o título leve "Competências" no site parece uma fonte geométrica diferente da Nunito Sans. Aqui ele usa Nunito Sans 300. Dizer se deve ser outra.
-
 ## Assinaturas visuais (do site)
 
 - **Colchetes nos cantos** emoldurando a foto ou vídeo do hero (`HeroBanner`).
 - **Título leve com fio fino** que se afasta à direita (`SectionTitle`).
 - **Etiquetas com contorno** nas cores do símbolo (`CategoryChip`).
-- **Cards brancos** com borda fina, cantos de 8 px e sombra suave azulada (_estimado_).
-- Botões de cantos quase retos (4 px, _estimado_); degradê azul-claro `#28abe1 → #27cfe0` em itens ativos.
+- **Cards brancos** com borda fina, cantos de 8 px e sombra suave azulada.
+- Botões de cantos quase retos (4 px); degradê azul-claro `#28abe1 → #27cfe0` em itens ativos.
 
-## Forma e espaço (estimado)
+## Forma e espaço (decisão do dono: opção B)
 
-Raios: 4 px (botões, etiquetas), 8 px (cards, imagens), pílula (chips pequenos). Espaçamento em múltiplos de 4. Proporções de entrega: 16:9 (institucional), 9:16 (Reels), 1:1, 4:5.
+Raios: 4 px (botões, etiquetas), 8 px (cards, imagens). Sombra suave e azulada nos cards. Espaçamento em múltiplos de 4. Proporções de entrega: 16:9 (institucional), 9:16 (Reels), 1:1, 4:5.
 
 ## Imagem
 

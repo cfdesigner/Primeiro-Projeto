@@ -12,7 +12,7 @@ Cada design system é **independente e completo**: tem o seu próprio jeito de f
 | Nome | Pasta | Estilo |
 | --- | --- | --- |
 | CFDesigner | `design-systems/cfdesigner/` | Cinema escuro com um ponto de luz dourada; marca pessoal de Carlos Felipe. |
-| CERTI | `design-systems/certi/` | Institucional, claro e tecnológico, azul da marca com acentos nas cores do símbolo. **Em construção (etapa 1):** movimento, transições, legendas, terceiro, números e fecho ainda a definir; não improvisar, perguntar. |
+| CERTI | `design-systems/certi/` | Institucional, claro e tecnológico, azul da marca com acentos nas cores do símbolo. **Em construção (etapa 1 aprovada):** movimento, transições, legendas, terceiro, números e fecho ainda a definir; não improvisar, perguntar. |
 
 ## Como usar
 
