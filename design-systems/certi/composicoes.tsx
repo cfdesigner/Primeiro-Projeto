@@ -1,5 +1,6 @@
 import React from "react";
 import { Composition, Still } from "remotion";
+import { LegendasOpcoes } from "./exemplo/LegendasOpcoes";
 import { MovimentoMedido } from "./exemplo/MovimentoMedido";
 import { MovimentoTeste } from "./exemplo/MovimentoTeste";
 import { TransicoesTeste } from "./exemplo/TransicoesTeste";
@@ -35,6 +36,13 @@ export const CertiComposicoes: React.FC = () => (
       fps={30}
       width={1920}
       height={1080}
+    />
+    {/* Prévia temporária para decisão do dono (apagar depois de decidir) */}
+    <Still
+      id="Certi-Legendas-Opcoes"
+      component={LegendasOpcoes}
+      width={2900}
+      height={1300}
     />
   </>
 );
