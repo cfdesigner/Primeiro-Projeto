@@ -9,17 +9,19 @@ Leia `PENDENCIAS.md` no começo da sessão e **lembre o dono das pendências abe
 ## Estrutura
 
 - `design-systems/<nome>/`: cada design system é independente e traz o seu movimento, transições, legendas, terceiros, números e fecho. Índice e contrato em `design-systems/README.md`. Modelo em `design-systems/_modelo/`.
-- `tecnicas/`: só o que não tem marca (lógica de texto das legendas).
-- `scripts/`: ferramentas gerais (transcrição com Whisper, sugestão de frases de efeito).
+- `tecnicas/`: só o que não tem marca (lógica de texto das legendas; exemplo de transições com os pacotes oficiais em `tecnicas/transicoes/`).
+- `scripts/`: ferramentas gerais (transcrição com Whisper, sugestão de frases de efeito, **análise de vídeo bruto** `analisar-video.py`).
 - `producoes/<nome>/`: os vídeos de verdade, cada um usando UM design system. Registrados em `producoes/index.tsx`.
 - `src/Root.tsx`: registra as composições (exemplos de cada design system + produções).
-- `.claude/skills/`: `producao-de-video` (fluxo geral), `design-systems` (índice), `criar-design-system` (a partir de referências), `legendas`, `whisper`, e as skills do Remotion.
+- `.claude/skills/`: `plano-de-edicao` (**com vídeo bruto, antes de editar**), `producao-de-video` (fluxo geral), `design-systems` (índice), `criar-design-system` (a partir de referências), `legendas`, `whisper`, e as skills do Remotion.
 
 ## Regras do dono (valem para TODOS os design systems)
 
 - **Legenda nunca termina com ponto final.** Vírgula, `?` e `!` podem. Reticências ficam.
 - **Sem barras de REC, timecode ou fps** nos vídeos, a menos que ele peça.
 - **Limpo e premium.** O elemento principal manda; texto de apoio é pequeno, suave e discreto. Nunca "textão" nem texto chamativo sobrando. Na dúvida: menos texto, menor, mais suave.
+- **Vídeo bruto: primeiro o plano de edição** (skill `plano-de-edicao`), mostrar ao dono e esperar aprovação, depois editar.
+- **Light leak oficial (`@remotion/effects`) não usar:** instável sem GPU (testado).
 - **Frases de efeito e escolhas de estilo novas: mostrar e esperar a aprovação** antes de renderizar o vídeo final.
 - **Terceiro de nome (lower third): NÃO colocar, a menos que o dono peça no comando.** É raro nos vídeos dele. Se pedir, perguntar nome e cargo; nunca inventar.
 - **Salvar no `main`** (autorizado pelo dono, sem perguntar). Sessões novas podem começar numa branch própria (ex.: `claude/...`): ao concluir o trabalho, mesclar no `main` e dar push, senão ele fica fora do `main` e pode se perder. Ao mesclar, buscar antes o histórico (`git fetch --depth=10 origin main`).

@@ -52,6 +52,11 @@
 
 - [ ] **[dono]** Sempre abrir sessões novas no ambiente **`cf-studio`** (o dono já abriu uma e deu certo; manter o hábito)
 
+### Plano de edição
+
+- [ ] **[dono + Claude]** Testar o plano de edição num vídeo com **vários planos** (b-roll, cortes) e com **música**: até agora só foi testado em plano único e em vídeo sintético
+- [ ] **[Claude]** `@remotion/motion-blur` foi instalado mas **não foi testado** (os `TransitionSeries` com fade e slide foram)
+
 ### Skills da lista do dono
 
 - [ ] **[dono]** Trazer os nomes das próximas skills

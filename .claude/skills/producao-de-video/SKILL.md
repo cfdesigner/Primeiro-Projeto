@@ -6,6 +6,7 @@ description: Use quando o usuário pedir para criar, montar ou editar um vídeo 
 # Fluxo de uma produção
 
 1. **Design system:** qual? (skill `design-systems`). Se o usuário não disse, pergunte. Leia o `README.md` e o `DESIGN-SYSTEM.md` dele.
+   1b. **Material bruto?** Siga a skill `plano-de-edicao` (analisa, monta o plano, mostra e espera aprovação) antes de montar.
 2. **Brief rápido** (só o que faltar): formato (vertical 1080×1920 / horizontal 1920×1080), duração, textos, imagens/logo, música. Não pergunte o que já está na ficha.
 3. **Pasta da produção:** `producoes/<nome>/` com a composição. Registre em `producoes/index.tsx` (uma `<Composition>` com `id` único). Use só componentes e efeitos do design system escolhido.
 4. **Vídeo com fala ou pedido de legenda:** siga a skill `legendas` (transcreve sozinho, sugere frases de efeito, espera aprovação).
