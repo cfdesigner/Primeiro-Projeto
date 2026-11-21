@@ -28,11 +28,12 @@ export type NumeroProps = {
   countMs?: number;
   /** Escurecimento azul sobre a imagem (padrão 0,62). */
   dim?: number;
+  /** Escurece o quadro em azul sob o número. Padrão desligado: o número entra direto sobre a cena (decisão do dono). */
+  escurecer?: boolean;
 };
 
 /**
- * Número de destaque do CERTI (aprovado: identidade do estilo A, sobre a imagem): o quadro escurece em azul-profundo,
- * o número aparece enorme em branco (Nunito Sans 900) com o prefixo em azul-claro, rótulo em caixa alta e um fio fino.
+ * Número de destaque do CERTI (aprovado: identidade do estilo A, sobre a imagem): o número aparece enorme em branco (Nunito Sans 900) com o prefixo em azul-claro, rótulo em caixa alta e um fio fino.
  * A contagem desacelera e termina exatamente no valor. Corte seco; só o escurecimento tem fade (200 ms).
  */
 export const Numero: React.FC<NumeroProps> = ({
@@ -44,6 +45,7 @@ export const Numero: React.FC<NumeroProps> = ({
   durationInFrames,
   countMs = 1200,
   dim = 0.62,
+  escurecer = false,
 }) => {
   const f = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
@@ -77,16 +79,19 @@ export const Numero: React.FC<NumeroProps> = ({
   };
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>
-      <AbsoluteFill
-        style={{ background: `rgba(0,40,96,${dim})`, opacity: shade }}
-      />
+      {escurecer ? (
+        <AbsoluteFill
+          style={{ background: `rgba(0,40,96,${dim})`, opacity: shade }}
+        />
+      ) : null}
       <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
         <div
           style={{
             display: "grid",
             justifyItems: "center",
             gap: 10 * k,
-            textShadow: "0 6px 30px rgba(0,0,0,0.35)",
+            textShadow:
+              "0 4px 28px rgba(0,0,0,0.5), 0 1px 4px rgba(0,0,0,0.45)",
           }}
         >
           {eyebrow ? (

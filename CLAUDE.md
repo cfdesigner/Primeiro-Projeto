@@ -21,6 +21,7 @@ Leia `PENDENCIAS.md` no começo da sessão e **lembre o dono das pendências abe
 - **Sem barras de REC, timecode ou fps** nos vídeos, a menos que ele peça.
 - **Limpo e premium.** O elemento principal manda; texto de apoio é pequeno, suave e discreto. Nunca "textão" nem texto chamativo sobrando. Na dúvida: menos texto, menor, mais suave.
 - **Frases de efeito e escolhas de estilo novas: mostrar e esperar a aprovação** antes de renderizar o vídeo final.
+- **Terceiro de nome (lower third): NÃO colocar, a menos que o dono peça no comando.** É raro nos vídeos dele. Se pedir, perguntar nome e cargo; nunca inventar.
 - **Nunca versionar vídeos** (`out/`, `public/entrada/` são ignorados). Entregar o MP4 na conversa.
 - **Nunca misturar elementos de design systems diferentes** numa peça, a menos que ele peça.
 

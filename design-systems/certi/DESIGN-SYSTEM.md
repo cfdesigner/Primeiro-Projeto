@@ -86,6 +86,8 @@ Fluxo: skill `legendas` (transcreve com Whisper, agrupa, renderiza). Exemplo: `C
 
 ## Terceiro de nome
 
+> **Só aparece quando o dono pedir no comando.** É raro nos vídeos dele; sem pedido, não colocar. Se pedir, perguntar nome e cargo antes (nunca inventar).
+
 Componente `TerceiroTech`, medido no institucional da CERTI:
 
 - Barra escura translúcida de **cantos chanfrados**, com uma textura sutil de rede (pontos e linhas) em azul-claro.
@@ -98,11 +100,12 @@ Componente `TerceiroTech`, medido no institucional da CERTI:
 
 **Sobre a imagem, com a identidade do estilo A (escolha do dono):** componente `Numero`.
 
-- O quadro escurece em azul-profundo (fade de 200 ms); o **número aparece enorme, em branco, Nunito Sans 900**, com o **prefixo (+) em azul-claro**.
+- **Sem escurecer nem tingir o quadro** (decisão do dono, igual à frase de efeito): o **número aparece enorme, em branco, Nunito Sans 900**, com o **prefixo (+) em azul-claro**.
 - Linha pequena de peso leve em cima ("MAIS DE"), **rótulo em caixa alta e negrito** embaixo ("CLIENTES NO MUNDO") e um **fio fino** branco no fim.
 - Sem colchetes nos cantos (eram do estilo C da prancha, que o dono não escolheu).
 - **A contagem é proposta minha:** o site não mostrou contador. Sobe com desaceleração em 1,2 s e termina exatamente no valor. Se o dono preferir o número já pronto, em corte seco, basta `countMs={0}`.
 - O tamanho se ajusta para o número sempre caber na largura.
+- A legibilidade vem da sombra suave nas letras; sobre fundos muito claros (jaleco, mesa branca) o rótulo e o fio fino perdem força. `escurecer` existe como opção, desligada por padrão.
 
 Exemplo: `Certi-Numero-Fecho-Exemplo`.
 

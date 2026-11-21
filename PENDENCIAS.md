@@ -35,12 +35,6 @@
 
 ## Próximos passos
 
-### Produção CERTI News (no `main`, em `producoes/certi-news/`)
-
-- [ ] **[dono]** Passar nome e cargo reais se quiser o terceiro de nome (hoje desligado; a apresentação provavelmente nem precisa)
-- [ ] **[dono]** Dizer se o número do CERTI (`Numero`) também deve entrar direto sobre a cena, sem escurecer
-- [ ] **[dono]** Dizer se a vírgula depois de "PESSOAL" ou o endereço `certi.org.br` do fecho incomodam (legendas não têm ponto final)
-
 ### CERTI: o que depende do dono
 
 - [ ] **[dono]** (opcional) fotos, manual da marca e, se existirem, os arquivos oficiais do horizontal negativo e do símbolo (hoje derivados por mim)

@@ -7,7 +7,7 @@ Design system: **CERTI**. Vídeo vertical de ~12 s com apresentação falada.
 - Legendas do dia a dia (46 px, a 30% do pé), com a palavra falada em azul-claro e **sem ponto final**.
 - Frase de efeito "A **Inteligência Artificial** está no centro das discussões" (5,5 s a 8,7 s), direto sobre a cena, sem escurecer.
 - Fecho: a cena desfoca e é tingida de azul-profundo (a partir de 8,9 s) e o logo vertical nasce dentro do azul, com `certi.org.br` discreto.
-- Terceiro de nome **desligado** (`terceiroDeNome={false}`): ainda não há nome e cargo reais. Ligar com `--props='{"terceiroDeNome":true}'` depois de trocar o texto em `CertiNews.tsx`.
+- Terceiro de nome **desligado por regra do dono** (só entra se ele pedir no comando) (`terceiroDeNome={false}`): ainda não há nome e cargo reais. Ligar com `--props='{"terceiroDeNome":true}'` depois de trocar o texto em `CertiNews.tsx`.
 
 ## Como renderizar de novo
 
