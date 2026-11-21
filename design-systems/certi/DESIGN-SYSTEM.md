@@ -1,6 +1,6 @@
 # CERTI: ficha de produção
 
-> **Status: em construção.** Etapa 1 (cores, tipografia, logo, componentes base) **aprovada pelo dono**. As demais etapas aguardam referência de movimento (vídeo de tela) e as aprovações do dono.
+> **Status: em construção.** Etapa 1 (cores, tipografia, logo, componentes base) aprovada. **Etapa 2 (movimento e transições) pronta para aprovação.** Faltam legendas, terceiro, números e fecho.
 
 **Identidade em uma linha:** institucional, claro e tecnológico; azul da marca com acentos nas cores do símbolo.
 
@@ -31,11 +31,27 @@ import {
 
 ## Movimento (a personalidade)
 
-**A definir.** Falta referência: o ideal é um vídeo de tela (~15 s) rolando o site e passando o mouse sobre botões e cards. Não inventar antes disso.
+**Direta e funcional**, de site institucional. Medido quadro a quadro no vídeo de tela do site (66 s, 30 fps); valores em `movimento.ts`.
+
+| Evento no site                           | O que acontece                                                                           | Medido                                                                                    |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Etiqueta ao passar o mouse               | Preenchimento azul (`primary`) e texto branco, subindo rápido e desacelerando (ease-out) | ≈ 300 ms para entrar, ≈ 250 ms para sair                                                  |
+| Menu suspenso                            | Painel aparece e some de uma vez                                                         | 1 quadro (corte seco)                                                                     |
+| Imagem dentro do menu, ao trocar de item | Crossfade entre as duas imagens, quase linear                                            | ≈ 400 ms (a troca já estava em andamento quando o trecho começou, pode ser um pouco mais) |
+| Imagem ao abrir o menu                   | Aparece junto com o painel, sem fade                                                     | 1 quadro                                                                                  |
+| Menu lateral (item ativo)                | Muda de cor instantaneamente                                                             | 1 quadro                                                                                  |
+| Rolagem                                  | É do navegador, não é movimento do site                                                  | não replicar                                                                              |
+
+**Não observado no vídeo** (não inventar): entradas de elementos ao rolar, contadores animados, carrossel, transições entre páginas.
 
 ## Transições
 
-**A definir** (etapa 2).
+- **Corte seco** é o padrão entre cenas e para painéis/cards que aparecem.
+- **Crossfade de 400 ms** quando uma imagem ou cena é trocada por outra (`FadeIn` sobre a cena anterior).
+- **Destaque em sequência** de etiquetas (`GradeDeEtiquetas`): o preenchimento passa de uma etiqueta para a seguinte, a cada ~450 ms, como o mouse passando.
+- Sem wipes, zooms, clarões ou deslizes: o site não tem. _Proposta a aprovar:_ usar também o fade de 400 ms para textos entrando (o site só mostra isso em imagens).
+
+Componentes em `efeitos/`: `ChipAnimado`, `GradeDeEtiquetas`, `FadeIn`. Vídeo de teste: `Certi-Movimento-Teste`.
 
 ## Legendas
 
